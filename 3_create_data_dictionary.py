@@ -10,7 +10,7 @@ NAMESPACE = "osse-11"          # adapt this to current registry
 REGISTRY_NAME = "ACLF"
 URL_PREFIX = "test.aclf"
 STRUCTURE_URL = f"https://{URL_PREFIX}.register.imi-frankfurt.de/schemata/data_element_list.csv"
-MDR_DE_PATH = "metadata/processed/2026-04-22_ACLF_API_MDR_dataelements.csv"
+MDR_DE_PATH = "metadata/processed/2026-05-04_ACLF_API_MDR_dataelements.csv"
 OUTPUT_DIR = "metadata/processed"
 
 import pandas as pd

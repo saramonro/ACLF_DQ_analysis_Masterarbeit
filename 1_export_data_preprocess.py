@@ -11,9 +11,14 @@
 
 import pandas as pd
 import csv
+from pathlib import Path
 
 # Paths will be added to config.py later
 DATA_PATH = "data/raw/ACLF_2026-02-12_MDAT.csv"
+OUTPUT_DIR = Path("data\processed")
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+OUTPUT_PATH = OUTPUT_DIR / "Export_long.csv"
 
 #Load data (includes metadata rows)
 
@@ -81,7 +86,7 @@ def main():
     df = extract_data_table(df_raw)
     df_clean = preprocess_export_data(df)
     df_long = wide_to_long(df_clean)
-    df_long.to_csv('data/processed/Export_long.csv', index=False, sep=';', quoting=csv.QUOTE_ALL, encoding='UTF-8')
+    df_long.to_csv(OUTPUT_PATH, index=False, sep=';', quoting=csv.QUOTE_ALL, encoding='UTF-8')
    
 
     

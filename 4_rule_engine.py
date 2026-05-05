@@ -6,7 +6,13 @@ EXPORT_LONG_PATH = "data/processed/Export_long.csv"
 DATA_DICTIONARY_PATH ="metadata/processed/data_dictionary.csv"
 PERMISSIBLE_VALUES_PATH = "metadata/processed/permissible_values.csv"
 
-OUTPUT_PATH = "results/rule_results.csv"
+OUTPUT_DIR = Path("results")
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+OUTPUT_PATH = OUTPUT_DIR / "rule_results.csv"
+
+
+
 
 def load_csv(path):
     return pd.read_csv(path, dtype="object", sep=";")
@@ -211,12 +217,13 @@ def check_single_vs_multiple_choice(df):
 
     enum_rows = df[mask].copy()   
 
-    # single-choice enumerated types are those with SELECT_ONE_RADIO as slot, as well as empty slots (become dropdowns)
+    # single-choice enumerated types are those with SELECT_ONE_RADIO as slot or  empty slots (become dropdowns)
 
     enum_rows["slots_clean"] = enum_rows["slots"].fillna("").astype(str).str.strip()
     single_choice = enum_rows[
          enum_rows["slots_clean"].isin(["", "SELECT_ONE_RADIO"])].copy()
     
+    # Variable instances are a combination of following columns
     group_cols =[
          "PID",
          "Episode",
@@ -224,8 +231,10 @@ def check_single_vs_multiple_choice(df):
          "IX",
          "source_id"
     ]
+    # Make sure columns exist
     existing_group_cols = [ c for c in group_cols if c in single_choice.columns]
     
+    # Counts of unique values per combination
     counts = (
         single_choice
         .dropna(subset=["source_value"])
@@ -234,13 +243,31 @@ def check_single_vs_multiple_choice(df):
         .reset_index(name="n_values")
     )
 
+    # Keep only groups where a single-choice variable has more than one value
+
+    bad_groups = counts[counts["n_values"] > 1]
+
+    failed = single_choice.merge(bad_groups[existing_group_cols + ["n_values"]], how="inner", on=existing_group_cols)
+
+    # Rename column
+    failed["observed_count"] = failed["n_values"]
+    return make_violation(
+    failed,
+    rule_id="SINGLE_CHOICE_MULTIPLE_VALUES",
+    rule_type="single_vs_multiple_choice",
+    expected="only one selected value for single-choice enumerated variable",
+    observed_col="observed_count"
+)
+
+
 def apply_rules(df, df_pv):
     rule_results = [
         check_integer_conformance(df),
         check_float_conformance(df),
         check_boolean_conformance(df),
         check_date_format_validity(df),
-        check_permissible_values(df, df_pv)
+        check_permissible_values(df, df_pv),
+        check_single_vs_multiple_choice(df)
     ]
 
     rule_results = [r for r in rule_results if not r.empty]
@@ -251,7 +278,6 @@ def apply_rules(df, df_pv):
     return pd.concat(rule_results, ignore_index=True)
 
 def main():
-    Path("results").mkdir(exist_ok=True)
 
     df_export = load_csv(EXPORT_LONG_PATH)
     df_dict = load_csv(DATA_DICTIONARY_PATH)
