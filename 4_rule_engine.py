@@ -2,7 +2,7 @@ import pandas as pd
 import re
 from pathlib import Path
 
-EXPORT_LONG_PATH = "data/processed/Export_long.csv"
+EXPORT_LONG_PATH = "data/processed/export_long_clean.csv"
 DATA_DICTIONARY_PATH ="metadata/processed/data_dictionary.csv"
 PERMISSIBLE_VALUES_PATH = "metadata/processed/permissible_values.csv"
 
@@ -115,6 +115,7 @@ def check_boolean_conformance(df):
           expected="True or False")
 
 # Check if date formats fit expected date type 
+## we cant rely solely on datetime validation, because issues like 202 as year arent flagged (its considered a valid year)
 ## Map date types to strftime format strings
 
 def get_date_parser_format(data_format):

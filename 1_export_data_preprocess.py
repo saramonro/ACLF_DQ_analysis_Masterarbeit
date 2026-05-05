@@ -51,6 +51,22 @@ def drop_columns(df):
     df = df.drop(columns=['patient repeat number', 'Unique ID (Form_Record_DataElement):'])
     return df
 
+# Drop Test Patients (patients in Test Locations)
+def drop_test_data(df):
+  
+    mask_test = (
+        df["Location"]
+        .astype(str)
+        .str.lower()
+        .str.contains("test location", na=False)
+    )
+
+    df_clean = df[~mask_test].copy()
+
+    print(f"Dropped {mask_test.sum()} test rows")
+
+    return df_clean
+
 #Rename columns
 def rename_columns(df):
     df = df.rename(columns={'Episode number': 'Episode',
@@ -76,6 +92,7 @@ def wide_to_long(df):
 
 
 def preprocess_export_data(df):
+    df= drop_test_data(df)
     df = drop_columns(df)
     df = rename_columns(df) 
     return df
