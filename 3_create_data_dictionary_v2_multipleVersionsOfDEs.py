@@ -3,9 +3,7 @@
 # This script generates unique IDs from information extracted from MDR API, and compares it to the data_element_list to generate a final Data Dictionary with only registry-present Data Elements.
 
 
-####################
 # Configuration 
-####################
 NAMESPACE = "osse-11"          # adapt this to current registry 
 REGISTRY_NAME = "ACLF"
 URL_PREFIX = "test.aclf"
@@ -73,12 +71,42 @@ def load_mdr_dataelements(path):
     df = pd.read_csv(path, dtype="object", sep=";")
     return df
 
+def remove_urn_version(urn):
+    parts = str(urn).split(":")
+    return ":".join(parts[:-1])
 
+
+def add_base_urns(df):
+    df = df.copy()
+    df["dataelement_base_urn"] = df["dataelement_urn"].apply(remove_urn_version)
+    return df
 
 def merge_structure_with_mdr(df_structure, df_mdr):
-    df_mdr_slots = df_mdr[['dataelement_urn', 'slots']].copy()
-    df_structure = df_structure.merge(df_mdr_slots, how="left", on="dataelement_urn")
-    return df_structure
+    df_structure = add_base_urns(df_structure)
+    df_mdr = add_base_urns(df_mdr)
+
+    # Keep only MDR versions of elements that still exist in the current structure
+    current_base_urns = df_structure["dataelement_base_urn"].dropna().unique()
+
+    df_mdr_current = df_mdr[
+        df_mdr["dataelement_base_urn"].isin(current_base_urns)
+    ].copy()
+
+    df_mdr_slots = df_mdr_current[
+        ["dataelement_base_urn", "dataelement_urn", "slots"]
+    ].copy()
+
+    df_mdr_slots = df_mdr_slots.rename(
+        columns={"dataelement_urn": "dataelement_urn_mdr"}
+    )
+
+    df_merged = df_structure.merge(
+        df_mdr_slots,
+        how="left",
+        on="dataelement_base_urn"
+    )
+
+    return df_merged
 
 
 
@@ -89,7 +117,7 @@ def main():
     structure_metadata_with_ids = generate_source_ids(clean_structure_metadata)
     mdr_data=load_mdr_dataelements(MDR_DE_PATH)
     data_dictionary=merge_structure_with_mdr(structure_metadata_with_ids,mdr_data)
-    output_path = f"{OUTPUT_DIR}/data_dictionary.csv"
+    output_path = f"{OUTPUT_DIR}/data_dictionary_with_versions.csv"
     data_dictionary.to_csv(output_path, index=False, sep=";")
 
 if __name__ == "__main__":

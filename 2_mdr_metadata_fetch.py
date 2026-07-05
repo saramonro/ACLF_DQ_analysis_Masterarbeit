@@ -1,6 +1,6 @@
 import pandas as pd
 import requests
-from datetime import date
+from pathlib import Path
 import csv
 import json
 
@@ -11,7 +11,8 @@ import json
 NAMESPACE = "osse-11"          # adapt this to current registry 
 REGISTRY_NAME = "ACLF"
 MDR_BASE = "https://mdr.prod.osse-register.de/rest/api/mdr/"
-OUTPUT_DIR = "metadata/processed"
+OUTPUT_DIR = Path("metadata/processed")
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True) # create directory if it doesn't exist
 HEADERS = {
     "Accept-Language": "en-US, en;q=0.7,de;q=0.3"
 }
@@ -165,12 +166,10 @@ def fetch_namespace_metadata(namespace):
     return df_dataelements, df_permissible_values
 
 def main():
-    today = date.today().isoformat()
-
     df_dataelements, df_permissible_values = fetch_namespace_metadata(NAMESPACE)
 
-    dataelements_path = f"{OUTPUT_DIR}/{today}_{REGISTRY_NAME}_API_MDR_dataelements.csv"
-    permissible_values_path = f"{OUTPUT_DIR}/{today}_{REGISTRY_NAME}_API_MDR_permittedValues.csv"
+    dataelements_path = f"{OUTPUT_DIR}/{REGISTRY_NAME}_API_MDR_dataelements.csv"
+    permissible_values_path = f"{OUTPUT_DIR}/{REGISTRY_NAME}_API_MDR_permittedValues.csv"
 
     df_dataelements.to_csv(dataelements_path, index=False, sep=";", encoding="utf-8")
     df_permissible_values.to_csv(permissible_values_path, index=False, sep=";", encoding="utf-8")

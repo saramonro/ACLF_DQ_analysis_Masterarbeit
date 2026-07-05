@@ -4,7 +4,7 @@ from pathlib import Path
 
 EXPORT_LONG_PATH = "data/processed/export_long_clean.csv"
 DATA_DICTIONARY_PATH ="metadata/processed/data_dictionary.csv"
-PERMISSIBLE_VALUES_PATH = "metadata/processed/permissible_values.csv"
+PERMISSIBLE_VALUES_PATH = "metadata/processed/ACLF_API_MDR_permittedValues.csv"
 
 OUTPUT_DIR = Path("results")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

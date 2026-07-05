@@ -69,9 +69,9 @@ def drop_test_data(df):
 
 #Rename columns
 def rename_columns(df):
-    df = df.rename(columns={'Episode number': 'Episode',
-                                             'Episode date': 'Episode_Date',
-                                             'Episode description': 'Episode_Description',})
+    df = df.rename(columns={'Episode number': 'episode',
+                                             'episode date': 'episode_date',
+})
     return df
 
 #Wide to Long format conversion
