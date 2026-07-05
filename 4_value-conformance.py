@@ -9,7 +9,7 @@ PERMISSIBLE_VALUES_PATH = "metadata/processed/ACLF_API_MDR_permittedValues.csv"
 OUTPUT_DIR = Path("results")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-OUTPUT_PATH = OUTPUT_DIR / "rule_results.csv"
+OUTPUT_PATH = OUTPUT_DIR / "value_conformance_violations.csv"
 
 
 
