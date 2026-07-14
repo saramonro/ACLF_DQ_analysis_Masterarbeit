@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Data Quality Report</h1>
+<p>The following results were generated on {{ generated_date }}</p>
+
+<p>The performed rule checks were conceptualized in alignment with the harmonized data quality
+framework by Kahn et al., which defines the dimensions Conformance, Plausibility and
+Completeness. The results will be displayed by dimension and subdimension.</p>
+
+
+<h2>Conformance</h2>
+<h3>Value Conformance</h3>
+<p>Value conformance checks checked whether reported values conformed to hard-coded constraints defined in the Metadata Repository (MDR). Different checks were applied to different data element types.</p>
+
+
+<h4>Boolean conformance</h4>
+<p>{{ boolean.explanation }}</p>
+
+<p>
+    <strong>Assessment scope:</strong>
+    {{ boolean.assessment_unit }}
+</p>
+
+<p>
+    A total of <strong>{{ boolean.assessed_elements }}</strong>
+    values were assessed.
+    <strong>{{ boolean.total_violations }}</strong>
+    violations were identified.
+</p>
+
+<h4>Float conformance</h4>
+<p>Checks whether recorded values are numerical.</p>
+
+<h4>Integer conformance</h4>
+<p>Checks whether recorded values are whole numbers.</p>
+
+<h4>Single-choice conformance</h4>
+<p>Checks whether enumerated types with single-choice input (radio buttons, dropdowns) contain only one recorded value.</p>
+
+<h4>Permissible values conformance</h4>
+<p>Checks whether enumerated types contain only values predefined in the MDR</p>
+
+<h4>Date type conformance</h4>
+<p>Checks that date type elements contain values conforming to the date format defined in the MDR</p>
+
+<h4>Range conformance</h4>
+<p>Checks that numerical values fall within hard-coded ranges</p>
+
+<h3>Computational Conformance</h3>
+<p>Computational conformance checks targeted automatic inputs coded in the registry´s frontend. </p>
+<h4>Import checks</h4>
+<p>Values automatically imported across forms were checked for whether the values for target and source elements were identical.</p>
+
+
+<h2>Dimension</h2>
+<p>text</p>
+<h3>Subdimension</h3>
+<p>text</p>
+<h4>Rule</h4>
+<p>text</p>
+
+
+</body>
+</html>

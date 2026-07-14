@@ -1,0 +1,17 @@
+rule_type;rule_id;display_name;assessment_unit;result_word;explanation
+numeric_range;;Numeric Range Conformance;All numeric values that could be parsed and compared with a recognized MDR-defined range. ;non-conforming values;Checks if recorded values fall within hard-coded ranges in the MDR
+computational_conformance;;x;;;checks targeted automatic inputs coded in the registry´s frontend. 
+;import;x;All target instances for which both a single target value and the corresponding single source value were available, using episode-level matching for longitudinal sources and patient-level matching for basic sources. ;;for values imported across forms, checks whether the values for target and source elements were identical  
+;calculation;x;All patient–episode score instances for which a stored score and all required inputs were available as single numeric values and the expected score could be calculated successfully. ;;for automatically calculated and input values, whether the resulting values conform to the source values and the predefined formulas
+temporal_plausibility;;x;;;placeholder text
+;not_before_dob ;x;All dates marked with notBeforeDOB = true for which both the assessed date and the patient’s date of birth could be parsed. ;;
+;not_after_death ;x;All dates marked with notAfterDeath = true for which both the assessed date and the patient’s date of death could be parsed. ;;
+;not_in_future ;x;All dates marked with notFuture = true that could be parsed successfully. ;;
+longitudinal_plausibility;;x;All patient–variable groups containing valid observations from at least two distinct episode dates. ;;placeholder text
+datatype_conformance;Integer_conformance;x;All non-empty values for which data_type equals INTEGER ;;Checks whether recorded values are whole numbers. 
+datatype_conformance;Float_conformance;x;All non-empty values for which data_type equals FLOAT. ;;Checks whether recorded values are numerical. 
+datatype_conformance;Boolean_conformance;x;All non-empty values for which data_type equals BOOLEAN. ;;Checks whether recorded values are “true” or “false”. 
+datatype_conformance;single_choice_conformance;x;WIP;;Checks whether enumerated types with single-choice input (radio buttons, dropdowns) contain only one recorded value. 
+Permissible_values_conformance;Permissible_values_conformance;x;All non-empty values for which data_type equals enumerated. ;;Checks whether enumerated types contain only values predefined in the MDR 
+Date_format_conformance;Date_format_conformance;x;All non-empty values for which data_type equals DATE. ;;Checks that date type elements contain values conforming to the date format defined in the MDR 
+;;x;;;
