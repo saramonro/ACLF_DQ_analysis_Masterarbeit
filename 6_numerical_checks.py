@@ -8,10 +8,13 @@ from pathlib import Path
 EXPORT_LONG_PATH = "data/processed/export_long_clean.csv"
 DATA_DICTIONARY_PATH = "metadata/processed/data_dictionary.csv"
 
-OUTPUT_DIR = Path("results/numerics")
+OUTPUT_DIR = Path("results/range")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-OUTPUT_PATH = OUTPUT_DIR / "numeric_rule_results.csv"
+OUTPUT_PATH = OUTPUT_DIR / "range_rule_results.csv"
+SUMMARY_OUTPUT_PATH = (
+    OUTPUT_DIR / "range_rule_summary.csv"
+)
 
 VALID_NUMERIC_TYPES = ["INTEGER", "FLOAT"]
 
@@ -40,7 +43,18 @@ def make_violation(df, rule_id, rule_type, expected, observed_col="source_value"
 
     return out
 
-
+def make_summary(
+    rule_type,
+    rule_id,
+    assessed_elements,
+    violations,
+):
+    return {
+        "rule_type": rule_type,
+        "rule_id": rule_id,
+        "assessed_elements": int(assessed_elements),
+        "total_violations": int(len(violations)),
+    }
 def get_numeric_types(df):
     """
     Return only INTEGER and FLOAT rows from the data dictionary.
@@ -178,13 +192,13 @@ def check_numeric_range(df_export, df_dict):
     Check whether numeric source_values fall inside metadata-defined ranges.
     """
 
-    # --- Step 1: get numeric rules from metadata ---
+    #get numeric rules from metadata
 
     numeric_rules = get_numeric_types(df_dict)[
         ["source_id", "data_type", "data_format"]
     ].copy()
 
-    # --- Step 2: merge export with numeric metadata ---
+    #merge export with numeric metadata
 
     merged = df_export.merge(
         numeric_rules,
@@ -192,7 +206,7 @@ def check_numeric_range(df_export, df_dict):
         how="inner"
     )
 
-    # --- Step 3: exclude rows without constraints ---
+    #exclude rows without constraints
 
     has_range = (
         merged["data_format"]
@@ -204,7 +218,7 @@ def check_numeric_range(df_export, df_dict):
 
     range_rows = merged[has_range].copy()
 
-    # --- Step 4: convert values to numeric ---
+    #convert values to numeric
 
     normalized = (
         range_rows["source_value"]
@@ -225,12 +239,19 @@ def check_numeric_range(df_export, df_dict):
     ].copy()
 
     failed_parts = []
+    assessed_elements = 0
 
-    # --- Step 5: evaluate each row against parsed conditions ---
+    #evaluate each row against parsed conditions
 
-    for idx, row in valid_numeric.iterrows():
+    for _, row in valid_numeric.iterrows():
 
         conditions = parse_numeric_range(row["data_format"])
+        # No recognized range means that this row
+        # could not actually be assessed
+        if not conditions:
+            continue
+        assessed_elements += 1 #malformed range expressions dont count as assessed
+
 
         value = row["numeric_value"]
 
@@ -247,34 +268,50 @@ def check_numeric_range(df_export, df_dict):
         if violated:
             failed_parts.append(row)
 
-    # --- Step 6: combine violations ---
+    # combine violations
 
     if failed_parts:
 
         failed_df = pd.DataFrame(failed_parts)
 
-        return make_violation(
+        violations = make_violation(
             failed_df,
             rule_id="NUMERIC_RANGE_CONFORMANCE",
             rule_type="numeric_range",
-            expected="value falls within metadata-defined numeric range"
+            expected=(
+                "value falls within metadata-defined "
+                "numeric range"
+            ),
         )
+    else:
+        violations = pd.DataFrame()
 
-    return pd.DataFrame()
+    summary = make_summary(
+        rule_type="numeric_range",
+        rule_id="NUMERIC_RANGE_CONFORMANCE",
+        assessed_elements=assessed_elements,
+        violations=violations,
+    )
 
+    return violations, summary
 
 def apply_rules(df_export, df_dict):
+    violations, summary = check_numeric_range(
+        df_export,
+        df_dict,
+    )
 
-    rule_results = [
-        check_numeric_range(df_export, df_dict)
-    ]
+    summary_df = pd.DataFrame(
+        [summary],
+        columns=[
+            "rule_type",
+            "rule_id",
+            "assessed_elements",
+            "total_violations",
+        ],
+    )
 
-    rule_results = [r for r in rule_results if not r.empty]
-
-    if not rule_results:
-        return pd.DataFrame()
-
-    return pd.concat(rule_results, ignore_index=True)
+    return violations, summary_df
 
 
 def main():
@@ -282,9 +319,11 @@ def main():
     df_export = load_csv(EXPORT_LONG_PATH)
     df_dict = load_csv(DATA_DICTIONARY_PATH)
 
-    results = apply_rules(df_export, df_dict)
-
-    print(f"Total numeric rule violations: {len(results)}")
+    results, summary = apply_rules(
+    df_export,
+    df_dict,
+)
+    print(f"Total range violations: {len(results)}")
 
     if not results.empty:
         print(
@@ -299,7 +338,7 @@ def main():
         )
 
     results.to_csv(OUTPUT_PATH, index=False, sep=";")
-
+    summary.to_csv(SUMMARY_OUTPUT_PATH, index=False,sep=";")
 
 if __name__ == "__main__":
     main()
