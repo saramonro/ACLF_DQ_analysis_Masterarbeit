@@ -9,8 +9,8 @@ PERMISSIBLE_VALUES_PATH = "metadata/processed/ACLF_API_MDR_permittedValues.csv"
 OUTPUT_DIR = Path("results")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-OUTPUT_PATH = OUTPUT_DIR / "value_conformance_violations.csv"
-
+RESULTS_OUTPUT_PATH = OUTPUT_DIR / "value_conformance_violations.csv"
+SUMMARY_OUTPUT_PATH = OUTPUT_DIR / "value_conformance_summary.csv"
 
 
 
@@ -46,7 +46,21 @@ def make_violation(df, rule_id, rule_type, expected, observed_col="source_value"
      out["rule_type"]=rule_type
      out["expected"] = expected
      out["observed"] = out[observed_col]
-     return out
+
+     output_columns = [
+        "PID",
+        "Episode_Date",
+        "source_id",
+        "dataelement_designation",
+        "source_value",
+        "rule_id",
+        "rule_type",
+        "expected",
+        "observed",
+    ]
+     return out.reindex(columns=output_columns) # added reindex to avoid exceptions for missing columns
+
+
 
 # Check if mapping worked by checking if all source_ids in the export map to information on the metadata
 def check_unmapped_variables(df):
@@ -70,12 +84,20 @@ def check_integer_conformance(df):
 
      is_integer = values.str.fullmatch(r"[+-]?\d+")
      failed=df.loc[mask].loc[~is_integer.fillna(False)].copy()
-
-     return make_violation(failed, 
+    
+     assessed_elements = int(mask.sum())
+     violations= make_violation(failed, 
                            rule_id="Integer_conformance", 
                            rule_type = "datatype_conformance",
                            expected="whole number")
+     summary = make_summary(
+        rule_type="datatype_conformance",
+        rule_id="Integer_conformance",
+        assessed_elements=assessed_elements,
+        violations=violations,
+    )
 
+     return violations, summary
 # Check float types
 
 def check_float_conformance(df):
@@ -89,12 +111,23 @@ def check_float_conformance(df):
      normalized = values.str.replace(",",".", regex=False)
      numeric = pd.to_numeric(normalized, errors="coerce") # tries to convert to numbers, invalid numbers becone NaN via coerce
      failed=df.loc[mask].loc[numeric.isna()].copy()
-     return make_violation(
+
+     assessed_elements = int(mask.sum())
+
+     violations=  make_violation(
      failed,
-     rule_id="FLOAT_CONFORMANCE",
+     rule_id="Float_conformance",
      rule_type="datatype_conformance",
      expected="numeric value using dot or comma as decimal separator"
 )
+     summary = make_summary(
+        rule_type="datatype_conformance",
+        rule_id="Float_conformance",
+        assessed_elements=assessed_elements,
+        violations=violations,
+    )
+
+     return violations, summary
 
 
 def check_boolean_conformance(df):
@@ -103,16 +136,28 @@ def check_boolean_conformance(df):
         df["source_value"].notna()
         & df["source_value"].astype(str).str.strip().ne(""))
      mask = is_boolean & has_value
+     assessed_elements = int(mask.sum())
+
      values = df.loc[mask, "source_value"].astype(str).str.strip()
 
      valid = values.str.upper().str.strip().isin(["TRUE", "FALSE"])
      failed = df.loc[mask].loc[~valid].copy()
 
-     return make_violation(
-          failed,
-          rule_id="Boolean_conformance",
-          rule_type="datatype_conformance",
-          expected="True or False")
+     violations = make_violation(
+        failed,
+        rule_id="Boolean_conformance",
+        rule_type="datatype_conformance",
+        expected="True or False",
+    )
+     summary = make_summary(
+        rule_type="datatype_conformance",
+        rule_id="Boolean_conformance",
+        assessed_elements=assessed_elements,
+        violations=violations,
+    )
+
+     return violations, summary
+
 
 # Check if date formats fit expected date type 
 ## we cant rely solely on datetime validation, because issues like 202 as year arent flagged (its considered a valid year)
@@ -137,6 +182,8 @@ def check_date_format_validity(df):
      mask = is_date & has_value
      date_rows = df.loc[mask].copy()
      
+     assessed_elements = int(mask.sum()) 
+
      failed_parts=[]
      # group by data_format so each variable is validated with its own parser
      for date_format, group in date_rows.groupby("data_format", dropna=False): 
@@ -152,18 +199,29 @@ def check_date_format_validity(df):
           # rows where parser failed are violations
           failed=group.loc[parsed.isna()].copy()
           if not failed.empty:  # skip appending empty violations
-            failed_parts.append(
-                 make_violation(failed,
-                                rule_id="Date_format_validity",
-                                rule_type="Date_format_validity",
+            violations=make_violation(failed,
+                                rule_id="Date_format_conformance",
+                                rule_type="Date_format_conformance",
                                 expected=f"valid date format = {date_format}")
-            )
+            
+            failed_parts.append(violations)
+                 
     # combine all violations into one df
      if failed_parts: 
-            return pd.concat(failed_parts, ignore_index=True)
-          
-     return pd.DataFrame()
-          
+        violations = pd.concat(
+            failed_parts,
+            ignore_index=True
+        )  
+     else:
+         violations = pd.DataFrame()        
+     summary = make_summary(
+        rule_type="Date_format_conformance",
+        rule_id="Date_format_conformance",
+        assessed_elements=assessed_elements,
+        violations=violations,
+    )
+
+     return violations, summary          
 
 
 # Check if values are included in permissible_values
@@ -175,6 +233,7 @@ def check_permissible_values(df, df_pv):
         df["source_value"].notna()
         & df["source_value"].astype(str).str.strip().ne(""))
     mask = is_enumerated & has_value
+    assessed_elements = int(mask.sum()) 
 
     enum_rows = df[mask].copy()
 
@@ -199,14 +258,21 @@ def check_permissible_values(df, df_pv):
     # rows where pv_value is Nan had no match to permissible values and is a value violation
     failed=checked[checked["pv_value"].isna()].copy()
     
-    return make_violation(
+    violations= make_violation(
         failed,
-        rule_id="PERMISSIBLE_VALUE_CONFORMANCE",
+        rule_id="Permissible_values_conformance",
         rule_type="permissible_values",
         expected="value exists in permissible values for this dataelement_urn",
         observed_col="source_value"
     )
+    summary = make_summary(
+        rule_type="permissible_values",
+        rule_id="Permissible_values_conformance",
+        assessed_elements=assessed_elements,
+        violations=violations,
+    )
 
+    return violations, summary   
 
 def check_single_vs_multiple_choice(df):
     # identify enumerated types and exclude missing values
@@ -243,7 +309,7 @@ def check_single_vs_multiple_choice(df):
         .size()
         .reset_index(name="n_values")
     )
-
+    assessed_elements = len(counts)
     # Keep only groups where a single-choice variable has more than one value
 
     bad_groups = counts[counts["n_values"] > 1]
@@ -252,17 +318,38 @@ def check_single_vs_multiple_choice(df):
 
     # Rename column
     failed["observed_count"] = failed["n_values"]
-    return make_violation(
+    violations= make_violation(
     failed,
-    rule_id="SINGLE_CHOICE_MULTIPLE_VALUES",
+    rule_id="Single_choice_conformance",
     rule_type="single_vs_multiple_choice",
     expected="only one selected value for single-choice enumerated variable",
     observed_col="observed_count"
-)
+    )
+    summary = make_summary(
+        rule_type="permissible_values",
+        rule_id="Permissible_values_conformance",
+        assessed_elements=assessed_elements,
+        violations=violations,
+    )
 
+    return violations, summary   
+
+# Makes a summary similar for all checks
+def make_summary(
+    rule_type,
+    rule_id,
+    assessed_elements,
+    violations,
+):
+    return {
+        "rule_type": rule_type,
+        "rule_id": rule_id,
+        "assessed_elements": int(assessed_elements),
+        "total_violations": int(len(violations)),
+    }
 
 def apply_rules(df, df_pv):
-    rule_results = [
+    check_results = [
         check_integer_conformance(df),
         check_float_conformance(df),
         check_boolean_conformance(df),
@@ -271,12 +358,34 @@ def apply_rules(df, df_pv):
         check_single_vs_multiple_choice(df)
     ]
 
-    rule_results = [r for r in rule_results if not r.empty]
+    violations = [
+        violation_df
+        for violation_df, summary in check_results
+        if not violation_df.empty
+    ]
 
-    if not rule_results:
-        return pd.DataFrame()
+    summaries = [
+        summary
+        for _, summary in check_results
+    ]
 
-    return pd.concat(rule_results, ignore_index=True)
+    violations_df = (
+        pd.concat(violations, ignore_index=True)
+        if violations
+        else pd.DataFrame()
+    )
+
+    summary_df = pd.DataFrame(
+        summaries,
+        columns=[
+            "rule_type",
+            "rule_id",
+            "assessed_elements",
+            "total_violations",
+        ],
+    )
+
+    return violations_df, summary_df
 
 def main():
 
@@ -286,14 +395,19 @@ def main():
 
     df_merged = merge_export_with_dictionary(df_export, df_dict)
 
-    results = apply_rules(df_merged, df_pv)
+    results, summary = apply_rules(df_merged, df_pv)
 
     print(f"Total rule violations: {len(results)}")
 
     if not results.empty:
         print(results[["PID", "source_id", "source_value", "rule_id", "expected", "observed"]].head())
 
-    results.to_csv(OUTPUT_PATH, index=False, sep=";")
+    results.to_csv(RESULTS_OUTPUT_PATH, index=False, sep=";")
+    summary.to_csv(
+    SUMMARY_OUTPUT_PATH,
+    index=False,
+    sep=";",
+)
 
 
 if __name__ == "__main__":
