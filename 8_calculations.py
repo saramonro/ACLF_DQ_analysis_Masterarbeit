@@ -5,24 +5,26 @@ import operator as op
 from pathlib import Path
 
 
-# 1. Paths
 
 BASE_DIR = Path(__file__).resolve().parents[0] # change to 1 if script moves to a scripts folder
 
 EXPORT_PATH = BASE_DIR / "data" / "processed" / "export_long_clean.csv"
 
-CALC_INSTANCES_PATH = BASE_DIR / "metadata" / "processed" / "calculations"/ "calculation_instances.csv"
-CALC_MAPPINGS_PATH = BASE_DIR / "metadata" / "processed" /"calculations"/ "calculation_variable_mappings.csv"
-CALC_FORMULAS_PATH = BASE_DIR / "metadata" / "processed" / "calculations"/"calculation_formulas.csv"
+CALC_INSTANCES_PATH = BASE_DIR / "metadata" / "contextual" / "calculations"/ "calculation_instances.csv"
+CALC_MAPPINGS_PATH = BASE_DIR / "metadata" / "contextual" /"calculations"/ "calculation_variable_mappings.csv"
+CALC_FORMULAS_PATH = BASE_DIR / "metadata" / "contextual" / "calculations"/"calculation_formulas.csv"
 
 RESULTS_DIR = BASE_DIR / "results"
 RESULTS_DIR.mkdir(exist_ok=True)
 
 VIOLATIONS_PATH = RESULTS_DIR / "computational_conformance_violations.csv"
 ALL_RESULTS_PATH = RESULTS_DIR / "computational_conformance_all_results.csv"
+SUMMARY_PATH = (
+    RESULTS_DIR
+    / "computational_conformance_summary.csv"
+)
 
 
-# 2. Safe formula evaluator
 
 ALLOWED_OPERATORS = {
     ast.Add: op.add,
@@ -93,7 +95,7 @@ def safe_eval_formula(expression, variables):
     return _eval(parsed_expression)
 
 
-# 3. Load data
+#Load data
 
 
 def load_data():
@@ -106,7 +108,7 @@ def load_data():
     return export, calculation_instances, calculation_mappings, calculation_formulas
 
 
-# 4. Preprocess export
+#Preprocess export
 
 def preprocess_export(export):
     """
@@ -139,7 +141,7 @@ def preprocess_export(export):
     return export
 
 
-# 5. Helper: get value for PID x episode_date x source_id
+# Helper: get value for PID x episode_date x source_id
 
 def get_single_value(export_subset, source_id):
     """
@@ -160,7 +162,7 @@ def get_single_value(export_subset, source_id):
     return values[0]
 
 
-# 6. Run computational conformance checks
+# Run computational conformance checks
 
 def run_computational_conformance_checks(
     export,
@@ -169,6 +171,8 @@ def run_computational_conformance_checks(
     calculation_formulas
 ):
     results = []
+    summary_rows = []
+
 
     formula_lookup = calculation_formulas.set_index("calculation_type").to_dict("index")
 
@@ -178,9 +182,22 @@ def run_computational_conformance_checks(
         calculation_type = instance["calculation_type"]
         score_label = instance.get("score_label", calculation_id)
         score_source_id = instance["score_source_id"]
-
+        instance_results = []
         if calculation_type not in formula_lookup:
-            print(f"Skipping {calculation_id}: no formula found.")
+            print(
+                 f"Skipping {calculation_id}: "
+                  "no formula found."
+                    )
+
+            summary_rows.append(
+              make_summary(
+                rule_type="computational_conformance",
+                 rule_id=calculation_id,
+                 assessed_elements=0,
+                 violations=pd.DataFrame(),
+        )
+    )
+
             continue
 
         formula_info = formula_lookup[calculation_type]
@@ -194,6 +211,14 @@ def run_computational_conformance_checks(
 
         if required_variables.empty:
             print(f"Skipping {calculation_id}: no variable mappings found.")
+            summary_rows.append(
+            make_summary(
+            rule_type="computational_conformance",
+            rule_id=calculation_id,
+            assessed_elements=0,
+            violations=pd.DataFrame(),
+        )
+    )
             continue
 
         # Only evaluate PID x episode_date combinations
@@ -265,22 +290,30 @@ def run_computational_conformance_checks(
                 difference = abs(float(stored_value) - float(expected_value))
                 violation = difference > tolerance
 
-                results.append({
-                    "PID": pid,
-                    "episode_date": episode_date,
-                    "calculation_id": calculation_id,
-                    "calculation_type": calculation_type,
-                    "score_label": score_label,
-                    "score_source_id": score_source_id,
-                    "stored_value": stored_value,
-                    "expected_value": expected_value,
-                    "difference": difference,
-                    "tolerance": tolerance,
-                    "formula_expression": formula_expression,
-                    "input_values": variable_values,
-                    "status": "violation" if violation else "pass",
-                    "violation": violation
-                })
+                result_row = {
+                     "PID": pid,
+                     "episode_date": episode_date,
+                     "calculation_id": calculation_id,
+                     "calculation_type": calculation_type,
+                     "score_label": score_label,
+                     "score_source_id": score_source_id,
+                     "stored_value": stored_value,
+                     "expected_value": expected_value,
+                     "difference": difference,
+                     "tolerance": tolerance,
+                     "formula_expression": formula_expression,
+                     "input_values": variable_values,
+                     "status": (
+                       "violation"
+                       if violation
+                       else "pass"
+                       ),
+                     "violation": violation,
+}
+                results.append(result_row)
+                instance_results.append(result_row)
+
+
 
             except Exception as error:
                 # Formula errors are implementation issues, not data-quality results.
@@ -289,33 +322,83 @@ def run_computational_conformance_checks(
                     f"Formula error for {calculation_id}, "
                     f"PID={pid}, episode_date={episode_date}: {error}"
                 )
+                
+        instance_results_df = pd.DataFrame(
+            instance_results
+        )
 
+        if instance_results_df.empty:
+            instance_violations = pd.DataFrame()
+        else:
+            instance_violations = instance_results_df[
+                instance_results_df["violation"] == True
+            ].copy()
+
+        summary_rows.append(
+            make_summary(
+                rule_type="computational_conformance",
+                rule_id=calculation_id,
+                assessed_elements=len(instance_results),
+                violations=instance_violations,
+            )
+        )
+
+    
     results_df = pd.DataFrame(results)
 
     if results_df.empty:
         violations_df = pd.DataFrame()
     else:
-        violations_df = results_df[results_df["violation"] == True].copy()
+        violations_df = results_df[
+            results_df["violation"] == True
+        ].copy()
 
-    return results_df, violations_df
+    summary_df = pd.DataFrame(
+        summary_rows,
+        columns=[
+            "rule_type",
+            "rule_id",
+            "assessed_elements",
+            "total_violations",
+        ],
+    )
+
+    return results_df, violations_df, summary_df
 
 
-# 7. Main
+
+
+# Summary
+def make_summary(
+    rule_type,
+    rule_id,
+    assessed_elements,
+    violations,
+):
+    return {
+        "rule_type": rule_type,
+        "rule_id": rule_id,
+        "assessed_elements": int(assessed_elements),
+        "total_violations": int(len(violations)),
+    }
+
+# Main
 
 def main():
     export, calculation_instances, calculation_mappings, calculation_formulas = load_data()
 
     export = preprocess_export(export)
 
-    all_results, violations = run_computational_conformance_checks(
-        export=export,
+    all_results, violations, summary = (
+    run_computational_conformance_checks(        export=export,
         calculation_instances=calculation_instances,
         calculation_mappings=calculation_mappings,
         calculation_formulas=calculation_formulas
-    )
+    ))
 
     all_results.to_csv(ALL_RESULTS_PATH, sep=";", index=False)
     violations.to_csv(VIOLATIONS_PATH, sep=";", index=False)
+    summary.to_csv(SUMMARY_PATH, sep=";", index=False)
 
     print("Computational conformance check finished.")
     print(f"All results saved to: {ALL_RESULTS_PATH}")
