@@ -8,16 +8,21 @@ from pathlib import Path
 # retrieve source value from same PID × episode_date
 # compare source vs target
 # write only evaluated rows
-# write mismatches to violations
+# write mismatches to violationsggg
 
 
-# 1. Paths
+# Paths
 
 BASE_DIR = Path.cwd()
 
 EXPORT_PATH = BASE_DIR / "data" / "processed" / "export_long_clean.csv"
-IMPORT_RULES_PATH = BASE_DIR / "metadata" / "processed" / "imports" / "import_rules.csv"
-
+IMPORT_RULES_PATH = BASE_DIR / "metadata" / "contextual" / "imports" / "import_rules.csv"
+DATA_DICTIONARY_PATH = (
+    BASE_DIR
+    / "metadata"
+    / "processed"
+    / "data_dictionary.csv"
+)
 RESULTS_DIR = BASE_DIR / "results"
 RESULTS_DIR.mkdir(exist_ok=True)
 
@@ -25,15 +30,85 @@ VIOLATIONS_PATH = RESULTS_DIR / "import_conformance_violations.csv"
 SUMMARY_PATH = RESULTS_DIR / "import_conformance_summary.csv"
 PATIENT_SUMMARY_PATH = RESULTS_DIR / "import_conformance_patient_summary.csv"
 
-# 2. Load data
+# Load data
 
 def load_data():
     export = pd.read_csv(EXPORT_PATH, sep=";", dtype=object)
     import_rules = pd.read_csv(IMPORT_RULES_PATH, sep=";", dtype=object)
-    return export, import_rules
+    data_dictionary = pd.read_csv(
+        DATA_DICTIONARY_PATH,
+        sep=";",
+        dtype=object,
+    )
+    return export, import_rules, data_dictionary
 
 
-# 3. Preprocess data
+
+# Form lookup
+## Added 14.07.26 because of testing results showing an error when the source variable is basic and the target is longutidinal
+
+def create_form_type_lookup(data_dictionary):
+    required_columns = [
+        "source_id",
+        "form_type",
+    ]
+
+    missing_columns = [
+        column
+        for column in required_columns
+        if column not in data_dictionary.columns
+    ]
+
+    if missing_columns:
+        raise ValueError(
+            "Data dictionary is missing columns: "
+            f"{missing_columns}"
+        )
+
+    form_types = data_dictionary[
+        required_columns
+    ].copy()
+
+    form_types["source_id"] = (
+        form_types["source_id"]
+        .astype(str)
+        .str.strip()
+    )
+
+    form_types["form_type"] = (
+        form_types["form_type"]
+        .astype(str)
+        .str.strip()
+        .str.lower()
+    )
+
+    form_types = form_types.drop_duplicates()
+
+    # Detect source IDs with contradictory classifications
+    conflicting = (
+        form_types
+        .groupby("source_id")["form_type"]
+        .nunique()
+    )
+
+    conflicting = conflicting[
+        conflicting > 1
+    ]
+
+    if not conflicting.empty:
+        raise ValueError(
+            "Some source_ids have multiple form types: "
+            f"{conflicting.index.tolist()}"
+        )
+
+    return (
+        form_types
+        .drop_duplicates(subset=["source_id"])
+        .set_index("source_id")["form_type"]
+        .to_dict()
+    )
+
+# Preprocess data
 
 def preprocess_export(export):
     export = export.copy()
@@ -67,8 +142,7 @@ def preprocess_import_rules(import_rules):
         "source_label",
         "source_source_id",
         "target_label",
-        "target_source_id",
-        "comparison"
+        "target_source_id"
     ]
 
     missing_columns = [
@@ -82,7 +156,7 @@ def preprocess_import_rules(import_rules):
     return import_rules
 
 
-# 4. Create lookup tables
+# Create lookup tables
 
 def create_value_lookup(export):
     """
@@ -107,6 +181,37 @@ def create_value_lookup(export):
 
     return lookup
 
+
+def create_patient_value_lookup(
+    export,
+    basic_source_ids,
+):
+    basic_export = export[
+        export["source_id"].isin(
+            basic_source_ids
+        )
+    ].copy()
+
+    collapsed = (
+        basic_export
+        .dropna(subset=["source_value"])
+        .groupby(
+            [
+                "PID",
+                "source_id",
+            ],
+            dropna=False,
+        )["source_value"]
+        .agg(collapse_values)
+        .reset_index()
+    )
+
+    return collapsed.set_index(
+        [
+            "PID",
+            "source_id",
+        ]
+    )["source_value"]
 
 def create_context_lookup(export):
     """
@@ -134,13 +239,33 @@ def collapse_values(values):
     return unique_values[0]
 
 
-# 5. Helper functions
+# Helper functions
 
 def get_value(lookup, pid, episode_date, source_id):
     key = (pid, episode_date, source_id)
 
     try:
         value = lookup.loc[key]
+    except KeyError:
+        return None
+
+    if pd.isna(value):
+        return None
+
+    return value
+
+def get_patient_value(
+    patient_value_lookup,
+    pid,
+    source_id,
+):
+    key = (
+        pid,
+        source_id,
+    )
+
+    try:
+        value = patient_value_lookup.loc[key]
     except KeyError:
         return None
 
@@ -165,9 +290,9 @@ def values_equal(source_value, target_value):
         return str(source_value).strip() == str(target_value).strip()
 
 
-# 6. Run import conformance checks
+# Run import conformance checks
 
-def run_import_conformance_checks(import_rules, value_lookup, context_lookup):
+def run_import_conformance_checks(import_rules, value_lookup, context_lookup,form_type_lookup, patient_value_lookup):
     violations = []
     summary_rows = []
 
@@ -178,11 +303,13 @@ def run_import_conformance_checks(import_rules, value_lookup, context_lookup):
         source_source_id = rule["source_source_id"]
         target_label = rule["target_label"]
         target_source_id = rule["target_source_id"]
-        comparison = rule["comparison"]
+        source_form_type = form_type_lookup.get(
+        source_source_id)
 
-        if comparison != "equal":
-            print(f"Skipping {rule_id}: unsupported comparison '{comparison}'")
-            continue
+        target_form_type = form_type_lookup.get(
+        target_source_id)
+
+
 
         target_contexts = context_lookup.get(target_source_id)
 
@@ -212,12 +339,38 @@ def run_import_conformance_checks(import_rules, value_lookup, context_lookup):
             pid = context["PID"]
             episode_date = context["episode_date"]
 
-            source_value = get_value(
-                value_lookup,
-                pid,
-                episode_date,
-                source_source_id
-            )
+            if (
+                source_form_type == "longitudinal"
+                and target_form_type == "longitudinal"
+):
+    # Compare source and target within the same episode
+                 source_value = get_value(
+                  value_lookup,
+                 pid,
+                 episode_date,
+                 source_source_id,
+    )
+
+            elif (
+                source_form_type == "basic"
+                and target_form_type == "longitudinal"
+):
+    # Reuse the patient's basic value for every
+    # longitudinal target episode
+                 source_value = get_patient_value(
+                 patient_value_lookup,
+                 pid,
+                 source_source_id,
+    )
+
+            else:
+               raise ValueError(
+        f"Unsupported form-type combination "
+        f"for rule {rule_id}: "
+        f"source={source_form_type}, "
+        f"target={target_form_type}"
+    )
+            
 
             target_value = get_value(
                 value_lookup,
@@ -257,7 +410,6 @@ def run_import_conformance_checks(import_rules, value_lookup, context_lookup):
                     "target_source_id": target_source_id,
                     "source_value": source_value,
                     "target_value": target_value,
-                    "comparison": comparison,
                     "violation": True
                 })
 
@@ -267,8 +419,8 @@ def run_import_conformance_checks(import_rules, value_lookup, context_lookup):
             "target_label": target_label,
             "source_source_id": source_source_id,
             "target_source_id": target_source_id,
-            "n_evaluated": n_evaluated,
-            "n_violations": n_violations,
+            "assessed_elements": n_evaluated,
+            "total_violations": n_violations,
             "n_skipped_missing_source": n_skipped_missing_source,
             "n_skipped_multiple_source": n_skipped_multiple_source,
             "n_skipped_multiple_target": n_skipped_multiple_target
@@ -312,7 +464,7 @@ def create_patient_summary(violations_df):
     )
 
     return patient_summary
-# 7. Save outputs
+# Save outputs
 
 def save_outputs(
     violations_df,
@@ -328,22 +480,40 @@ def save_outputs(
 )
 
 
-# 8. Main
+# Main
 
 def main():
-    export, import_rules = load_data()
-
+    export, import_rules, data_dictionary = (
+    load_data()
+)
     export = preprocess_export(export)
+   
     import_rules = preprocess_import_rules(import_rules)
-
+    form_type_lookup = create_form_type_lookup(
+    data_dictionary
+)       
+    basic_source_ids = {
+    source_id
+    for source_id, form_type
+    in form_type_lookup.items()
+    if form_type == "basic"
+}
     value_lookup = create_value_lookup(export)
+    patient_value_lookup = (
+    create_patient_value_lookup(
+        export,
+        basic_source_ids,
+    )
+)
     context_lookup = create_context_lookup(export)
 
-    violations_df, summary_df = run_import_conformance_checks(
+    (violations_df, summary_df) = run_import_conformance_checks(
         import_rules=import_rules,
         value_lookup=value_lookup,
-        context_lookup=context_lookup
-    )
+        patient_value_lookup=patient_value_lookup,
+        context_lookup=context_lookup,
+        form_type_lookup=form_type_lookup,
+)
     patient_summary_df = create_patient_summary(
     violations_df
 )

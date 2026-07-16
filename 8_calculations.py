@@ -17,11 +17,11 @@ CALC_FORMULAS_PATH = BASE_DIR / "metadata" / "contextual" / "calculations"/"calc
 RESULTS_DIR = BASE_DIR / "results"
 RESULTS_DIR.mkdir(exist_ok=True)
 
-VIOLATIONS_PATH = RESULTS_DIR / "computational_conformance_violations.csv"
-ALL_RESULTS_PATH = RESULTS_DIR / "computational_conformance_all_results.csv"
+VIOLATIONS_PATH = RESULTS_DIR / "calculation_check_violations.csv"
+ALL_RESULTS_PATH = RESULTS_DIR / "calculation_check_all_results.csv"
 SUMMARY_PATH = (
     RESULTS_DIR
-    / "computational_conformance_summary.csv"
+    / "calculation_check_summary.csv"
 )
 
 
@@ -233,10 +233,16 @@ def run_computational_conformance_checks(
             pid = target_context["PID"]
             episode_date = target_context["episode_date"]
 
-            export_subset = export[
-                (export["PID"] == pid)
-                & (export["episode_date"] == episode_date)
-            ]
+            if pd.isna(episode_date):
+                 export_subset = export[
+                  (export["PID"] == pid)
+                 & export["episode_date"].isna()
+                  ]
+            else:
+                   export_subset = export[
+                 (export["PID"] == pid)
+                  & (export["episode_date"] == episode_date)
+    ]
 
             stored_value = get_single_value(export_subset, score_source_id)
 
@@ -336,7 +342,7 @@ def run_computational_conformance_checks(
 
         summary_rows.append(
             make_summary(
-                rule_type="computational_conformance",
+                rule_type="calculation_check",
                 rule_id=calculation_id,
                 assessed_elements=len(instance_results),
                 violations=instance_violations,

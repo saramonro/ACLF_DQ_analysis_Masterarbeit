@@ -321,13 +321,13 @@ def check_single_vs_multiple_choice(df):
     violations= make_violation(
     failed,
     rule_id="Single_choice_conformance",
-    rule_type="single_vs_multiple_choice",
+    rule_type="Single_choice_conformance",
     expected="only one selected value for single-choice enumerated variable",
     observed_col="observed_count"
     )
     summary = make_summary(
-        rule_type="permissible_values",
-        rule_id="Permissible_values_conformance",
+        rule_type="Single_choice_conformance",
+        rule_id="Single_choice_conformance",
         assessed_elements=assessed_elements,
         violations=violations,
     )

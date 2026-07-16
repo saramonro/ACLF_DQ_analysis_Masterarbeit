@@ -288,7 +288,7 @@ def check_numeric_range(df_export, df_dict):
 
     summary = make_summary(
         rule_type="numeric_range",
-        rule_id="NUMERIC_RANGE_CONFORMANCE",
+        rule_id="range_conformance",
         assessed_elements=assessed_elements,
         violations=violations,
     )

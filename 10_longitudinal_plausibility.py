@@ -6,7 +6,7 @@ import numpy as np
 # Configuration
 
 EXPORT_PATH = Path("data/processed/export_long_clean.csv")
-RULES_PATH = Path("metadata/processed/longitudinal_plausibility.csv")
+RULES_PATH = Path("metadata/contextual/longitudinal_plausibility.csv")
 
 VIOLATIONS_OUT = Path("results/longitudinal_plausibility_violations.csv")
 SUMMARY_OUT = Path("results/longitudinal_plausibility_summary.csv")
@@ -17,7 +17,7 @@ RULES_SEP = ";"
 
 # Loading
 
-def load_rules(path: Path) -> pd.DataFrame:
+def load_rules(path: Path):
     rules = pd.read_csv(path, sep=RULES_SEP, dtype="object")
 
     required_cols = {
@@ -42,7 +42,7 @@ def load_rules(path: Path) -> pd.DataFrame:
     return rules
 
 
-def load_relevant_export(path: Path, source_ids: set[str]) -> pd.DataFrame:
+def load_relevant_export(path: Path, source_ids: set[str]):
     usecols = ["PID", "Episode_Date", "source_id", "source_value"]
 
     export = pd.read_csv(
@@ -75,7 +75,7 @@ def load_relevant_export(path: Path, source_ids: set[str]) -> pd.DataFrame:
 
 # Variation logic
 
-def calculate_variation(group: pd.DataFrame, value_type: str) -> dict:
+def calculate_variation(group: pd.DataFrame, value_type: str):
     value_type = str(value_type).lower()
 
     if value_type in ["float", "integer", "numeric"]:
@@ -140,7 +140,7 @@ def calculate_variation(group: pd.DataFrame, value_type: str) -> dict:
     raise ValueError(f"Unsupported value_type: {value_type}")
 
 
-def check_group(group: pd.DataFrame, rule: pd.Series) -> dict | None:
+def check_group(group: pd.DataFrame, rule: pd.Series) | None:
     stats = calculate_variation(group, rule["value_type"])
 
     if stats["n_valid_episode_dates"] < 2:
@@ -167,11 +167,9 @@ def check_group(group: pd.DataFrame, rule: pd.Series) -> dict | None:
     }
 
 
-# =========================
 # Running checks
-# =========================
 
-def run_longitudinal_checks(export: pd.DataFrame, rules: pd.DataFrame) -> pd.DataFrame:
+def run_longitudinal_checks(export: pd.DataFrame, rules: pd.DataFrame):
     violations = []
 
     rules_by_source = rules.set_index("source_id", drop=False)
@@ -186,35 +184,77 @@ def run_longitudinal_checks(export: pd.DataFrame, rules: pd.DataFrame) -> pd.Dat
     return pd.DataFrame(violations)
 
 
-# =========================
 # Summary
-# =========================
 
-def build_summary(export: pd.DataFrame, violations: pd.DataFrame) -> pd.DataFrame:
-    n_groups_checked = (
-        export
-        .groupby(["PID", "source_id"], sort=False)["episode_date"]
-        .nunique()
-        .ge(2)
-        .sum()
+def build_summary(
+    export,
+    violations,
+    rules,
+):
+    summary_rows = []
+
+    for _, rule in rules.iterrows():
+        rule_id = rule["rule_id"]
+        source_id = rule["source_id"]
+        value_type = rule["value_type"]
+
+        # Export rows relevant to the current rule
+        rule_export = export[
+            export["source_id"] == source_id
+        ].copy()
+
+        assessed_elements = 0
+
+        # Each PID × source_id group is one potential
+        # longitudinal assessment
+        for _, group in rule_export.groupby(
+            "PID",
+            sort=False,
+            dropna=False,
+        ):
+            # calculate_variation is used because it filters numerical values which cannot be converted to numbers (so false format)
+            ## so these dont count as assessments
+            stats = calculate_variation(
+                group,
+                value_type,
+            )
+
+            # The longitudinal rule is assessed only when
+            ## at least two valid episode dates are available
+            if stats["n_valid_episode_dates"] >= 2:
+                assessed_elements += 1
+
+        if (
+            violations.empty
+            or "rule_id" not in violations.columns
+        ):
+            total_violations = 0
+        else:
+            total_violations = int(
+                violations["rule_id"]
+                .eq(rule_id)
+                .sum()
+            )
+
+        summary_rows.append({
+            "rule_type": "longitudinal_plausibility",
+            "rule_id": rule_id,
+            "assessed_elements": assessed_elements,
+            "total_violations": total_violations,
+        })
+
+    return pd.DataFrame(
+        summary_rows,
+        columns=[
+            "rule_type",
+            "rule_id",
+            "assessed_elements",
+            "total_violations",
+        ],
     )
 
-    summary = {
-        "n_rows_checked": len(export),
-        "n_patient_variable_groups_checked": int(n_groups_checked),
-        "n_violations_total": len(violations),
-        "n_patients_with_violations": (
-            violations["PID"].nunique() if not violations.empty else 0
-        ),
-        "n_source_ids_checked": export["source_id"].nunique(),
-    }
 
-    return pd.DataFrame([summary])
-
-
-# =========================
 # Main
-# =========================
 
 def main() -> None:
     VIOLATIONS_OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -226,18 +266,28 @@ def main() -> None:
     export = load_relevant_export(EXPORT_PATH, source_ids)
 
     violations = run_longitudinal_checks(export, rules)
-    summary = build_summary(export, violations)
+    summary = build_summary(export, violations, rules)
 
     violations.to_csv(VIOLATIONS_OUT, sep=";", index=False)
     summary.to_csv(SUMMARY_OUT, sep=";", index=False)
+    
 
     print("Longitudinal plausibility check complete.")
-    print(f"Rows checked: {summary.loc[0, 'n_rows_checked']}")
+
     print(
-        "Patient-variable groups checked: "
-        f"{summary.loc[0, 'n_patient_variable_groups_checked']}"
-    )
-    print(f"Violations total: {summary.loc[0, 'n_violations_total']}")
+    "Rules summarized:",
+    len(summary),
+)
+
+    print(
+    "Assessed patient-variable groups:",
+    summary["assessed_elements"].sum(),
+)
+
+    print(
+    "Total violations:",
+    summary["total_violations"].sum(),
+)
 
 
 if __name__ == "__main__":
