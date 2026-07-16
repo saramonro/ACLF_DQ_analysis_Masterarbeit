@@ -170,13 +170,13 @@ def main():
 
     df_form_elements = extract_form_elements(INPUT_PATH)
 
-    df_form_elements.to_csv(OUTPUT_PATH, index=False)
+    df_form_elements.to_csv(OUTPUT_PATH, sep=";", index=False)
 
     data_dictionary = pd.read_csv(DATA_DICTIONARY_PATH, dtype="object", sep=";")
 
     df_form_elements_extended_records = expand_form_versioning_with_data_dictinoary(df_form_elements, data_dictionary)
 
-    df_form_elements_extended_records.to_csv(OUTPUT_PATH_EXTENDED, index=False)
+    df_form_elements_extended_records.to_csv(OUTPUT_PATH_EXTENDED, sep=";", index=False)
 
     print(f"Saved {len(df_form_elements)} rows.")
 

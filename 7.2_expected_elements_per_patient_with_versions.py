@@ -56,8 +56,8 @@ def create_expected_elements(
         how="left"
     )
 
-    expected_longitudinal.to_csv(OUTPUT_PATH, index=False)
-    expected_basic.to_csv(OUTPUT_PATH, index=False)
+    expected_longitudinal.to_csv(OUTPUT_PATH, sep=";", index=False)
+    expected_basic.to_csv(OUTPUT_PATH, sep=";", index=False)
     expected_basic["form_type"] = "basic"
     expected_longitudinal["form_type"] = "longitudinal"
 
@@ -73,7 +73,7 @@ def create_expected_elements(
     .sort_values(["form_id", "form_version"])
 )
     unique_form_versions.to_csv(
-    "metadata/processed/form_versions_present.csv",
+    "metadata/processed/form_versions_present.csv", sep=";",
     index=False
 )
 
@@ -148,11 +148,11 @@ def create_expected_elements_summary(
 def main():
 
     basic_versions = pd.read_csv(BASIC_VERSIONS_PATH, dtype="object")
-    longitudinal_versions = pd.read_csv(LONGITUDINAL_VERSIONS_PATH, dtype="object")
+    longitudinal_versions = pd.read_csv(LONGITUDINAL_VERSIONS_PATH,  dtype="object")
     form_elements_versioned = pd.read_csv(FORM_ELEMENTS_PATH, dtype="object")
 
-    form_items = pd.read_csv(FORM_ITEMS_PATH, dtype="object")
-    form_elements_extended = pd.read_csv(FORM_ELEMENTS_EXTENDED_PATH, dtype="object")
+    form_items = pd.read_csv(FORM_ITEMS_PATH, sep=";", dtype="object")
+    form_elements_extended = pd.read_csv(FORM_ELEMENTS_EXTENDED_PATH, sep=";", dtype="object")
 
     expected_elements = create_expected_elements(
         basic_versions,
@@ -160,7 +160,7 @@ def main():
         form_elements_versioned
     )
 
-    expected_elements.to_csv(OUTPUT_PATH, index=False)
+    expected_elements.to_csv(OUTPUT_PATH, sep=";", index=False)
 
     expected_basic = expected_elements[
         expected_elements["form_type"].eq("basic")
@@ -178,7 +178,7 @@ def main():
         expected_longitudinal=expected_longitudinal,
     )
 
-    summary.to_csv(SUMMARY_OUTPUT_PATH, index=False)
+    summary.to_csv(SUMMARY_OUTPUT_PATH, sep=";", index=False)
 
     print(f"Saved {len(expected_elements)} expected elements.")
     print(f"Saved versioning summary to {SUMMARY_OUTPUT_PATH}")

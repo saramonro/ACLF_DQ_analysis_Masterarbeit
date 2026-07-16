@@ -318,28 +318,30 @@ def completeness_per_patient(df):
 def completeness_per_form(df):
     """Calculate general and core completeness per form."""
 
+    group_columns = ["form_id", "form_label"]
     general = (
-        df.groupby("form_id", dropna=False)
-        .agg(
-            general_expected_n=("source_id", "count"),
-            general_filled_n=("is_filled", "sum"),
-            n_patients=("PID", "nunique")
-        )
-        .reset_index()
+    df.groupby("form_id", dropna=False)
+    .agg(
+        form_label=("form_label", "first"),
+        general_expected_n=("source_id", "count"),
+        general_filled_n=("is_filled", "sum"),
+        n_patients=("PID", "nunique")
     )
+    .reset_index()
+)
     general["general_completeness_percent"] = (
         general["general_filled_n"] / general["general_expected_n"] * 100
     ).round(2)
 
     core = (
-        df[df["is_core"]]
-        .groupby("form_id", dropna=False)
-        .agg(
-            core_expected_n=("source_id", "count"),
-            core_filled_n=("is_filled", "sum")
-        )
-        .reset_index()
+    df[df["is_core"]]
+    .groupby("form_id", dropna=False)
+    .agg(
+        core_expected_n=("source_id", "count"),
+        core_filled_n=("is_filled", "sum")
     )
+    .reset_index()
+)
     core["core_completeness_percent"] = (
         core["core_filled_n"] / core["core_expected_n"] * 100
     ).round(2)
@@ -350,7 +352,7 @@ def completeness_per_form(df):
     ].fillna(0).astype(int)
 
     columns = [
-        "form_id", "general_expected_n", "general_filled_n",
+        "form_id", "form_label", "general_expected_n", "general_filled_n",
         "general_completeness_percent", "core_expected_n", "core_filled_n",
         "core_completeness_percent", "n_patients"
     ]
@@ -453,7 +455,7 @@ def completeness_per_element(df):
 
 
 def main():
-    expected = pd.read_csv(EXPECTED_ELEMENTS_PATH, dtype="object")
+    expected = pd.read_csv(EXPECTED_ELEMENTS_PATH, sep=";", dtype="object")
     export = pd.read_csv(EXPORT_PATH, sep=";", dtype="object")
     core_elements = pd.read_csv(CORE_ELEMENTS_PATH, sep=";",dtype="object")
 
@@ -478,21 +480,21 @@ def main():
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     completeness_present_forms_only.to_csv(COMPLETENESS_OUTPUT_PATH, index=False)
-    summary.to_csv(OUTPUT_DIR / "completeness_summary.csv", index=False)
+    summary.to_csv(OUTPUT_DIR / "completeness_summary.csv", sep=";", index=False)
     presence_summary.to_csv(
-        OUTPUT_DIR / "form_presence_summary.csv",
+        OUTPUT_DIR / "form_presence_summary.csv", sep=";",
         index=False
     )
-    per_patient.to_csv(OUTPUT_DIR / "completeness_per_patient.csv", index=False)
-    per_form.to_csv(OUTPUT_DIR / "completeness_per_form.csv", index=False)
+    per_patient.to_csv(OUTPUT_DIR / "completeness_per_patient.csv",sep=";", index=False)
+    per_form.to_csv(OUTPUT_DIR / "completeness_per_form.csv",sep=";", index=False)
     per_form_version.to_csv(
-        OUTPUT_DIR / "completeness_per_form_version.csv",
+        OUTPUT_DIR / "completeness_per_form_version.csv",sep=";",
         index=False
     )
-    per_element.to_csv(OUTPUT_DIR / "completeness_per_element.csv", index=False)
-    empty_basic.to_csv(OUTPUT_DIR / "empty_basic_forms.csv", index=False)
+    per_element.to_csv(OUTPUT_DIR / "completeness_per_element.csv",sep=";", index=False)
+    empty_basic.to_csv(OUTPUT_DIR / "empty_basic_forms.csv",sep=";", index=False)
     empty_longitudinal.to_csv(
-        OUTPUT_DIR / "empty_longitudinal_forms.csv",
+        OUTPUT_DIR / "empty_longitudinal_forms.csv",sep=";",
         index=False
     )
 
