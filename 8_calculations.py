@@ -48,10 +48,7 @@ ALLOWED_FUNCTIONS = {
 
 
 def safe_eval_formula(expression, variables):
-    """
-    Evaluate a mathematical formula using only allowed operators,
-    functions, and variables.
-    """
+    #Evaluate a mathematical formula using only allowed operators, functions, and variables
 
     def _eval(node):
         if isinstance(node, ast.Expression):
@@ -111,27 +108,13 @@ def load_data():
 #Preprocess export
 
 def preprocess_export(export):
-    """
-    Standardizes relevant column names and values.
-    """
-
-    export = export.copy()
-
-    # Adjust here if your export uses Episode_Date instead
+    
+   # Standardizes relevant column names and values
+    
     if "Episode_Date" in export.columns and "episode_date" not in export.columns:
         export = export.rename(columns={"Episode_Date": "episode_date"})
 
-    if "source_value" not in export.columns:
-        raise ValueError("Expected column 'source_value' not found in export.")
 
-    if "source_id" not in export.columns:
-        raise ValueError("Expected column 'source_id' not found in export.")
-
-    if "PID" not in export.columns:
-        raise ValueError("Expected column 'PID' not found in export.")
-
-    if "episode_date" not in export.columns:
-        raise ValueError("Expected column 'episode_date' not found in export.")
 
     export["source_value_numeric"] = pd.to_numeric(
         export["source_value"].str.replace(",", ".", regex=False),
@@ -140,16 +123,13 @@ def preprocess_export(export):
 
     return export
 
+#get value for PID x episode_datexsource_idx IX
+# IX added because of "repeatable" issue
 
-# Helper: get value for PID x episode_date x source_id
-
-def get_single_value(export_subset, source_id):
-    """
-    Retrieves one numeric value for a source_id within one PID x episode_date group.
-    """
-
+def get_single_value(export_subset, source_id, ix):
     values = export_subset.loc[
-        export_subset["source_id"] == source_id,
+        (export_subset["source_id"] == source_id)
+        & (export_subset["IX"] == ix),
         "source_value_numeric"
     ].dropna().unique()
 
@@ -161,8 +141,7 @@ def get_single_value(export_subset, source_id):
 
     return values[0]
 
-
-# Run computational conformance checks
+# Calculation checks
 
 def run_computational_conformance_checks(
     export,
@@ -208,6 +187,15 @@ def run_computational_conformance_checks(
         required_variables = calculation_mappings[
             calculation_mappings["calculation_id"] == calculation_id
         ]
+# Addition to make it less memory consuming, targetting only relevant ids
+        relevant_source_ids = (
+         required_variables["variable_source_id"].tolist()
+           + [score_source_id]
+)
+
+        calculation_export = export[
+         export["source_id"].isin(relevant_source_ids)
+]
 
         if required_variables.empty:
             print(f"Skipping {calculation_id}: no variable mappings found.")
@@ -221,38 +209,31 @@ def run_computational_conformance_checks(
     )
             continue
 
-        # Only evaluate PID x episode_date combinations
+        # Only evaluate PID x episode_date x IX combinations
         # where the target calculated value is actually present
-        target_rows = export[
-            (export["source_id"] == score_source_id)
-            & (export["source_value_numeric"].notna())
-        ][["PID", "episode_date"]].drop_duplicates()
+        target_rows = calculation_export[
+    (calculation_export["source_id"] == score_source_id)
+    & (calculation_export["source_value_numeric"].notna())
+][["PID", "episode_date", "IX", "source_value_numeric"]]
 
         for _, target_context in target_rows.iterrows():
 
             pid = target_context["PID"]
             episode_date = target_context["episode_date"]
+            ix = target_context["IX"]
+            stored_value = target_context["source_value_numeric"]
 
             if pd.isna(episode_date):
-                 export_subset = export[
-                  (export["PID"] == pid)
-                 & export["episode_date"].isna()
+                 export_subset = calculation_export[
+                  (calculation_export["PID"] == pid)
+                 & calculation_export["episode_date"].isna()
                   ]
             else:
-                   export_subset = export[
-                 (export["PID"] == pid)
-                  & (export["episode_date"] == episode_date)
+                   export_subset = calculation_export[
+                 (calculation_export["PID"] == pid)
+                  & (calculation_export["episode_date"] == episode_date)
     ]
 
-            stored_value = get_single_value(export_subset, score_source_id)
-
-            # This should rarely happen because we filtered target_rows already,
-            # but keep it as protection against duplicates/inconsistent values.
-            if isinstance(stored_value, str) and stored_value == "MULTIPLE_VALUES":
-                continue
-
-            if pd.isna(stored_value):
-                continue
 
             variable_values = {}
             missing_variables = []
@@ -263,7 +244,11 @@ def run_computational_conformance_checks(
                 alias = variable["variable_alias"]
                 variable_source_id = variable["variable_source_id"]
 
-                value = get_single_value(export_subset, variable_source_id)
+                value = get_single_value(
+    export_subset,
+    variable_source_id,
+    ix
+)
 
                 if isinstance(value, str) and value == "MULTIPLE_VALUES":
                     multiple_value_variables.append(alias)
@@ -303,6 +288,7 @@ def run_computational_conformance_checks(
                      "calculation_type": calculation_type,
                      "score_label": score_label,
                      "score_source_id": score_source_id,
+                     "IX": ix,
                      "stored_value": stored_value,
                      "expected_value": expected_value,
                      "difference": difference,
