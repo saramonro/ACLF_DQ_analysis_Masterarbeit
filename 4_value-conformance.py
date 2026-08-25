@@ -1,12 +1,17 @@
+import sys
 import pandas as pd
 import re
 from pathlib import Path
 
-EXPORT_LONG_PATH = "data/processed/export_long_clean.csv"
-DATA_DICTIONARY_PATH ="metadata/processed/data_dictionary.csv"
-PERMISSIBLE_VALUES_PATH = "metadata/processed/ACLF_API_MDR_permittedValues.csv"
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from config import REGISTRY_NAME
 
-OUTPUT_DIR = Path("results")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+EXPORT_LONG_PATH = PROJECT_ROOT / "data" / "processed" / "export_long_clean.csv"
+DATA_DICTIONARY_PATH = PROJECT_ROOT / "metadata" / "processed" / "data_dictionary.csv"
+PERMISSIBLE_VALUES_PATH = PROJECT_ROOT / "metadata" / "processed" / f"{REGISTRY_NAME}_codebook.csv"
+
+OUTPUT_DIR = PROJECT_ROOT / "results"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 RESULTS_OUTPUT_PATH = OUTPUT_DIR / "value_conformance_violations.csv"
@@ -34,8 +39,13 @@ def merge_export_with_dictionary(df_export, df_dict):
     "data_format",
     "record_mandatory",
     "dataelement_mandatory",
+    "record_repeatable",
+    "dataelement_repeatable",
     "slots"
 ]
+
+        
+        
         df_dict_rules = df_dict [dict_cols].copy()
         df_merged = df_export.merge(df_dict_rules, how="left", on="source_id")
         return df_merged
@@ -289,21 +299,52 @@ def check_single_vs_multiple_choice(df):
     enum_rows["slots_clean"] = enum_rows["slots"].fillna("").astype(str).str.strip()
     single_choice = enum_rows[
          enum_rows["slots_clean"].isin(["", "SELECT_ONE_RADIO"])].copy()
+
+
+    # define Ausnhame for repeatability
+    record_repeatable = (
+    single_choice["record_repeatable"]
+    .fillna("")
+    .astype(str)
+    .str.strip()
+    .str.lower()
+    .eq("true")
+)
+
+    dataelement_repeatable = (
+    single_choice["dataelement_repeatable"]
+    .fillna("")
+    .astype(str)
+    .str.strip()
+    .str.lower()
+    .eq("true")
+)
+    # assessable single choice variables do not belong to repeatable combinations (This is noted as a tech. limitation for further assessment)
+    is_repeatable = record_repeatable | dataelement_repeatable
+    single_choice_assessable = single_choice.loc[~is_repeatable].copy()
     
     # Variable instances are a combination of following columns
-    group_cols =[
-         "PID",
-         "Episode",
-         "Episode_Date",
-         "IX",
-         "source_id"
+    ## corrected bug regarding repeatable values
+    group_cols = [
+     "PID",
+     "Episode",
+        "Episode_Date",
+        "source_id"
     ]
+
+    counts = (
+        single_choice_assessable
+        .dropna(subset=["source_value"])
+        .groupby(group_cols, dropna=False)
+        .size()
+        .reset_index(name="n_values")
+    )
     # Make sure columns exist
-    existing_group_cols = [ c for c in group_cols if c in single_choice.columns]
+    existing_group_cols = [ c for c in group_cols if c in single_choice_assessable.columns]
     
     # Counts of unique values per combination
     counts = (
-        single_choice
+        single_choice_assessable
         .dropna(subset=["source_value"])
         .groupby(existing_group_cols)
         .size()
@@ -314,7 +355,7 @@ def check_single_vs_multiple_choice(df):
 
     bad_groups = counts[counts["n_values"] > 1]
 
-    failed = single_choice.merge(bad_groups[existing_group_cols + ["n_values"]], how="inner", on=existing_group_cols)
+    failed = single_choice_assessable.merge(bad_groups[existing_group_cols + ["n_values"]], how="inner", on=existing_group_cols)
 
     # Rename column
     failed["observed_count"] = failed["n_values"]

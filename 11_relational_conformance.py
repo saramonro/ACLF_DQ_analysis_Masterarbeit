@@ -5,14 +5,13 @@ from pathlib import Path
 
 # Configuration
 
-EXPORT_PATH = Path("data/processed/export_long_clean.csv")
-DATA_DICTIONARY_PATH = Path("metadata/processed/data_dictionary.csv")
-EXPECTED_ELEMENTS_PATH = Path("metadata/processed/expected_elements.csv")
-FORM_ELEMENTS_PATH = Path(
-    "metadata/processed/form_elements_versioned_resolved_only.csv"
-)
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+EXPORT_PATH = PROJECT_ROOT / "data" / "processed" / "export_long_clean.csv"
+DATA_DICTIONARY_PATH = PROJECT_ROOT / "metadata" / "processed" / "data_dictionary.csv"
+EXPECTED_ELEMENTS_PATH = PROJECT_ROOT / "metadata" / "processed" / "expected_elements.csv"
+FORM_ELEMENTS_PATH = PROJECT_ROOT / "metadata" / "processed" / "form_elements_versioned_resolved_only.csv"
 
-OUTPUT_DIR = Path("results/relational_conformance")
+OUTPUT_DIR = PROJECT_ROOT / "results" / "relational_conformance"
 VIOLATIONS_OUTPUT_PATH = (
     OUTPUT_DIR / "relational_conformance_violations.csv"
 )

@@ -3,10 +3,13 @@ import pandas as pd
 from pathlib import Path
 
 # Config
-INPUT_PATH = Path("metadata/raw/forms_details.json")
-OUTPUT_PATH = Path("metadata/processed/form_elements_versioned_v3.csv")
-OUTPUT_PATH_EXTENDED = Path("metadata/processed/form_elements_versioned_extended.csv")
-DATA_DICTIONARY_PATH = Path("metadata/processed/data_dictionary_with_versions.csv")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+INPUT_PATH = PROJECT_ROOT / "metadata" / "raw" / "versioning" / "forms_details.json"
+OUTPUT_PATH = PROJECT_ROOT / "metadata" / "processed" / "form_elements_versioned_v3.csv"
+OUTPUT_PATH_EXTENDED = PROJECT_ROOT / "metadata" / "processed" / "form_elements_versioned_extended.csv"
+DATA_DICTIONARY_PATH = PROJECT_ROOT / "metadata" / "processed" / "data_dictionary.csv"
+RESOLVED_ONLY_PATH = PROJECT_ROOT / "metadata" / "processed" / "form_elements_versioned_resolved_only.csv"
+UNRESOLVED_PATH = PROJECT_ROOT / "metadata" / "processed" / "form_elements_versioned_unresolved.csv"
 
 OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 
@@ -102,10 +105,10 @@ def expand_form_versioning_with_data_dictinoary(form_items, data_dictionary):
 
     direct = direct.merge(
     data_dictionary[
-        ["form_id", "dataelement_urn_mdr", "source_id"]
+        ["form_id", "dataelement_urn", "source_id"]
     ].drop_duplicates(),
     left_on=["form_id", "dataelement_urn"],
-    right_on=["form_id", "dataelement_urn_mdr"],
+    right_on=["form_id", "dataelement_urn"],
     how="left"
 )
 
@@ -156,12 +159,12 @@ def expand_form_versioning_with_data_dictinoary(form_items, data_dictionary):
     unresolved = result[result["source_id"].isna()].copy()
 
     resolved.to_csv(
-        "metadata/processed/form_elements_versioned_resolved_only.csv",
+        RESOLVED_ONLY_PATH,
         index=False
     )
 
     unresolved.to_csv(
-     "metadata/processed/form_elements_versioned_unresolved.csv",
+     UNRESOLVED_PATH,
      index=False
     )
     return result

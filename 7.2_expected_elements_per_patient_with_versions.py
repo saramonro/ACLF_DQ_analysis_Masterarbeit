@@ -2,17 +2,22 @@ import pandas as pd
 from pathlib import Path
 
 
-BASIC_VERSIONS_PATH = Path("metadata/raw/aclf_caseforms.csv")
-LONGITUDINAL_VERSIONS_PATH = Path("metadata/raw/aclf_episodeforms.csv")
-FORM_ELEMENTS_PATH = Path("metadata/processed/form_elements_versioned_resolved_only.csv")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-OUTPUT_PATH = Path("metadata/processed/expected_elements.csv")
+BASIC_VERSIONS_PATH = PROJECT_ROOT / "metadata" / "raw" / "versioning" / "aclf_caseforms.csv"
+LONGITUDINAL_VERSIONS_PATH = PROJECT_ROOT / "metadata" / "raw" / "versioning" / "aclf_episodeforms.csv"
+FORM_ELEMENTS_PATH = PROJECT_ROOT / "metadata" / "processed" / "form_elements_versioned_resolved_only.csv"
+
+OUTPUT_PATH = PROJECT_ROOT / "metadata" / "processed" / "expected_elements.csv"
+OUTPUT_BASIC_PATH = PROJECT_ROOT / "metadata" / "processed" / "expected_basic.csv"
+OUTPUT_LONGITUDINAL_PATH = PROJECT_ROOT / "metadata" / "processed" / "expected_longitudinal.csv"
+FORM_VERSIONS_PRESENT_PATH = PROJECT_ROOT / "metadata" / "processed" / "form_versions_present.csv"
 
 OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 #summary
-FORM_ITEMS_PATH = Path("metadata/processed/form_elements_versioned_v3.csv")
-FORM_ELEMENTS_EXTENDED_PATH = Path("metadata/processed/form_elements_versioned_extended.csv")
-SUMMARY_OUTPUT_PATH = Path("metadata/processed/summaries/expected_elements_summary.csv")
+FORM_ITEMS_PATH = PROJECT_ROOT / "metadata" / "processed" / "form_elements_versioned_v3.csv"
+FORM_ELEMENTS_EXTENDED_PATH = PROJECT_ROOT / "metadata" / "processed" / "form_elements_versioned_extended.csv"
+SUMMARY_OUTPUT_PATH = PROJECT_ROOT / "metadata" / "processed" / "summaries" / "expected_elements_summary.csv"
 SUMMARY_OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 
@@ -56,8 +61,8 @@ def create_expected_elements(
         how="left"
     )
 
-    expected_longitudinal.to_csv(OUTPUT_PATH, sep=";", index=False)
-    expected_basic.to_csv(OUTPUT_PATH, sep=";", index=False)
+    expected_longitudinal.to_csv(OUTPUT_LONGITUDINAL_PATH, sep=";", index=False)
+    expected_basic.to_csv(OUTPUT_BASIC_PATH, sep=";", index=False)
     expected_basic["form_type"] = "basic"
     expected_longitudinal["form_type"] = "longitudinal"
 
@@ -73,7 +78,7 @@ def create_expected_elements(
     .sort_values(["form_id", "form_version"])
 )
     unique_form_versions.to_csv(
-    "metadata/processed/form_versions_present.csv", sep=";",
+    FORM_VERSIONS_PRESENT_PATH, sep=";",
     index=False
 )
 

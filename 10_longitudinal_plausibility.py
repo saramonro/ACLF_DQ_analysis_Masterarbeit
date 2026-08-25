@@ -5,11 +5,12 @@ import numpy as np
 
 # Configuration
 
-EXPORT_PATH = Path("data/processed/export_long_clean.csv")
-RULES_PATH = Path("metadata/contextual/longitudinal_plausibility.csv")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+EXPORT_PATH = PROJECT_ROOT / "data" / "processed" / "export_long_clean.csv"
+RULES_PATH = PROJECT_ROOT / "metadata" / "contextual" / "longitudinal_plausibility.csv"
 
-VIOLATIONS_OUT = Path("results/longitudinal_plausibility_violations.csv")
-SUMMARY_OUT = Path("results/longitudinal_plausibility_summary.csv")
+VIOLATIONS_OUT = PROJECT_ROOT / "results" / "longitudinal_plausibility_violations.csv"
+SUMMARY_OUT = PROJECT_ROOT / "results" / "longitudinal_plausibility_summary.csv"
 
 EXPORT_SEP = ";"
 RULES_SEP = ";"
@@ -65,7 +66,8 @@ def load_relevant_export(path: Path, source_ids: set[str]):
 
     export["episode_date"] = pd.to_datetime(
         export["episode_date"],
-        errors="coerce"
+        errors="coerce",
+        dayfirst=True
     )
 
     export = export.dropna(subset=["episode_date"])
@@ -77,6 +79,53 @@ def load_relevant_export(path: Path, source_ids: set[str]):
 
 def calculate_variation(group: pd.DataFrame, value_type: str):
     value_type = str(value_type).lower()
+    if value_type == "date_increasing":
+         ordered_group = group.sort_values("episode_date").copy()
+
+         ordered_group["parsed_value"] = pd.to_datetime(
+             ordered_group["source_value"],
+                errors="coerce",
+                dayfirst=True,
+        )
+
+         valid_group = ordered_group.dropna(
+             subset=["parsed_value"]
+           ).copy()
+
+         if valid_group["episode_date"].nunique() < 2:
+                return {
+                    "observed_variation": np.nan,
+                   "min_value": np.nan,
+                   "max_value": np.nan,
+                   "values_observed": "",
+                   "n_valid_episode_dates": valid_group["episode_date"].nunique(),
+                  "n_rows_checked": len(valid_group),
+               }
+
+         valid_group["previous_value"] = (
+          valid_group["parsed_value"].shift(1)
+            )
+
+         invalid_transitions = (
+             valid_group["parsed_value"]
+            < valid_group["previous_value"]
+       )
+
+         number_of_decreases = int(invalid_transitions.sum())
+
+         return {
+            "observed_variation": number_of_decreases,
+            "min_value": valid_group["parsed_value"].min(),
+            "max_value": valid_group["parsed_value"].max(),
+            "values_observed": " | ".join(
+               valid_group["parsed_value"]
+                .dt.strftime("%Y-%m-%d")
+                .tolist()
+            ),
+           "n_valid_episode_dates": valid_group["episode_date"].nunique(),
+            "n_rows_checked": len(valid_group),
+       }
+
 
     if value_type in ["float", "integer", "numeric"]:
         numeric_values = pd.to_numeric(group["source_value"], errors="coerce")
@@ -140,7 +189,7 @@ def calculate_variation(group: pd.DataFrame, value_type: str):
     raise ValueError(f"Unsupported value_type: {value_type}")
 
 
-def check_group(group: pd.DataFrame, rule: pd.Series) | None:
+def check_group(group: pd.DataFrame, rule: pd.Series):
     stats = calculate_variation(group, rule["value_type"])
 
     if stats["n_valid_episode_dates"] < 2:

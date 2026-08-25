@@ -6,13 +6,13 @@ from pathlib import Path
 
 
 
-BASE_DIR = Path(__file__).resolve().parents[0] # change to 1 if script moves to a scripts folder
+BASE_DIR = Path(__file__).resolve().parents[1] # project root; script lives in the checks/ subfolder
 
 EXPORT_PATH = BASE_DIR / "data" / "processed" / "export_long_clean.csv"
 
-CALC_INSTANCES_PATH = BASE_DIR / "metadata" / "contextual" / "calculations"/ "calculation_instances.csv"
-CALC_MAPPINGS_PATH = BASE_DIR / "metadata" / "contextual" /"calculations"/ "calculation_variable_mappings.csv"
-CALC_FORMULAS_PATH = BASE_DIR / "metadata" / "contextual" / "calculations"/"calculation_formulas.csv"
+CALC_INSTANCES_PATH = BASE_DIR / "metadata" / "behavioral" / "calculations" / "calculation_instances.csv"
+CALC_MAPPINGS_PATH = BASE_DIR / "metadata" / "behavioral" / "calculations" / "calculation_variable_mappings.csv"
+CALC_FORMULAS_PATH = BASE_DIR / "metadata" / "behavioral" / "calculations" / "calculation_formulas.csv"
 
 RESULTS_DIR = BASE_DIR / "results"
 RESULTS_DIR.mkdir(exist_ok=True)
