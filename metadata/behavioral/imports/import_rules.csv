@@ -1,0 +1,34 @@
+rule_id;target_label;target_source_id;source_label;source_source_id
+IMPORT_001;MELD INR;X_235_56_256;Laboratory INR;X_231_0_256
+IMPORT_002;MELD Total Bilirubin;X_235_56_264;Laboratory Total Bilirubin;X_231_0_264
+IMPORT_003;MELD Creatinine;X_235_56_265;Laboratory Creatinine;X_231_0_265
+IMPORT_004;MELD Sodium;X_235_56_266;Laboratory Sodium;X_231_0_266
+IMPORT_005;Child-Pugh Old Total Bilirubin;X_235_58_264;Laboratory Total Bilirubin;X_231_0_264
+IMPORT_006;Child-Pugh Old Prothrombin Time;X_235_58_254;Laboratory Prothrombin Time;X_231_0_254
+IMPORT_007;Child-Pugh Old INR;X_235_58_256;Laboratory INR;X_231_0_256
+IMPORT_008;Child-Pugh New Total Bilirubin;X_235_69_264;Laboratory Total Bilirubin;X_231_0_264
+IMPORT_009;Child-Pugh New Albumin;X_235_69_347;Laboratory Albumin;X_231_0_347
+IMPORT_010;Child-Pugh New Prothrombin Time;X_235_69_254;Laboratory Prothrombin Time;X_231_0_254
+IMPORT_011;Child-Pugh New INR;X_235_69_256;Laboratory INR;X_231_0_256
+IMPORT_012;Maddrey Prothrombin Time;X_235_59_254;Laboratory Prothrombin Time;X_231_0_254
+IMPORT_013;Maddrey Control Prothrombin Time;X_235_59_325;Laboratory Control Prothrombin Time;X_231_0_255
+IMPORT_014;Maddrey Total Bilirubin;X_235_59_264;Laboratory Total Bilirubin;X_231_0_264
+IMPORT_015;SIRS Temperature;X_235_60_239;Physical Examination Temperature;X_230_0_239
+IMPORT_016;SIRS Heart Rate;X_235_60_238;Physical Examination Heart Rate;X_230_0_238
+IMPORT_017;SIRS Respiratory Rate;X_235_60_240;Physical Examination Respiratory Rate;X_230_0_240
+IMPORT_018;SIRS PaCO2;X_235_60_283;Blood Gas PaCO2;X_232_0_283
+IMPORT_019;SIRS Leucocytes;X_235_60_245;Laboratory Leucocytes;X_231_0_245
+IMPORT_020;SIRS Immature Neutrophils;X_235_60_252;Laboratory Immature Neutrophils;X_231_0_252
+IMPORT_021;CLIF-OF Consent Date;X_235_0_56;Consent Date;X_222_0_48
+IMPORT_022;CLIF-OF Liver Bilirubin;X_235_61_264;Laboratory Total Bilirubin;X_231_0_264
+IMPORT_023;CLIF-OF Coagulation INR;X_235_65_256;Laboratory INR;X_231_0_256
+IMPORT_024;CLIF-OF Kidney Creatinine;X_235_62_265;Laboratory Creatinine;X_231_0_265
+IMPORT_025;CLIF-OF Circulation SBP;X_235_64_67;Physical Examination SBP;X_230_0_67
+IMPORT_026;CLIF-OF Circulation DBP;X_235_64_68;Physical Examination DBP;X_230_0_68
+IMPORT_027;CLIF-OF Circulation MAP;X_235_64_69;Physical Examination MAP;X_230_0_69
+IMPORT_028;CLIF-OF Lung SpO2;X_235_66_73;Physical Examination SpO2;X_230_0_73
+IMPORT_029;CLIF-OF Lung PaO2;X_235_66_282;Blood Gas PaO2;X_232_0_282
+IMPORT_030;CLIF-C AD Leucocytes;X_235_68_245;Laboratory Leucocytes;X_231_0_245
+IMPORT_031;CLIF-C AD Creatinine;X_235_68_265;Laboratory Creatinine;X_231_0_265
+IMPORT_032;CLIF-C AD INR;X_235_68_256;Laboratory INR;X_231_0_256
+IMPORT_033;CLIF-C AD Sodium;X_235_68_266;Laboratory Sodium;X_231_0_266

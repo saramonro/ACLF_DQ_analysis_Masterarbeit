@@ -1,0 +1,11 @@
+metric;value
+form_versions_found;99
+form_items_extracted_from_json;1966
+direct_dataelement_items;1539
+record_items;427
+resolved_items;2834
+unresolved_items;140
+resolved_items_used_for_expected_elements;2834
+expected_basic_elements;47560
+expected_longitudinal_elements;132185
+total_expected_elements;179745

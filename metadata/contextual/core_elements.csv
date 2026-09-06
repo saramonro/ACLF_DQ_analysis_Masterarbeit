@@ -1,0 +1,274 @@
+form;formid_version;form_type;record_urn;record_designation;record_mandatory;record_repeatable;dataelement_urn;dataelement_designation;dataelement_definition;dataelement_mandatory;dataelement_repeatable;data_type;data_format;unit_measure;id;form_id;form_version
+ACLF evaluation;224:4;Basic;urn:osse-11:record:16:1;Liver failure;false;false;urn:osse-11:dataelement:57:1;Liver failure;Liver failure;;;enumerated;enumerated;;12;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:16:1;Liver failure;false;false;urn:osse-11:dataelement:58:1;Total bilirubin;Total bilirubin;;;FLOAT;0<=x<=200;mg/dl;13;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:17:1;Renal failure;false;false;urn:osse-11:dataelement:59:1;Renal failure;Renal failure;;;enumerated;enumerated;;14;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:17:1;Renal failure;false;false;urn:osse-11:dataelement:60:1;Creatinine;Creatinine;;;FLOAT;0<=x<=200;mg/dl;15;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:17:1;Renal failure;false;false;urn:osse-11:dataelement:61:1;Renal replacement therapy;Renal replacement therapy;;;BOOLEAN;(true|false|yes|no|f|t);;16;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:18:1;Coagulation failure;false;false;urn:osse-11:dataelement:64:1;Coagulation failure;INR over 2.5;;;enumerated;enumerated;;17;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:18:1;Coagulation failure;false;false;urn:osse-11:dataelement:65:1;INR;INR;;;FLOAT;0<=x<=100;;18;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:19:1;Circulatory failure;false;false;urn:osse-11:dataelement:66:1;Circulatory failure;Circulatory failure;;;enumerated;enumerated;;21;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:19:1;Circulatory failure;false;false;urn:osse-11:dataelement:67:1;Systolic Blood Pressure;Systolic Blood Pressure;;;INTEGER;0<=x<=300;mmHg;22;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:19:1;Circulatory failure;false;false;urn:osse-11:dataelement:68:1;Diastolic Blood Pressure;Diastolic Blood Pressure;;;INTEGER;0<=x<=300;mmHg;23;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:19:1;Circulatory failure;false;false;urn:osse-11:dataelement:69:1;Mean Arterial Pressure ;Formula: MAP= (2*DBP+SBP)/3;;;FLOAT;0<=x<=300;mmHg;24;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:19:1;Circulatory failure;false;false;urn:osse-11:dataelement:70:1;Use of vasopresors (Circulatory failure indication selected);Use of vasopresors (Circulatory failure indication selected);;;enumerated;enumerated;;25;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:20:1;Respiratory failure;false;false;urn:osse-11:dataelement:71:1;Respiratory failure;Respiratory failure;;;enumerated;enumerated;;26;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:20:1;Respiratory failure;false;false;urn:osse-11:dataelement:72:1;PaO2;PaO2;;;INTEGER;0<=x<=200;mmHg;27;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:20:1;Respiratory failure;false;false;urn:osse-11:dataelement:73:1;SpO2;SpO2;;;INTEGER;0<=x<=100;%;28;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:20:1;Respiratory failure;false;false;urn:osse-11:dataelement:74:1;Supplemental oxygen (including mechanical ventilation);Supplemental oxygen (including mechanical ventilation);;;enumerated;enumerated;;29;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:20:1;Respiratory failure;false;false;urn:osse-11:dataelement:75:1;FiO2;"FiO2 (If Supplemental oxygen is ""No""): 21% (0.21 for internal calculation)";;;INTEGER;0<=x<=1000;;30;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:20:1;Respiratory failure;false;false;urn:osse-11:dataelement:76:1;If Supplemental oxygen is yes;Way of supplemental oxygen ;;;enumerated;enumerated;;31;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:20:1;Respiratory failure;false;false;urn:osse-11:dataelement:84:1;If Mechanical ventilation-Reason for mechanical ventilation;Reason for mechanical ventilation;;;enumerated;enumerated;;38;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:20:1;Respiratory failure;false;false;urn:osse-11:dataelement:85:1;Type of mechanical ventilation;Type of mechanical ventilation;;;enumerated;enumerated;;39;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:20:1;Respiratory failure;false;false;urn:osse-11:dataelement:79:1;FiO2;FiO2;;;INTEGER;0<=x<=200;%;40;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:20:1;Respiratory failure;false;false;urn:osse-11:dataelement:86:1;SpO2/FiO2;SpO2/FiO2;;;FLOAT;0<=x<=600;;41;224;4
+ACLF evaluation;224:4;Basic;urn:osse-11:record:20:1;Respiratory failure;false;false;urn:osse-11:dataelement:87:1;PaO2/FiO2;PaO2/FiO2;;;FLOAT;0<=x<=600;;42;224;4
+Patient�s information and Medical history;225:2;Basic;urn:osse-11:record:22:1;Diagnosis of Cirrhosis;false;false;urn:osse-11:dataelement:97:1;Date of diagnosis of chronic liver disease;Date of diagnosis of chronic liver disease;;;DATE;DD.MM.YYYY;;56;225;2
+Patient�s information and Medical history;225:2;Basic;urn:osse-11:record:22:1;Diagnosis of Cirrhosis;false;false;urn:osse-11:dataelement:98:1;Date of diagnosis of cirrhosis;Date of diagnosis of cirrhosis;;;DATE;DD.MM.YYYY;;57;225;2
+Patient�s information and Medical history;225:2;Basic;urn:osse-11:record:22:1;Diagnosis of Cirrhosis;false;false;urn:osse-11:dataelement:99:1;History of acute decompensation;History of acute decompensation;;;enumerated;enumerated;;58;225;2
+Patient�s information and Medical history;225:2;Basic;urn:osse-11:record:22:1;Diagnosis of Cirrhosis;false;false;urn:osse-11:dataelement:100:1;If AD-Date of first acute decompensation;If AD-Date of first acute decompensation;;;DATE;MM.YYYY;;59;225;2
+Patient�s information and Medical history;225:2;Basic;urn:osse-11:record:22:1;Diagnosis of Cirrhosis;false;false;urn:osse-11:dataelement:101:1;If AD-Types of prior acute decompensations;If AD-Types of prior acute decompensations;;;enumerated;enumerated;;60;225;2
+Patient�s information and Medical history;225:2;Basic;urn:osse-11:record:22:1;Diagnosis of Cirrhosis;false;false;urn:osse-11:dataelement:102:1;Listed for Liver transplantation;Listed for Liver transplantation;;;enumerated;enumerated;;61;225;2
+Patient�s information and Medical history;225:2;Basic;urn:osse-11:record:22:1;Diagnosis of Cirrhosis;false;false;urn:osse-11:dataelement:103:1;If listed-listed liver transplantation date;If listed-listed liver transplantation date;;;DATE;DD.MM.YYYY;;62;225;2
+Patient�s information and Medical history;225:2;Basic;urn:osse-11:record:23:1;Other previous /concomitant medical disease;false;false;urn:osse-11:dataelement:106:1;Other previous /concomitant medical disease;Other previous /concomitant medical disease;;;enumerated;enumerated;;66;225;2
+Patient�s information and Medical history;225:2;Basic;urn:osse-11:record:23:1;Other previous /concomitant medical disease;false;false;urn:osse-11:dataelement:107:1;Other chronic systemic disease Specification;Other chronic systemic disease Specification;;;STRING;;;67;225;2
+Previous clinical course;226:11;Basic;urn:osse-11:record:25:1;Prior ascites;false;false;urn:osse-11:dataelement:114:1;1. Ascites;1. Ascites;;;enumerated;enumerated;;73;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:25:1;Prior ascites;false;false;urn:osse-11:dataelement:116:1;Number of hospitalizations for ascites episodes;Number of hospitalizations for ascites episodes;;;enumerated;enumerated;;74;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:25:1;Prior ascites;false;false;urn:osse-11:dataelement:117:1; Maximum grade of ascites; Maximum grade of ascites;;;enumerated;enumerated;;75;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:26:1;Prior hepatic encephalopathy;false;false;urn:osse-11:dataelement:115:1;2. Hepatic encephalopathy;2. Hepatic encephalopathy;;;enumerated;enumerated;;76;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:26:1;Prior hepatic encephalopathy;false;false;urn:osse-11:dataelement:118:1;Number of episodes requiring hospitalization;Number of episodes requiring hospitalization;;;enumerated;enumerated;;77;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:26:1;Prior hepatic encephalopathy;false;false;urn:osse-11:dataelement:119:1;Episodic overt HE;Episodic overt HE;;;enumerated;enumerated;;78;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:26:1;Prior hepatic encephalopathy;false;false;urn:osse-11:dataelement:120:1;Recurrent overt HE;Recurrent overt HE;;;enumerated;enumerated;;79;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:26:1;Prior hepatic encephalopathy;false;false;urn:osse-11:dataelement:121:1;Persistent overt HE;Persistent overt HE;;;enumerated;enumerated;;80;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:27:1;Prior gastrointestinal bleeding;false;false;urn:osse-11:dataelement:122:1;3. Gastrointestinal bleeding;3. Gastrointestinal bleeding;;;enumerated;enumerated;;81;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:27:1;Prior gastrointestinal bleeding;false;false;urn:osse-11:dataelement:118:1;Number of episodes requiring hospitalization;Number of episodes requiring hospitalization;;;enumerated;enumerated;;82;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:27:1;Prior gastrointestinal bleeding;false;false;urn:osse-11:dataelement:123:1;Known etiology of GIB;Known etiology of GIB;;;enumerated;enumerated;;83;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:28:1;Prior bacterial infections;false;false;urn:osse-11:dataelement:124:1;4. Bacterial infections;4. Bacterial infections;;;enumerated;enumerated;;84;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:28:1;Prior bacterial infections;false;false;urn:osse-11:dataelement:118:1;Number of episodes requiring hospitalization;Number of episodes requiring hospitalization;;;enumerated;enumerated;;85;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:28:1;Prior bacterial infections;false;false;urn:osse-11:dataelement:125:1;Type of infection;Type of infection;;;enumerated;enumerated;;86;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:29:1;Prior ACLF;false;false;urn:osse-11:dataelement:126:1;5. ACLF;5. ACLF;;;enumerated;enumerated;;87;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:29:1;Prior ACLF;false;false;urn:osse-11:dataelement:118:1;Number of episodes requiring hospitalization;Number of episodes requiring hospitalization;;;enumerated;enumerated;;88;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:29:1;Prior ACLF;false;false;urn:osse-11:dataelement:127:1;Highest ACLF grade;Highest ACLF grade;;;enumerated;enumerated;;89;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:29:1;Prior ACLF;false;false;urn:osse-11:dataelement:128:1;Any ACLF caused by a clinical event;Any ACLF caused by a clinical event;;;enumerated;enumerated;;90;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:29:1;Prior ACLF;false;false;urn:osse-11:dataelement:129:1;Clinical event related to;Clinical event related to;;;enumerated;enumerated;;91;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:30:1;Prior HCC;false;false;urn:osse-11:dataelement:133:1;9. Hepatocellular carcinoma;9. Hepatocellular carcinoma;;;enumerated;enumerated;;95;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:30:1;Prior HCC;false;false;urn:osse-11:dataelement:134:1;Number of nodules of HCC;Number of nodules of HCC;;;INTEGER;0<=x<=10;;96;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:30:1;Prior HCC;false;false;urn:osse-11:dataelement:135:1;Maximum size of nodules;Maximum size of nodules;;;INTEGER;0<=x<=100;mm;97;226;11
+Previous clinical course;226:11;Basic;urn:osse-11:record:30:1;Prior HCC;false;false;urn:osse-11:dataelement:136:1;Vascular invasion;Vascular invasion;;;enumerated;enumerated;;98;226;11
+Previous treatments;227:3;Basic;urn:osse-11:record:31:1;1. Alcoholic cirrhosis;false;false;urn:osse-11:dataelement:138:1;Alcoholic cirrhosis;Alcoholic cirrhosis;;;enumerated;enumerated;;101;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:31:1;1. Alcoholic cirrhosis;false;false;urn:osse-11:dataelement:139:1;Type of therapy;Type of therapy for alcoholic cirrhosis;;;enumerated;enumerated;;102;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:31:1;1. Alcoholic cirrhosis;false;false;urn:osse-11:dataelement:140:1;Treatment response;Treatment response for alcoholic cirrhosis;;;enumerated;enumerated;;103;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:32:1;2. Hepatitis C virus antiviral therapy;false;false;urn:osse-11:dataelement:141:1;Hepatitis C virus antiviral therapy;Hepatitis C virus antiviral therapy;;;enumerated;enumerated;;104;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:32:1;2. Hepatitis C virus antiviral therapy;false;false;urn:osse-11:dataelement:142:1;Virus therapy;Virus therapy for HCV;;;enumerated;enumerated;;105;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:32:1;2. Hepatitis C virus antiviral therapy;false;false;urn:osse-11:dataelement:143:1;Antiviral therapy terminated ;Antiviral therapy terminated for HCV;;;enumerated;enumerated;;106;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:32:1;2. Hepatitis C virus antiviral therapy;false;false;urn:osse-11:dataelement:144:1;Sustained virological response;Sustained virological response for HCV;;;enumerated;enumerated;;107;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:32:1;2. Hepatitis C virus antiviral therapy;false;false;urn:osse-11:dataelement:145:1;Early virological response;Early virological response for HCV;;;enumerated;enumerated;;108;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:33:1;3. Hepatitis B virus antiviral therapy;false;false;urn:osse-11:dataelement:146:1;Hepatitis B virus antiviral therapy;Hepatitis B virus antiviral therapy;;;enumerated;enumerated;;109;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:33:1;3. Hepatitis B virus antiviral therapy;false;false;urn:osse-11:dataelement:147:1;Virus therapy;Virus therapy for HBV;;;enumerated;enumerated;;110;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:33:1;3. Hepatitis B virus antiviral therapy;false;false;urn:osse-11:dataelement:148:1;Complete response (<10 IU);Complete response (<10 IU) f�r HBV;;;enumerated;enumerated;;111;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:33:1;3. Hepatitis B virus antiviral therapy;false;false;urn:osse-11:dataelement:149:1;Reactivation of hepatitis B virus;Reactivation of hepatitis B virus;;;enumerated;enumerated;;112;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:34:1;4.NAFLD/NASH;false;false;urn:osse-11:dataelement:150:1;NAFLD/NASH;NAFLD/NASH therapy;;;enumerated;enumerated;;113;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:34:1;4.NAFLD/NASH;false;false;urn:osse-11:dataelement:151:1;Associated features ;Associated features for NASH/NAFLD;;;enumerated;enumerated;;114;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:34:1;4.NAFLD/NASH;false;false;urn:osse-11:dataelement:152:1;If obesity is selected-Type of therapy for obesity;If obesity is selected-Type of therapy for obesity;;;enumerated;enumerated;;115;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:34:1;4.NAFLD/NASH;false;false;urn:osse-11:dataelement:153:1;Specific therapy of associated complications;Specific therapy of associated complications for NASH/NAFLD;;;enumerated;enumerated;;116;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:35:1;5. Autoimmune hepatitis treatment;false;false;urn:osse-11:dataelement:154:1;Autoimmune hepatitis therapy;Autoimmune hepatitis therapy;;;enumerated;enumerated;;117;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:35:1;5. Autoimmune hepatitis treatment;false;false;urn:osse-11:dataelement:155:1;Immunosupresive therapies;Immunosupresive therapies for AIH;;;enumerated;enumerated;;118;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:35:1;5. Autoimmune hepatitis treatment;false;false;urn:osse-11:dataelement:156:1;Positive response;Positive response for AIH;;;enumerated;enumerated;;119;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:35:1;5. Autoimmune hepatitis treatment;false;false;urn:osse-11:dataelement:157:1;Type of response;Type of response for AIH;;;enumerated;enumerated;;120;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:36:1;1. Diuretics;false;false;urn:osse-11:dataelement:160:1;Diuretics;Diuretics treatment;;;enumerated;enumerated;;123;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:36:1;1. Diuretics;false;false;urn:osse-11:dataelement:161:1;Type of diuretic;Type of diuretic;;;enumerated;enumerated;;124;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:37:1;3. Beta-blockers;false;false;urn:osse-11:dataelement:163:1;Beta-blockers;Beta-blockers;;;enumerated;enumerated;;126;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:37:1;3. Beta-blockers;false;false;urn:osse-11:dataelement:164:1;Indication ;Indication for beta-blockers;;;enumerated;enumerated;;127;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:38:1;4. Intravenous albumin;false;false;urn:osse-11:dataelement:165:1;Intravenous albumin;Intravenous albumin;;;enumerated;enumerated;;128;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:38:1;4. Intravenous albumin;false;false;urn:osse-11:dataelement:166:1;Indication;Indication for intravenous albumin;;;enumerated;enumerated;;129;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:39:1;5. Vasopressors;false;false;urn:osse-11:dataelement:167:1;Vasopressors;Vasopressors;;;enumerated;enumerated;;130;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:39:1;5. Vasopressors;false;false;urn:osse-11:dataelement:168:1;Indication;Indication for vasopressors;;;enumerated;enumerated;;131;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:40:1;12. TIPS;false;false;urn:osse-11:dataelement:175:1;TIPS;TIPS;;;enumerated;enumerated;;138;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:40:1;12. TIPS;false;false;urn:osse-11:dataelement:176:1;Indication;Indication for TIPS;;;enumerated;enumerated;;139;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:40:1;12. TIPS;false;false;urn:osse-11:dataelement:177:1;Other specification for TIPS indication;Other specification for TIPS indication;;;STRING;;;140;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:41:1;13. Antibiotic prophylaxis;false;false;urn:osse-11:dataelement:178:1;Antibiotic prophylaxis;Antibiotic prophylaxis;;;enumerated;enumerated;;141;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:41:1;13. Antibiotic prophylaxis;false;false;urn:osse-11:dataelement:179:1;Indication;Indication for antibiotic prophylaxis;;;enumerated;enumerated;;142;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:42:1;15. Corticosteroids;false;false;urn:osse-11:dataelement:181:1;Corticosteroids;Corticosteroids;;;enumerated;enumerated;;144;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:42:1;15. Corticosteroids;false;false;urn:osse-11:dataelement:182:1;Indication (other than autoimmune cirrhosis);Indication for Corticosteroids (other than autoimmune cirrhosis);;;STRING;;;145;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:43:1;16. Treatments for HCC;false;false;urn:osse-11:dataelement:183:1;Treatments for HCC;Treatments for HCC;;;enumerated;enumerated;;146;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:43:1;16. Treatments for HCC;false;false;urn:osse-11:dataelement:184:1;Type of treatments;Type of treatments for HCC;;;enumerated;enumerated;;147;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:44:1;18. Oral antidiabetics;false;false;urn:osse-11:dataelement:186:1;Oral antidiabetics;Oral antidiabetics;;;enumerated;enumerated;;149;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:44:1;18. Oral antidiabetics;false;false;urn:osse-11:dataelement:187:1;Metformin;Metformin for oral antidiabetics;;;enumerated;enumerated;;150;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:45:1;20. Non-bariatric surgery;false;false;urn:osse-11:dataelement:189:1;Non-bariatric surgery;Non-bariatric surgery;;;enumerated;enumerated;;152;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:45:1;20. Non-bariatric surgery;false;false;urn:osse-11:dataelement:190:1;Type of surgery;Type of surgery;;;enumerated;enumerated;;153;227;3
+Data at visit;228:7;Longitudinal;urn:osse-11:record:47:1;Visit Date;false;false;urn:osse-11:dataelement:197:1;Visit Date;Visit Date;;;DATE;DD.MM.YYYY;;160;228;7
+Data at visit;228:7;Longitudinal;urn:osse-11:record:47:1;Visit Date;false;false;urn:osse-11:dataelement:198:1;Is the patient already included in a prophylactic or therapeutic;Is the patient already included in a prophylactic or therapeutic;;;enumerated;enumerated;;161;228;7
+Data at visit;228:7;Longitudinal;urn:osse-11:record:47:1;Visit Date;false;false;urn:osse-11:dataelement:199:1;Type of study;Type of study;;;enumerated;enumerated;;162;228;7
+Data at visit;228:7;Longitudinal;urn:osse-11:record:47:1;Visit Date;false;false;urn:osse-11:dataelement:200:1;Study treatment specification;Study treatment specification;;;STRING;;;163;228;7
+Data at visit;228:7;Longitudinal;urn:osse-11:record:47:1;Visit Date;false;false;urn:osse-11:dataelement:201:1;Control treatment specification;Control treatment specification;;;STRING;;;164;228;7
+Data at visit;228:7;Longitudinal;urn:osse-11:record:47:1;Visit Date;false;false;urn:osse-11:dataelement:202:1;Does the patient continue in the study;Does the patient continue in the study;;;enumerated;enumerated;;165;228;7
+Clinical features;229:3;Longitudinal;urn:osse-11:record:52:1;5. AKI (not caused by GIB);false;false;urn:osse-11:dataelement:215:1;AKI (not caused by GIB);AKI (not caused by GIB);;;enumerated;enumerated;;186;229;3
+Clinical features;229:3;Longitudinal;urn:osse-11:record:52:1;5. AKI (not caused by GIB);false;false;urn:osse-11:dataelement:216:1;AKI caused by;AKI caused by;;;enumerated;enumerated;;187;229;3
+Clinical features;229:3;Longitudinal;urn:osse-11:record:52:1;5. AKI (not caused by GIB);false;false;urn:osse-11:dataelement:217:1;Grade of AKI;Grade of AKI;;;enumerated;enumerated;;188;229;3
+Clinical features;229:3;Longitudinal;urn:osse-11:record:52:1;5. AKI (not caused by GIB);false;false;urn:osse-11:dataelement:218:1;Type of AKI;Type of AKI;;;enumerated;enumerated;;189;229;3
+Clinical features;229:3;Longitudinal;urn:osse-11:record:53:1;12. Hepatocellular carcinoma;false;false;urn:osse-11:dataelement:226:2;Hepatocellular carcinoma;Hepatocellular carcinoma;;;enumerated;enumerated;;197;229;3
+Clinical features;229:3;Longitudinal;urn:osse-11:record:53:1;12. Hepatocellular carcinoma;false;false;urn:osse-11:dataelement:134:1;Number of nodules of HCC;Number of nodules of HCC;;;INTEGER;0<=x<=10;;198;229;3
+Clinical features;229:3;Longitudinal;urn:osse-11:record:53:1;12. Hepatocellular carcinoma;false;false;urn:osse-11:dataelement:135:1;Maximum size of nodules;Maximum size of nodules;;;INTEGER;0<=x<=100;mm;199;229;3
+Clinical features;229:3;Longitudinal;urn:osse-11:record:53:1;12. Hepatocellular carcinoma;false;false;urn:osse-11:dataelement:136:1;Vascular invasion;Vascular invasion;;;enumerated;enumerated;;200;229;3
+Treatment;233:10;Longitudinal;urn:osse-11:record:40:1;12. TIPS;false;false;urn:osse-11:dataelement:175:1;TIPS;TIPS;;;enumerated;enumerated;;328;233;10
+Treatment;233:10;Longitudinal;urn:osse-11:record:40:1;12. TIPS;false;false;urn:osse-11:dataelement:176:1;Indication;Indication for TIPS;;;enumerated;enumerated;;329;233;10
+Treatment;233:10;Longitudinal;urn:osse-11:record:40:1;12. TIPS;false;false;urn:osse-11:dataelement:177:1;Other specification for TIPS indication;Other specification for TIPS indication;;;STRING;;;330;233;10
+Treatment;233:10;Longitudinal;urn:osse-11:record:41:1;13. Antibiotic prophylaxis;false;false;urn:osse-11:dataelement:178:1;Antibiotic prophylaxis;Antibiotic prophylaxis;;;enumerated;enumerated;;331;233;10
+Treatment;233:10;Longitudinal;urn:osse-11:record:41:1;13. Antibiotic prophylaxis;false;false;urn:osse-11:dataelement:179:1;Indication;Indication for antibiotic prophylaxis;;;enumerated;enumerated;;332;233;10
+Treatment;233:10;Longitudinal;urn:osse-11:record:42:1;15. Corticosteroids;false;false;urn:osse-11:dataelement:181:1;Corticosteroids;Corticosteroids;;;enumerated;enumerated;;335;233;10
+Treatment;233:10;Longitudinal;urn:osse-11:record:42:1;15. Corticosteroids;false;false;urn:osse-11:dataelement:182:1;Indication (other than autoimmune cirrhosis);Indication for Corticosteroids (other than autoimmune cirrhosis);;;STRING;;;336;233;10
+Treatment;233:10;Longitudinal;urn:osse-11:record:43:1;16. Treatments for HCC;false;false;urn:osse-11:dataelement:183:1;Treatments for HCC;Treatments for HCC;;;enumerated;enumerated;;337;233;10
+Treatment;233:10;Longitudinal;urn:osse-11:record:43:1;16. Treatments for HCC;false;false;urn:osse-11:dataelement:184:1;Type of treatments;Type of treatments for HCC;;;enumerated;enumerated;;338;233;10
+Treatment;233:10;Longitudinal;urn:osse-11:record:44:1;18. Oral antidiabetics;false;false;urn:osse-11:dataelement:186:1;Oral antidiabetics;Oral antidiabetics;;;enumerated;enumerated;;340;233;10
+Treatment;233:10;Longitudinal;urn:osse-11:record:44:1;18. Oral antidiabetics;false;false;urn:osse-11:dataelement:187:1;Metformin;Metformin for oral antidiabetics;;;enumerated;enumerated;;341;233;10
+Treatment;233:10;Longitudinal;urn:osse-11:record:45:1;20. Non-bariatric surgery;false;false;urn:osse-11:dataelement:189:1;Non-bariatric surgery;Non-bariatric surgery;;;enumerated;enumerated;;343;233;10
+Treatment;233:10;Longitudinal;urn:osse-11:record:45:1;20. Non-bariatric surgery;false;false;urn:osse-11:dataelement:190:1;Type of surgery;Type of surgery;;;enumerated;enumerated;;344;233;10
+Previous treatments;227:3;Basic;urn:osse-11:record:46:1;21. ICU admission;true;false;urn:osse-11:dataelement:191:1;ICU admission;ICU admission;;;enumerated;enumerated;;154;227;3
+Previous treatments;227:3;Basic;urn:osse-11:record:46:1;21. ICU admission;true;false;urn:osse-11:dataelement:192:1;Number of ICU admissions;Number of ICU admissions;;;INTEGER;0<=x<=20;;155;227;3
+Clinical features;229:3;Longitudinal;urn:osse-11:record:49:1;1. Ascites;true;false;urn:osse-11:dataelement:114:1;1. Ascites;1. Ascites;;;enumerated;enumerated;;175;229;3
+Clinical features;229:3;Longitudinal;urn:osse-11:record:49:1;1. Ascites;true;false;urn:osse-11:dataelement:117:1; Maximum grade of ascites; Maximum grade of ascites;;;enumerated;enumerated;;176;229;3
+Clinical features;229:3;Longitudinal;urn:osse-11:record:50:1;2. Hepatic encephalopathy;true;false;urn:osse-11:dataelement:115:1;2. Hepatic encephalopathy;2. Hepatic encephalopathy;;;enumerated;enumerated;;177;229;3
+Clinical features;229:3;Longitudinal;urn:osse-11:record:50:1;2. Hepatic encephalopathy;true;false;urn:osse-11:dataelement:63:1;West Haven grade;West Haven grade of Hepatic encephalopathy;;;enumerated;enumerated;;178;229;3
+Clinical features;229:3;Longitudinal;urn:osse-11:record:50:1;2. Hepatic encephalopathy;true;false;urn:osse-11:dataelement:209:1;Precipitating events HE;Precipitating events HE;;;enumerated;enumerated;;179;229;3
+Screen data;222:8;Basic;;;;;urn:osse-11:dataelement:43:2;Patient ID;Patient's identification number of ACLF-I (should be the same as the sample ID);true;false;STRING;;;3;222;8
+ACLF evaluation;224:4;Basic;;;;;urn:osse-11:dataelement:62:1;Cerebral failure;West Haven grade 3 to 4;false;false;enumerated;enumerated;;19;224;4
+ACLF evaluation;224:4;Basic;;;;;urn:osse-11:dataelement:63:1;West Haven grade;West Haven grade of Hepatic encephalopathy;false;false;enumerated;enumerated;;20;224;4
+Patient�s information and Medical history;225:2;Basic;;;;;urn:osse-11:dataelement:55:1;Date of birth;Date of birth;true;false;DATE;DD.MM.YYYY;;50;225;2
+Patient�s information and Medical history;225:2;Basic;;;;;urn:osse-11:dataelement:92:1;Gender;Gender;true;false;enumerated;enumerated;;51;225;2
+Patient�s information and Medical history;225:2;Basic;;;;;urn:osse-11:dataelement:104:1;Etiology of cirrhosis;Etiology of cirrhosis;true;false;enumerated;enumerated;;63;225;2
+Patient�s information and Medical history;225:2;Basic;;;;;urn:osse-11:dataelement:346:1;If other, please specify;Specify the other conditions;false;false;STRING;;;64;225;2
+Patient�s information and Medical history;225:2;Basic;;;;;urn:osse-11:dataelement:105:1;Biopsy proved cirrhosis;Biopsy proved cirrhosis;true;false;enumerated;enumerated;;65;225;2
+Previous clinical course;226:11;Basic;;;;;urn:osse-11:dataelement:112:1;Time prior to Hospital Study Admission;Time prior to Hospital Study Admission;true;false;enumerated;enumerated;;68;226;11
+Previous clinical course;226:11;Basic;;;;;urn:osse-11:dataelement:113:1;Any prior decompensation prior to hospital study admission ?;Any prior decompensation prior to hospital study admission ?;true;false;enumerated;enumerated;;72;226;11
+Previous clinical course;226:11;Basic;;;;;urn:osse-11:dataelement:130:1;6. Acute alcoholic-steatohepatitis (ASH);6. Acute alcoholic-steatohepatitis (ASH);false;false;enumerated;enumerated;;92;226;11
+Previous clinical course;226:11;Basic;;;;;urn:osse-11:dataelement:131:1;7. Acute viral hepatitis superimposed to cirrhosis;7. Acute viral hepatitis superimposed to cirrhosis;false;false;enumerated;enumerated;;93;226;11
+Previous clinical course;226:11;Basic;;;;;urn:osse-11:dataelement:132:1;8. Suspected drug-induced liver injury;8. Suspected drug-induced liver injury;false;false;enumerated;enumerated;;94;226;11
+Previous clinical course;226:11;Basic;;;;;urn:osse-11:dataelement:137:1;Other relevant clinical events;Other relevant clinical events;false;false;STRING;;;99;226;11
+Previous treatments;227:3;Basic;;;;;urn:osse-11:dataelement:112:1;Time prior to Hospital Study Admission;Time prior to Hospital Study Admission;true;false;enumerated;enumerated;;100;227;3
+Previous treatments;227:3;Basic;;;;;urn:osse-11:dataelement:158:1;6. Other type of cirrhosis;6. Other type of cirrhosis treatment;false;false;enumerated;enumerated;;121;227;3
+Previous treatments;227:3;Basic;;;;;urn:osse-11:dataelement:159:1;7. Continuous treatment;7. Continuous treatment;false;false;enumerated;enumerated;;122;227;3
+Previous treatments;227:3;Basic;;;;;urn:osse-11:dataelement:162:1;2. Therapeutic paracentesis;2. Therapeutic paracentesis;false;false;enumerated;enumerated;;125;227;3
+Previous treatments;227:3;Basic;;;;;urn:osse-11:dataelement:169:1;6. Renal replacement treatment;6. Renal replacement treatment;false;false;enumerated;enumerated;;132;227;3
+Previous treatments;227:3;Basic;;;;;urn:osse-11:dataelement:170:1;7. Artificial liver support;7. Artificial liver support;false;false;enumerated;enumerated;;133;227;3
+Previous treatments;227:3;Basic;;;;;urn:osse-11:dataelement:171:1;8. Omeprazol or other PPI;8. Omeprazol or other PPI;false;false;enumerated;enumerated;;134;227;3
+Previous treatments;227:3;Basic;;;;;urn:osse-11:dataelement:172:1;9. Endoscopic therapy of bleeding;9. Endoscopic therapy of bleeding;false;false;enumerated;enumerated;;135;227;3
+Previous treatments;227:3;Basic;;;;;urn:osse-11:dataelement:173:1;10. Lactulose;10. Lactulose;false;false;enumerated;enumerated;;136;227;3
+Previous treatments;227:3;Basic;;;;;urn:osse-11:dataelement:174:1;11. Rifaximin for HE;11. Rifaximin for HE;false;false;enumerated;enumerated;;137;227;3
+Previous treatments;227:3;Basic;;;;;urn:osse-11:dataelement:180:1;14. Antibiotic for infection (nonprophylactic);14. Antibiotic for infection (nonprophylactic);false;false;enumerated;enumerated;;143;227;3
+Previous treatments;227:3;Basic;;;;;urn:osse-11:dataelement:185:1;17. Insulin;17. Insulin;false;false;enumerated;enumerated;;148;227;3
+Previous treatments;227:3;Basic;;;;;urn:osse-11:dataelement:188:1;19. Statins;19. Statins;false;false;enumerated;enumerated;;151;227;3
+Previous treatments;227:3;Basic;;;;;urn:osse-11:dataelement:193:1;Any drug with potential hepatotoxic effect;Any drug with potential hepatotoxic effect;false;false;enumerated;enumerated;;156;227;3
+Previous treatments;227:3;Basic;;;;;urn:osse-11:dataelement:195:1;Drug with potential hepatotoxic effect;Drug with potential hepatotoxic effect;false;true;STRING;;;157;227;3
+Previous treatments;227:3;Basic;;;;;urn:osse-11:dataelement:194:1;Any drug with potential adverse effect;Any drug with potential adverse effect;false;false;enumerated;enumerated;;158;227;3
+Previous treatments;227:3;Basic;;;;;urn:osse-11:dataelement:196:1;Drug with potential adverse effect;Drug with potential adverse effect;false;true;STRING;;;159;227;3
+Data at visit;228:7;Longitudinal;;;;;urn:osse-11:dataelement:203:1;Alcohol consumption since last visit;Alcohol consumption since last visit;false;false;enumerated;enumerated;;166;228;7
+Data at visit;228:7;Longitudinal;;;;;urn:osse-11:dataelement:109:1;Type of alcohol consumption;Type of alcohol consumption;false;false;enumerated;enumerated;;167;228;7
+Data at visit;228:7;Longitudinal;;;;;urn:osse-11:dataelement:355:1;Average number of drinks per week;Average number of drinks per week;false;false;INTEGER;0<=x<=20000;ml;168;228;7
+Data at visit;228:7;Longitudinal;;;;;urn:osse-11:dataelement:111:1;Most common drink consumed;Most common drink consumed;false;false;enumerated;enumerated;;169;228;7
+Data at visit;228:7;Longitudinal;;;;;urn:osse-11:dataelement:204:1;Origin at the time of hospital admission;Origin at the time of hospital admission;true;false;enumerated;enumerated;;170;228;7
+Data at visit;228:7;Longitudinal;;;;;urn:osse-11:dataelement:205:1;Site of hospital admission;Site of hospital admission;true;false;enumerated;enumerated;;171;228;7
+Data at visit;228:7;Longitudinal;;;;;urn:osse-11:dataelement:206:1;Reason(s) for hospital admission;Reason(s) for hospital admission;true;false;enumerated;enumerated;;172;228;7
+Data at visit;228:7;Longitudinal;;;;;urn:osse-11:dataelement:346:1;If other, please specify;Specify the other conditions;false;false;STRING;;;173;228;7
+Data at visit;228:7;Longitudinal;;;;;urn:osse-11:dataelement:207:1;Main reason for hospital admission;Main reason for hospital admission;true;false;enumerated;enumerated;;174;228;7
+Clinical features;229:3;Longitudinal;;;;;urn:osse-11:dataelement:122:1;3. Gastrointestinal bleeding;3. Gastrointestinal bleeding;true;false;enumerated;enumerated;;180;229;3
+Clinical features;229:3;Longitudinal;;;;;urn:osse-11:dataelement:219:1;6. Bacterial infections;6. Bacterial infections;true;false;enumerated;enumerated;;190;229;3
+Clinical features;229:3;Longitudinal;;;;;urn:osse-11:dataelement:220:1;7. Fungal infection/Colonization;7. Fungal infection/Colonization;false;false;enumerated;enumerated;;191;229;3
+Clinical features;229:3;Longitudinal;;;;;urn:osse-11:dataelement:221:1;8. Viral infection;8. Viral infection;false;false;enumerated;enumerated;;192;229;3
+Clinical features;229:3;Longitudinal;;;;;urn:osse-11:dataelement:222:1;Viral infection ;Viral infection;false;true;STRING;;;193;229;3
+Clinical features;229:3;Longitudinal;;;;;urn:osse-11:dataelement:223:1;9. Acute alcoholic-steatohepatitis (ASH);9. Acute alcoholic-steatohepatitis (ASH);false;false;enumerated;enumerated;;194;229;3
+Clinical features;229:3;Longitudinal;;;;;urn:osse-11:dataelement:224:1;10. Acute viral hepatitis superimposed to cirrhosis (suspected/confirmed);10. Acute viral hepatitis superimposed to cirrhosis (suspected/confirmed);false;false;enumerated;enumerated;;195;229;3
+Clinical features;229:3;Longitudinal;;;;;urn:osse-11:dataelement:225:1;11. Suspected drug-induced liver injury;11. Suspected drug-induced liver injury;false;false;enumerated;enumerated;;196;229;3
+Clinical features;229:3;Longitudinal;;;;;urn:osse-11:dataelement:227:1;13. Other relevant clinical events;13. Other relevant clinical events;false;false;STRING;;;201;229;3
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:232:1;Physical examination date;Physical examination date;true;false;DATE;DD.MM.YYYY;;206;230;8
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:233:1;Race;Race;true;false;enumerated;enumerated;;207;230;8
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:349:1;Weight (Kg);Weight (Kg);false;false;FLOAT;0<=x<=400;kg;208;230;8
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:350:1;Height (cm);Height (cm);false;false;INTEGER;0<=x<=300;cm;209;230;8
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:236:1;BMI;Formula: BMI= Weight (Kg)/Height2(m);false;false;FLOAT;0<=x<=100;;210;230;8
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:237:1;Flapping tremor;Flapping tremor;false;false;enumerated;enumerated;;211;230;8
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:67:1;Systolic Blood Pressure;Systolic Blood Pressure;false;false;INTEGER;0<=x<=300;mmHg;212;230;8
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:68:1;Diastolic Blood Pressure;Diastolic Blood Pressure;false;false;INTEGER;0<=x<=300;mmHg;213;230;8
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:69:1;Mean Arterial Pressure ;Formula: MAP= (2*DBP+SBP)/3;false;false;FLOAT;0<=x<=300;mmHg;214;230;8
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:238:1;Heart rate;Heart rate;false;false;INTEGER;0<=x<=200;bpm;215;230;8
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:239:1;Temperature;Temperature;false;false;FLOAT;0<=x<=50;�C;216;230;8
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:240:1;Respiratory rate;Respiratory rate;false;false;INTEGER;0<=x<=100;bpm;217;230;8
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:73:1;SpO2;SpO2;false;false;INTEGER;0<=x<=100;%;218;230;8
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:74:1;Supplemental oxygen (including mechanical ventilation);Supplemental oxygen (including mechanical ventilation);false;false;enumerated;enumerated;;219;230;8
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:75:1;FiO2;"FiO2 (If Supplemental oxygen is ""No""): 21% (0.21 for internal calculation)";false;false;INTEGER;0<=x<=1000;;220;230;8
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:84:1;If Mechanical ventilation-Reason for mechanical ventilation;Reason for mechanical ventilation;false;false;enumerated;enumerated;;229;230;8
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:85:1;Type of mechanical ventilation;Type of mechanical ventilation;false;false;enumerated;enumerated;;230;230;8
+Physical examination;230:8;Longitudinal;;;;;urn:osse-11:dataelement:79:1;FiO2;FiO2;false;false;INTEGER;0<=x<=200;%;231;230;8
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:241:1;Has blood analysis been performed?;Has blood analysis been performed?;true;false;enumerated;enumerated;;232;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:242:1;Date of Collection;Date of Collection;false;false;DATE;DD.MM.YYYY;;233;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:348:1;Hemoglobin;Hemoglobin;false;false;FLOAT;0<=x<=300;g/dl;234;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:244:1;Hematocrit;Hematocrit;false;false;FLOAT;0<=x<=100;%;235;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:245:1;Leucocyte (Absolute);Leucocyte (Absolute);false;false;FLOAT;0<=x;/nl;236;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:246:1;Leucocytes (%);Leucocytes (%);false;false;FLOAT;0<=x<=100;%;237;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:247:1;Lymphocytes;Lymphocytes;false;false;FLOAT;0<=x<=100;/nl;238;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:248:1;Lymphocytes (%);Lymphocytes (%);false;false;FLOAT;0<=x<=100;%;239;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:249:1;Monocytes (Absolute);Monocytes (Absolute);false;false;FLOAT;0<=x;/nl;240;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:250:1;Monocytes (%);Monocytes (%);false;false;FLOAT;0<=x<=100;%;241;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:251:1;Neutrophils (Absolute);Neutrophils (Absolute);false;false;FLOAT;0<=x;/nl;242;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:252:1;Immature neutrophils (%);Immature neutrophils (%);false;false;FLOAT;0<=x<=100;%;243;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:253:1;Platelet count;Platelet count;false;false;INTEGER;0<=x;/nl;244;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:254:1;Prothrombin time;Prothrombin time;false;false;INTEGER;0<=x<=100;s;245;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:255:1;Control prothrombin time;Control prothrombin time;false;false;INTEGER;0<=x<=100;s;246;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:256:1;INR;INR;false;false;FLOAT;0<=x<=100;;247;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:357:1;Quick (%);Quick (%);false;false;INTEGER;0<=x<=200;%;248;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:258:1;ISI;ISI;false;false;FLOAT;0<=x;;249;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:347:1;Albumin;Albumin;false;false;FLOAT;0<=x<=100;g/dl;250;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:260:1;AST;AST;false;false;FLOAT;0<=x;U/l;251;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:354:1;ALT;ALT;false;false;FLOAT;0<=x<=1000;U/l;252;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:262:1;Alkaline phosphatase;Alkaline phosphatase;false;false;FLOAT;0<=x;U/l;253;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:263:1;GGT;GGT;false;false;FLOAT;0<=x;U/l;254;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:264:1;Total Bilirubin;Total Bilirubin;false;false;FLOAT;0<=x;mg/dl;255;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:265:1;Creatinine;Creatinine;false;false;FLOAT;0<=x;mg/dl;256;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:266:1;Sodium;Sodium;false;false;FLOAT;0<=x<=200;mmol/l;257;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:267:1;Potassium;Potassium;false;false;FLOAT;0<=x;mmol/l;258;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:268:1;Glucose;Glucose;false;false;FLOAT;0<=x;mg/dl;259;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:269:1;Total cholesterol;Total cholesterol;false;false;FLOAT;0<=x;mg/dl;260;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:270:1;HDL-Cholesterol;HDL-Cholesterol;false;false;FLOAT;0<=x;mg/dl;261;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:271:1;LDL-Cholesterol;LDL-Cholesterol;false;false;FLOAT;0<=x;mg/dl;262;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:272:1;Triglycerides;Triglycerides;false;false;FLOAT;0<=x;mg/dl;263;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:273:1;C-reactive protein (CRP);C-reactive protein (CRP);false;false;FLOAT;0<=x;mg/dl;264;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:274:1;Has urine analysis been performed?;Has urine analysis been performed?;false;false;enumerated;enumerated;;265;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:275:1;Date of Collection;Date of Collection of urine;false;false;DATE;YYYY-MM-DD;;266;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:276:1;Leukocytes reagent strip result;Leukocytes reagent strip result;false;false;enumerated;enumerated;;267;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:277:1;Urine Albumin;Urine Albumin;false;false;enumerated;enumerated;;268;231;11
+Laboratory data 1;231:11;Longitudinal;;;;;urn:osse-11:dataelement:278:1;Leukocytes per field;Leukocytes per field;false;false;INTEGER;0<=x;;269;231;11
+Laboratory data 2;232:6;Longitudinal;;;;;urn:osse-11:dataelement:279:1;Has arterial blood sample been collected;Has arterial blood sample been collected;true;false;enumerated;enumerated;;270;232;6
+Laboratory data 2;232:6;Longitudinal;;;;;urn:osse-11:dataelement:280:1;Date of arterial blood sample  collection;Date of arterial blood sample  collection;false;false;DATE;DD.MM.YYYY;;271;232;6
+Laboratory data 2;232:6;Longitudinal;;;;;urn:osse-11:dataelement:281:1;PHa;PHa;false;false;FLOAT;0<=x<=14;;272;232;6
+Laboratory data 2;232:6;Longitudinal;;;;;urn:osse-11:dataelement:282:1;PaO2;PaO2;false;false;FLOAT;0<=x;mmHg;273;232;6
+Laboratory data 2;232:6;Longitudinal;;;;;urn:osse-11:dataelement:283:1;PaCO2;PaCO2;false;false;FLOAT;0<=x;mmHg;274;232;6
+Laboratory data 2;232:6;Longitudinal;;;;;urn:osse-11:dataelement:289:1;HCO3a;HCO3a;false;false;FLOAT;0<=x;mmol/l;275;232;6
+Laboratory data 2;232:6;Longitudinal;;;;;urn:osse-11:dataelement:356:1;BEa;BEa;false;false;FLOAT;x;;276;232;6
+Laboratory data 2;232:6;Longitudinal;;;;;urn:osse-11:dataelement:286:1;PHv;PHv;false;false;FLOAT;0<=x<=14;;277;232;6
+Laboratory data 2;232:6;Longitudinal;;;;;urn:osse-11:dataelement:287:1;PvO2;PvO2;false;false;FLOAT;0<=x;mmHg;278;232;6
+Laboratory data 2;232:6;Longitudinal;;;;;urn:osse-11:dataelement:288:1;PvCO2;PvCO2;false;false;FLOAT;0<=x;mmHg;279;232;6
+Laboratory data 2;232:6;Longitudinal;;;;;urn:osse-11:dataelement:358:1;HCO3v;HCO3v;false;false;FLOAT;0<=x;mmol/l;280;232;6
+Laboratory data 2;232:6;Longitudinal;;;;;urn:osse-11:dataelement:359:1;BEv;BEv;false;false;FLOAT;x;;281;232;6
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:169:1;6. Renal replacement treatment;6. Renal replacement treatment;false;false;enumerated;enumerated;;319;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:294:1;#1: Complete Renal Replacement Therapy table (General forms);#1: Complete Renal Replacement Therapy table (General forms);false;true;STRING;;;320;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:170:1;7. Artificial liver support;7. Artificial liver support;false;false;enumerated;enumerated;;321;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:171:1;8. Omeprazol or other PPI;8. Omeprazol or other PPI;false;false;enumerated;enumerated;;322;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:363:1;Dose of the treatment (PPI);Dose of the PPI and unit <e.g. x-x-x-x mg>;false;false;STRING;;;323;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:172:1;9. Endoscopic therapy of bleeding;9. Endoscopic therapy of bleeding;false;false;enumerated;enumerated;;324;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:173:1;10. Lactulose;10. Lactulose;false;false;enumerated;enumerated;;325;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:174:1;11. Rifaximin for HE;11. Rifaximin for HE;false;false;enumerated;enumerated;;326;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:364:1;Dose of the treatment (Rifaximin);Dose of the Rifaximin and unit <e.g. x-x-x-x mg>;false;false;STRING;;;327;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:180:1;14. Antibiotic for infection (nonprophylactic);14. Antibiotic for infection (nonprophylactic);false;false;enumerated;enumerated;;333;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:295:1;#1: Complete Antibiotic table (General forms);#1: Complete Antibiotic table (General forms);false;true;STRING;;;334;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:185:1;17. Insulin;17. Insulin;false;false;enumerated;enumerated;;339;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:188:1;19. Statins;19. Statins;false;false;enumerated;enumerated;;342;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:191:1;ICU admission;ICU admission;true;false;enumerated;enumerated;;345;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:296:1;ICU admission date:;ICU admission date:;false;false;DATE;DD.MM.YYYY;;346;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:193:1;Any drug with potential hepatotoxic effect;Any drug with potential hepatotoxic effect;false;false;enumerated;enumerated;;347;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:195:1;Drug with potential hepatotoxic effect;Drug with potential hepatotoxic effect;false;true;STRING;;;348;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:194:1;Any drug with potential adverse effect;Any drug with potential adverse effect;false;false;enumerated;enumerated;;349;233;10
+Treatment;233:10;Longitudinal;;;;;urn:osse-11:dataelement:196:1;Drug with potential adverse effect;Drug with potential adverse effect;false;true;STRING;;;350;233;10
+Status;236:1;Longitudinal;;;;;urn:osse-11:dataelement:338:1;Patient's vital status;Patient's vital status;true;false;enumerated;enumerated;;469;236;1
+Status;236:1;Longitudinal;;;;;urn:osse-11:dataelement:339:1;Date of Death;Date of Death;false;false;DATE;DD.MM.YYYY;;470;236;1
+Status;236:1;Longitudinal;;;;;urn:osse-11:dataelement:340:1;In-hospital death;In-hospital death;false;false;enumerated;enumerated;;471;236;1
+Status;236:1;Longitudinal;;;;;urn:osse-11:dataelement:341:1;Cause(s) of death;Cause(s) of death;false;false;enumerated;enumerated;;472;236;1
+Status;236:1;Longitudinal;;;;;urn:osse-11:dataelement:342:1;Other cause of death specification:;Other cause of death specification:;false;false;STRING;;;473;236;1
+Status;236:1;Longitudinal;;;;;urn:osse-11:dataelement:343:1;Liver transplantation since last contact;Liver transplantation since last contact;true;false;enumerated;enumerated;;474;236;1
+Status;236:1;Longitudinal;;;;;urn:osse-11:dataelement:344:1;Date of liver transplantation;Date of liver transplantation;false;false;DATE;DD.MM.YYYY;;475;236;1
