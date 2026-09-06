@@ -10,15 +10,15 @@ paths:
 
 scripts:
   "1_mdr_metadata_fetch": false
-  "2_create_data_dictionary": false
+  "2_create_data_dictionary": true
   "3_export_data_preprocess_clean": false
-  "4_value-conformance": true
-  "5_daterules": true
-  "6_ranges": true
-  "7.1_Form_versioning_JSON_to_CSV": true
-  "7.2_expected_elements_per_patient_with_versions": true
-  "7.3_completeness_checks": true
-  "8_calculations": true
-  "9_import_checks": true
-  "10_longitudinal_plausibility": true
-  "11_relational_conformance": true
+  "4_value-conformance": false
+  "5_daterules": false
+  "6_ranges": false
+  "7.1_Form_versioning_JSON_to_CSV": false
+  "7.2_expected_elements_per_patient_with_versions": false
+  "7.3_completeness_checks": false
+  "8_calculations": false
+  "9_import_checks": false
+  "10_longitudinal_plausibility": false
+  "11_relational_conformance": false

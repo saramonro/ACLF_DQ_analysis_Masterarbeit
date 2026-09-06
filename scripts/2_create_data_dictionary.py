@@ -12,9 +12,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import REGISTRY_NAME, URL
-
-STRUCTURE_URL = f"{URL}"
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DATAELEMENTLIST_PATH = PROJECT_ROOT / "metadata" / "raw"/ "structural" / "data_element_list.csv"
+
 MDR_DE_PATH = PROJECT_ROOT / "metadata" / "processed" / f"{REGISTRY_NAME}_API_MDR_dataelements.csv"
 OUTPUT_DIR = PROJECT_ROOT / "metadata" / "processed"
 
@@ -85,7 +85,7 @@ def merge_structure_with_mdr(df_structure, df_mdr):
 
 def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    structure_metadata=load_structure_metadata(STRUCTURE_URL)
+    structure_metadata=load_structure_metadata(DATAELEMENTLIST_PATH)
     clean_structure_metadata = rename_columns(structure_metadata)
     structure_metadata_with_ids = generate_source_ids(clean_structure_metadata)
     mdr_data=load_mdr_dataelements(MDR_DE_PATH)
