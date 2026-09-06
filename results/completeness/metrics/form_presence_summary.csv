@@ -1,4 +1,0 @@
-metric,denominator_definition,numerator_definition,denominator_n,numerator_n,completeness_percent
-Form presence completeness,Expected form instances,Form instances with at least one value,5255,5166,98.31
-Empty expected basic forms,Expected basic form instances,Basic form instances with no value at all,1305,13,1.0
-Empty expected longitudinal forms,Expected longitudinal form instances,Episode/form instances with no value at all,3950,76,1.92
