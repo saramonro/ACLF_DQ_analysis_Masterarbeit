@@ -18,7 +18,7 @@ from pathlib import Path
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent
-CHECKS_DIR = PROJECT_ROOT / "checks"
+CHECKS_DIR = PROJECT_ROOT / "scripts"
 
 # Canonical execution order, matching the numbered filenames in checks/.
 SCRIPT_ORDER = [
