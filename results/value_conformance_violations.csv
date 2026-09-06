@@ -1,2 +1,0 @@
-PID;Episode;Episode_Date;IX;source_id;source_value;dataelement_designation;dataelement_urn;record_designation;record_urn;data_type;data_format;record_mandatory;dataelement_mandatory;slots;rule_id;rule_type;expected;observed
-175;1;01/12/2021;1;X_230_0_232;29.11.0021;Physical examination date;urn:osse-11:dataelement:232:1;;;DATE;DD.MM.YYYY;;true;;Date_format_validity;Date_format_validity;valid date format = DD.MM.YYYY;29.11.0021

@@ -1,0 +1,14 @@
+rule_id;source_id;variable_label;value_type;allowed_variation_percent
+LONG_001;X_230_0_233;Race;enumerated;0
+LONG_002;X_230_0_349;Weight (Kg);float;50
+LONG_003;X_230_0_350;Height (cm);integer;10
+LONG_004;X_230_0_239;Temperature ;float;15
+LONG_005;X_230_0_238;Heart rate ;float;50
+LONG_006;X_236_0_338;Patient's vital status ;enumerated;0
+LONG_007;X_236_0_339;Date of Death;date;0
+LONG_008;X_231_0_242;Date of Collection ;date_increasing;0
+LONG_009;X_232_0_280;Date of arterial blood sample collection ;date_increasing;0
+LONG_010;X_223_7_29;Collection date ;date_increasing;0
+LONG_011;X_223_8_29;Collection date ;date_increasing;0
+LONG_012;X_223_9_29;Collection date ;date_increasing;0
+LONG_013;X_223_10_29;Collection date ;date_increasing;0

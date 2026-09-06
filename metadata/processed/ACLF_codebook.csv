@@ -1,0 +1,781 @@
+dataelement_id;dataelement_version;dataelement_urn;pv_value;pv_language;pv_designation;pv_definition;pv_selection
+3;1;urn:osse-11:dataelement:3:1;Sex;en;Male;Sex;
+7;1;urn:osse-11:dataelement:7:1;Male;en;Male;Male;
+7;1;urn:osse-11:dataelement:7:1;Female;en;Female;Female;
+7;1;urn:osse-11:dataelement:7:1;Unknown;en;Unknown;Unknown;
+8;1;urn:osse-11:dataelement:8:1;Dead;en;Dead;Dead;SELECT_ONE_RADIO
+8;1;urn:osse-11:dataelement:8:1;Alive;en;Alive;Alive;SELECT_ONE_RADIO
+8;1;urn:osse-11:dataelement:8:1;Lost in follow-up;en;Lost in follow-up;Lost in follow-up;SELECT_ONE_RADIO
+9;1;urn:osse-11:dataelement:9:1;Ascites;en;Ascites;Ascites;SELECT_MANY_CHECKBOX
+9;1;urn:osse-11:dataelement:9:1;GI bleeding;en;GI bleeding;GI bleeding;SELECT_MANY_CHECKBOX
+9;1;urn:osse-11:dataelement:9:1;Bacterial infection;en;Bacterial infection;Bacterial infection;SELECT_MANY_CHECKBOX
+14;1;urn:osse-11:dataelement:14:1;Peripharel venous;en;Peripharel venous;Peripharel venous;SELECT_MANY_CHECKBOX
+14;1;urn:osse-11:dataelement:14:1;Central venous;en;Central venous;Central venous;SELECT_MANY_CHECKBOX
+14;1;urn:osse-11:dataelement:14:1;Arterial;en;Blood from arterial;Blood from arterial;SELECT_MANY_CHECKBOX
+14;1;urn:osse-11:dataelement:14:1;Other blood;en;Other blood please note;Other blood please note;SELECT_MANY_CHECKBOX
+13;2;urn:osse-11:dataelement:13:2;Yes;en;Blood sample has been collected;Blood sample has been collected;SELECT_ONE_RADIO
+13;2;urn:osse-11:dataelement:13:2;No;en;Blood sample has not been collected;Blood sample has not been collected;SELECT_ONE_RADIO
+17;1;urn:osse-11:dataelement:17:1;less than 2h;en;aliquoting the serum equal or less than 2h;aliquoting the serum less than 2h;SELECT_ONE_RADIO
+17;1;urn:osse-11:dataelement:17:1;more than 2h;en;aliquoting the serum more than 2h;aliquoting the serum more than 2h;SELECT_ONE_RADIO
+21;1;urn:osse-11:dataelement:21:1;Plasma;en;Plasma collected or not;Plasma collected or not;SELECT_MANY_CHECKBOX
+21;1;urn:osse-11:dataelement:21:1;Buffy coat;en;Buffy coat collected or not;Buffy coat collected or not;SELECT_MANY_CHECKBOX
+23;1;urn:osse-11:dataelement:23:1;Plasma;en;Plasma collected or not;Plasma collected or not;SELECT_MANY_CHECKBOX
+23;1;urn:osse-11:dataelement:23:1;Buffy coat;en;Buffy coat collected or not;Buffy coat collected or not;SELECT_MANY_CHECKBOX
+27;1;urn:osse-11:dataelement:27:1;<= 2h;en;Time from sample collection to storage at -80 C° equal or less than 2h;Time from sample collection to storage at -80 C° less than 2h;SELECT_ONE_RADIO
+27;1;urn:osse-11:dataelement:27:1;> 2h;en;Time from sample collection to storage at -80 C° more than 2h;Time from sample collection to storage at -80 C° more than 2h;SELECT_ONE_RADIO
+30;1;urn:osse-11:dataelement:30:1;Wilmut tube;en;Wilmut tube;Wilmut tube;SELECT_ONE_RADIO
+30;1;urn:osse-11:dataelement:30:1;10 mL tube;en;10 mL tube;10 mL tube;SELECT_ONE_RADIO
+33;1;urn:osse-11:dataelement:33:1;Home;en;Home;Home;SELECT_ONE_RADIO
+33;1;urn:osse-11:dataelement:33:1;Ward;en;Ward;Ward;SELECT_ONE_RADIO
+33;1;urn:osse-11:dataelement:33:1;Out-patient clinic;en;Out-patient clinic;Out-patient clinic;SELECT_ONE_RADIO
+33;1;urn:osse-11:dataelement:33:1;Others;en;Others;Others;SELECT_ONE_RADIO
+35;1;urn:osse-11:dataelement:35:1;-18 C°;en;stool stored at home at -18 C° ;stool stored at home at -18 C° ;SELECT_ONE_RADIO
+35;1;urn:osse-11:dataelement:35:1;4 C°;en;stool stored at home at 4 C° ;stool stored at home at 4 C° ;SELECT_ONE_RADIO
+37;1;urn:osse-11:dataelement:37:1;<= 12h;en;Time from sample collection to storage at -80 C° equal or less than 12h;Time from sample collection to storage at -80 C° equal or less than 12h;
+37;1;urn:osse-11:dataelement:37:1;> 12h;en;Time from sample collection to storage at -80 C° more than 12h;Time from sample collection to storage at -80 C° more than 12h;
+45;1;urn:osse-11:dataelement:45:1;Patients who decline to participate or who cannot provide prior written informed consent and when there is documented evidence that the patient has no legal surrogate decision maker and it appears unlikely that the patient will regain consciousness or sufficient ability to provide delayed informed consent.;en;Patients who decline to participate or who cannot provide prior written informed consent and when there is documented evidence that the patient has no legal surrogate decision maker and it appears unlikely that the patient will regain consciousness or sufficient ability to provide delayed informed consent.;Patients who decline to participate or who cannot provide prior written informed consent and when there is documented evidence that the patient has no legal surrogate decision maker and it appears unlikely that the patient will regain consciousness or sufficient ability to provide delayed informed consent.;SELECT_MANY_CHECKBOX
+45;1;urn:osse-11:dataelement:45:1;Physician’s denial (e.g. the investigator considers that the patient will not follow the protocol scheduled).;en;Physician’s denial (e.g. the investigator considers that the patient will not follow the protocol scheduled).;Physician’s denial (e.g. the investigator considers that the patient will not follow the protocol scheduled).;SELECT_MANY_CHECKBOX
+46;1;urn:osse-11:dataelement:46:1;The patients admitted/referred to study center with cirrhosis.;en;The patients admitted/referred to study center with cirrhosis.;The patients admitted/referred to study center with cirrhosis.;SELECT_MANY_CHECKBOX
+47;1;urn:osse-11:dataelement:47:1;Patient;en;Patient;Patient;SELECT_ONE_RADIO
+47;1;urn:osse-11:dataelement:47:1;Surrogate;en;Surrogate;Surrogate;SELECT_ONE_RADIO
+47;1;urn:osse-11:dataelement:47:1;Not signed;en;Not signed;Not signed;SELECT_ONE_RADIO
+50;1;urn:osse-11:dataelement:50:1;Yes;en;- Research study under prior surrogate consent;- Research study under prior surrogate consent;SELECT_ONE_RADIO
+50;1;urn:osse-11:dataelement:50:1;No;en;- Research study not under prior surrogate consent;- Research study not under prior surrogate consent;SELECT_ONE_RADIO
+57;1;urn:osse-11:dataelement:57:1;Yes;en;Had liver failure;Had liver failure;SELECT_ONE_RADIO
+57;1;urn:osse-11:dataelement:57:1;No;en;No liver failure;No liver failure;SELECT_ONE_RADIO
+59;1;urn:osse-11:dataelement:59:1;Yes;en;Had renal failure;Creatinine over 2.0 mg/dl;SELECT_ONE_RADIO
+59;1;urn:osse-11:dataelement:59:1;No;en;Had no renal failure;Creatinine less than 2.0 mg/dl;SELECT_ONE_RADIO
+62;1;urn:osse-11:dataelement:62:1;Yes;en;Had brain failure;West Haven grade 3 to 4;SELECT_ONE_RADIO
+62;1;urn:osse-11:dataelement:62:1;No;en;No brain failure;West Haven grade 0 1 2;SELECT_ONE_RADIO
+63;1;urn:osse-11:dataelement:63:1;Grade 0;en;Grade 0;Grade 0;SELECT_ONE_RADIO
+63;1;urn:osse-11:dataelement:63:1;Grade 1;en;Grade 1;Grade 1;SELECT_ONE_RADIO
+63;1;urn:osse-11:dataelement:63:1;Grade 2;en;Grade 2;Grade 2;SELECT_ONE_RADIO
+63;1;urn:osse-11:dataelement:63:1;Grade 3;en;Grade 3;Grade 3;SELECT_ONE_RADIO
+63;1;urn:osse-11:dataelement:63:1;Grade 4;en;Grade 4;Grade 4;SELECT_ONE_RADIO
+64;1;urn:osse-11:dataelement:64:1;Yes;en;Had coagulation failure;INR over 2.5;SELECT_ONE_RADIO
+64;1;urn:osse-11:dataelement:64:1;No;en;No coagulation failure;INR lower than 2.5;SELECT_ONE_RADIO
+66;1;urn:osse-11:dataelement:66:1;Yes;en;Had circulatory failure;Had circulatory failure;SELECT_ONE_RADIO
+66;1;urn:osse-11:dataelement:66:1;No;en;No circulatory failure;No circulatory failure;SELECT_ONE_RADIO
+70;1;urn:osse-11:dataelement:70:1;Yes;en;Use of vasopresors ;Use of vasopresors;SELECT_ONE_RADIO
+70;1;urn:osse-11:dataelement:70:1;No;en;No use of vasopresors ;No use of vasopresors ;SELECT_ONE_RADIO
+71;1;urn:osse-11:dataelement:71:1;Yes;en;Had respiratory failure;Had respiratory failure;SELECT_ONE_RADIO
+71;1;urn:osse-11:dataelement:71:1;No;en;No respiratory failure;No respiratory failure;SELECT_ONE_RADIO
+74;1;urn:osse-11:dataelement:74:1;Yes;en;Had supplemental oxygen ;Had supplemental oxygen ;SELECT_ONE_RADIO
+74;1;urn:osse-11:dataelement:74:1;No;en;No supplemental oxygen;No supplemental oxygen;SELECT_ONE_RADIO
+76;1;urn:osse-11:dataelement:76:1;Delivery device;en;Delivery device;Delivery device;SELECT_MANY_CHECKBOX
+76;1;urn:osse-11:dataelement:76:1;Mechanical ventilation;en;Mechanical ventilation;Mechanical ventilation;SELECT_MANY_CHECKBOX
+77;1;urn:osse-11:dataelement:77:1;Nasal catheter;en;Nasal catheter;Nasal catheter;SELECT_MANY_CHECKBOX
+77;1;urn:osse-11:dataelement:77:1;Simple oxygen mask;en;Simple oxygen mask;Simple oxygen mask;SELECT_MANY_CHECKBOX
+77;1;urn:osse-11:dataelement:77:1;Monaghan mask (reservoir);en;Monaghan mask (reservoir);Monaghan mask (reservoir);SELECT_MANY_CHECKBOX
+77;1;urn:osse-11:dataelement:77:1;Venturi mask;en;Venturi mask;Venturi mask;SELECT_MANY_CHECKBOX
+77;1;urn:osse-11:dataelement:77:1;High-flow nasal cannula;en;High-flow nasal cannula;High-flow nasal cannula;SELECT_MANY_CHECKBOX
+78;1;urn:osse-11:dataelement:78:1;1 (24%);en;1 (24%);1 (24%);SELECT_ONE_RADIO
+78;1;urn:osse-11:dataelement:78:1;2 (28%);en;2 (28%);2 (28%);SELECT_ONE_RADIO
+78;1;urn:osse-11:dataelement:78:1;3 (32%);en;3 (32%);3 (32%);SELECT_ONE_RADIO
+78;1;urn:osse-11:dataelement:78:1;4 (36%);en;4 (36%);4 (36%);SELECT_ONE_RADIO
+78;1;urn:osse-11:dataelement:78:1;5 (40%);en;5 (40%);5 (40%);SELECT_ONE_RADIO
+78;1;urn:osse-11:dataelement:78:1;6 (44%);en;6 (44%);6 (44%);SELECT_ONE_RADIO
+80;1;urn:osse-11:dataelement:80:1;<5 (40%);en;<5 (40%);<5 (40%);SELECT_ONE_RADIO
+80;1;urn:osse-11:dataelement:80:1;5-7 (50%);en;5-7 (50%);5-7 (50%);SELECT_ONE_RADIO
+80;1;urn:osse-11:dataelement:80:1;>7 (60%);en;>7 (60%);>7 (60%);SELECT_ONE_RADIO
+81;1;urn:osse-11:dataelement:81:1;10 (60%);en;10 (60%);10 (60%);SELECT_ONE_RADIO
+81;1;urn:osse-11:dataelement:81:1;15 (80%);en;15 (80%);15 (80%);SELECT_ONE_RADIO
+81;1;urn:osse-11:dataelement:81:1;>15 (100%);en;>15 (100%);>15 (100%);SELECT_ONE_RADIO
+82;1;urn:osse-11:dataelement:82:1;3 (25%);en;3 (25%);3 (25%);SELECT_ONE_RADIO
+82;1;urn:osse-11:dataelement:82:1;4 (26%);en;4 (26%);4 (26%);SELECT_ONE_RADIO
+82;1;urn:osse-11:dataelement:82:1;5 (28%);en;5 (28%);5 (28%);SELECT_ONE_RADIO
+82;1;urn:osse-11:dataelement:82:1;7 (30%);en;7 (30%);7 (30%);SELECT_ONE_RADIO
+82;1;urn:osse-11:dataelement:82:1;10 (35%);en;10 (35%);10 (35%);SELECT_ONE_RADIO
+82;1;urn:osse-11:dataelement:82:1;12 (40%);en;12 (40%);12 (40%);SELECT_ONE_RADIO
+82;1;urn:osse-11:dataelement:82:1;15 (60%);en;15 (60%);15 (60%);SELECT_ONE_RADIO
+84;1;urn:osse-11:dataelement:84:1;Hepatic encephalopathy (cerebral failure);en;Hepatic encephalopathy (cerebral failure);Hepatic encephalopathy (cerebral failure);SELECT_MANY_CHECKBOX
+84;1;urn:osse-11:dataelement:84:1;Respiratory failure;en;Respiratory failure;Respiratory failure;SELECT_MANY_CHECKBOX
+84;1;urn:osse-11:dataelement:84:1;Other;en;Other;Other;SELECT_MANY_CHECKBOX
+85;1;urn:osse-11:dataelement:85:1;Invasive;en;Invasive;Invasive;SELECT_ONE_RADIO
+85;1;urn:osse-11:dataelement:85:1;Non-invasive (BiPAP / CPAP);en;Non-invasive (BiPAP / CPAP);Non-invasive (BiPAP / CPAP);SELECT_ONE_RADIO
+89;1;urn:osse-11:dataelement:89:1;Yes;en;ACLF;ACLF;SELECT_ONE_RADIO
+89;1;urn:osse-11:dataelement:89:1;No;en;no ACLF;no ACLF;SELECT_ONE_RADIO
+90;1;urn:osse-11:dataelement:90:1;Grade 0;en;Grade 0;Grade 0;SELECT_ONE_RADIO
+90;1;urn:osse-11:dataelement:90:1;Grade 1;en;Grade 1;Grade 1;SELECT_ONE_RADIO
+90;1;urn:osse-11:dataelement:90:1;Grade 2;en;Grade 2;Grade 2;SELECT_ONE_RADIO
+90;1;urn:osse-11:dataelement:90:1;Grade 3;en;Grade 3;Grade 3;SELECT_ONE_RADIO
+92;1;urn:osse-11:dataelement:92:1;Male;en;Male;Male;SELECT_ONE_RADIO
+92;1;urn:osse-11:dataelement:92:1;Female;en;Female;Female;SELECT_ONE_RADIO
+93;1;urn:osse-11:dataelement:93:1;Yes;en;The patient smoked;The patient smoked;SELECT_ONE_RADIO
+93;1;urn:osse-11:dataelement:93:1;No;en;The patient never smoked;The patient never smoked;SELECT_ONE_RADIO
+94;1;urn:osse-11:dataelement:94:1;Current smoker;en;Current smoker;Current smoker;SELECT_MANY_CHECKBOX
+94;1;urn:osse-11:dataelement:94:1;Former smoker;en;Former smoker;Former smoker;SELECT_MANY_CHECKBOX
+99;1;urn:osse-11:dataelement:99:1;Yes;en;Had history of acute decompensation;Had history of acute decompensation;SELECT_ONE_RADIO
+99;1;urn:osse-11:dataelement:99:1;No;en;No history of acute decompensation;No history of acute decompensation;SELECT_ONE_RADIO
+99;1;urn:osse-11:dataelement:99:1;n.a.;en;Not available;Not available;SELECT_ONE_RADIO
+101;1;urn:osse-11:dataelement:101:1;Ascites;en;Ascites;Ascites;SELECT_MANY_CHECKBOX
+101;1;urn:osse-11:dataelement:101:1;Encephalopathy;en;Encephalopathy;Encephalopathy;SELECT_MANY_CHECKBOX
+101;1;urn:osse-11:dataelement:101:1;Portal hypertension related bleeding;en;Portal hypertension related bleeding;Portal hypertension related bleeding;SELECT_MANY_CHECKBOX
+101;1;urn:osse-11:dataelement:101:1;SBP;en;SBP;SBP;SELECT_MANY_CHECKBOX
+101;1;urn:osse-11:dataelement:101:1;Other bacterial infection;en;Other bacterial infection;Other bacterial infection;SELECT_MANY_CHECKBOX
+101;1;urn:osse-11:dataelement:101:1;n.a.;en;Not available;Not available;SELECT_MANY_CHECKBOX
+102;1;urn:osse-11:dataelement:102:1;Yes;en;Listed for Liver transplantation;Listed for Liver transplantation;SELECT_ONE_RADIO
+102;1;urn:osse-11:dataelement:102:1;No;en;Not listed for Liver transplantation;Not listed for Liver transplantation;SELECT_ONE_RADIO
+104;1;urn:osse-11:dataelement:104:1;1. Alcohol;en;1. Alcohol;1. Alcohol;SELECT_MANY_CHECKBOX
+104;1;urn:osse-11:dataelement:104:1;2. Hepatitis C virus;en;2. Hepatitis C virus;2. Hepatitis C virus;SELECT_MANY_CHECKBOX
+104;1;urn:osse-11:dataelement:104:1;3. Hepatitis B virus;en;3. Hepatitis B virus;3. Hepatitis B virus;SELECT_MANY_CHECKBOX
+104;1;urn:osse-11:dataelement:104:1;4. NAFLD/NASH;en;4. NAFLD/NASH;4. NAFLD/NASH;SELECT_MANY_CHECKBOX
+104;1;urn:osse-11:dataelement:104:1;5. Cryptogenic;en;5. Cryptogenic;5. Cryptogenic;SELECT_MANY_CHECKBOX
+104;1;urn:osse-11:dataelement:104:1;6. Others;en;6. Others;6. Others;SELECT_MANY_CHECKBOX
+105;1;urn:osse-11:dataelement:105:1;Yes;en;Biopsy proved cirrhosis;Biopsy proved cirrhosis;SELECT_ONE_RADIO
+105;1;urn:osse-11:dataelement:105:1;No;en;Not biopsy proved cirrhosis;Not biopsy proved cirrhosis;SELECT_ONE_RADIO
+106;1;urn:osse-11:dataelement:106:1;Chronic obstructive pulmonary disease;en;Chronic obstructive pulmonary disease;Chronic obstructive pulmonary disease;SELECT_MANY_CHECKBOX
+106;1;urn:osse-11:dataelement:106:1;Heart failure;en;Heart failure;Heart failure;SELECT_MANY_CHECKBOX
+106;1;urn:osse-11:dataelement:106:1;Arterial hypertension;en;Arterial hypertension;Arterial hypertension;SELECT_MANY_CHECKBOX
+106;1;urn:osse-11:dataelement:106:1;Coronary artery disease;en;Coronary artery disease;Coronary artery disease;SELECT_MANY_CHECKBOX
+106;1;urn:osse-11:dataelement:106:1;Chronic renal failure;en;Chronic renal failure;Chronic renal failure;SELECT_MANY_CHECKBOX
+106;1;urn:osse-11:dataelement:106:1;Cerebrovascular disease or other neurological disease;en;Cerebrovascular disease or other neurological disease;Cerebrovascular disease or other neurological disease;SELECT_MANY_CHECKBOX
+106;1;urn:osse-11:dataelement:106:1;Diabetes mellitus requiring treatment;en;Diabetes mellitus requiring treatment;Diabetes mellitus requiring treatment;SELECT_MANY_CHECKBOX
+106;1;urn:osse-11:dataelement:106:1;Other chronic systemic disease;en;Other chronic systemic disease;Other chronic systemic disease;SELECT_MANY_CHECKBOX
+109;1;urn:osse-11:dataelement:109:1;Active drinker;en;Active drinker;more than 7 drinks per week in women and more than 14 drinks per week in men.;SELECT_ONE_RADIO
+109;1;urn:osse-11:dataelement:109:1;Moderate drinker;en;Moderate drinker;Moderate drinker;SELECT_ONE_RADIO
+109;1;urn:osse-11:dataelement:109:1;Patient teetotaler (abstinence);en;Patient teetotaler (abstinence);Patient teetotaler (abstinence);SELECT_ONE_RADIO
+109;1;urn:osse-11:dataelement:109:1;Patient never drink;en;Patient never drink;Patient never drink;SELECT_ONE_RADIO
+111;1;urn:osse-11:dataelement:111:1;Beer;en;Beer;Beer;SELECT_MANY_CHECKBOX
+111;1;urn:osse-11:dataelement:111:1;Wine;en;Wine;Wine;SELECT_MANY_CHECKBOX
+111;1;urn:osse-11:dataelement:111:1;Hard liquor;en;Hard liquor;Hard liquor;SELECT_MANY_CHECKBOX
+112;1;urn:osse-11:dataelement:112:1;1. 14 days;en;1. 14 days;1. 14 days;SELECT_ONE_RADIO
+112;1;urn:osse-11:dataelement:112:1;2. 3 months;en;2. 3 months;2. 3 months;SELECT_ONE_RADIO
+112;1;urn:osse-11:dataelement:112:1;3. 2 years;en;3. 2 years;3. 2 years;SELECT_ONE_RADIO
+113;1;urn:osse-11:dataelement:113:1;Yes;en;Had prior decompensation prior to hospital study admission;Had prior decompensation prior to hospital study admission;SELECT_ONE_RADIO
+113;1;urn:osse-11:dataelement:113:1;No;en;No prior decompensation prior to hospital study admission;No prior decompensation prior to hospital study admission;SELECT_ONE_RADIO
+114;1;urn:osse-11:dataelement:114:1;Yes;en;Ascites;Ascites;SELECT_ONE_RADIO
+114;1;urn:osse-11:dataelement:114:1;No;en;No ascites;No ascites;SELECT_ONE_RADIO
+114;1;urn:osse-11:dataelement:114:1;n.a.;de;Not available;Not available;SELECT_ONE_RADIO
+115;1;urn:osse-11:dataelement:115:1;Yes;en;Had hepatic encephalopathy;Had hepatic encephalopathy;SELECT_ONE_RADIO
+115;1;urn:osse-11:dataelement:115:1;No;en;No hepatic encephalopathy;No hepatic encephalopathy;SELECT_ONE_RADIO
+115;1;urn:osse-11:dataelement:115:1;n.a.;en;Not available;Not available;SELECT_ONE_RADIO
+116;1;urn:osse-11:dataelement:116:1;1;en;1;1;SELECT_ONE_RADIO
+116;1;urn:osse-11:dataelement:116:1;2;en;2;2;SELECT_ONE_RADIO
+116;1;urn:osse-11:dataelement:116:1;3;en;3;3;SELECT_ONE_RADIO
+116;1;urn:osse-11:dataelement:116:1;> 3;en;> 3;> 3;SELECT_ONE_RADIO
+116;1;urn:osse-11:dataelement:116:1;n.a.;en;Not available;Not available;SELECT_ONE_RADIO
+117;1;urn:osse-11:dataelement:117:1;Mild;en;Mild;Mild;SELECT_ONE_RADIO
+117;1;urn:osse-11:dataelement:117:1;Moderate;en;Moderate;Moderate;SELECT_ONE_RADIO
+117;1;urn:osse-11:dataelement:117:1;Large/Tense;en;Large/Tense;Large/Tense;SELECT_ONE_RADIO
+117;1;urn:osse-11:dataelement:117:1;n.a.;en;n.a.;Not available;SELECT_ONE_RADIO
+118;1;urn:osse-11:dataelement:118:1;1;en;1;1;SELECT_ONE_RADIO
+118;1;urn:osse-11:dataelement:118:1;2;en;2;2;SELECT_ONE_RADIO
+118;1;urn:osse-11:dataelement:118:1;3;en;3;3;SELECT_ONE_RADIO
+118;1;urn:osse-11:dataelement:118:1;> 3;en;> 3;> 3;SELECT_ONE_RADIO
+118;1;urn:osse-11:dataelement:118:1;n.a.;en;n.a.;n.a.;SELECT_ONE_RADIO
+119;1;urn:osse-11:dataelement:119:1;Yes;en;Had episodic overt HE;Had episodic overt HE;SELECT_ONE_RADIO
+119;1;urn:osse-11:dataelement:119:1;No;en;No episodic overt HE;No episodic overt HE;SELECT_ONE_RADIO
+119;1;urn:osse-11:dataelement:119:1;n.a.;en;Not available;Not available;SELECT_ONE_RADIO
+120;1;urn:osse-11:dataelement:120:1;Yes;en;Recurrent overt HE;the patient has had at least another episode over the last 6 months;SELECT_ONE_RADIO
+120;1;urn:osse-11:dataelement:120:1;No;en;No recurrent overt HE;the patient has had no episode over the last 6 months;SELECT_ONE_RADIO
+120;1;urn:osse-11:dataelement:120:1;n.a.;en;Not available;Not available;SELECT_ONE_RADIO
+121;1;urn:osse-11:dataelement:121:1;Yes;en;Had persistent overt HE;the patient never goes back to normal neuropsychiatric performance, and between episodes of severe Overt HE remains encephalopatic, albeit less severely so;SELECT_ONE_RADIO
+121;1;urn:osse-11:dataelement:121:1;No;de;No persistent overt HE;No persistent overt HE;SELECT_ONE_RADIO
+121;1;urn:osse-11:dataelement:121:1;n.a.;de;Not applicable;Not applicable;SELECT_ONE_RADIO
+122;1;urn:osse-11:dataelement:122:1;Yes;en;Had gastrointestinal bleeding;Had gastrointestinal bleeding;SELECT_ONE_RADIO
+122;1;urn:osse-11:dataelement:122:1;No;en;No gastrointestinal bleeding;No gastrointestinal bleeding;SELECT_ONE_RADIO
+122;1;urn:osse-11:dataelement:122:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+123;1;urn:osse-11:dataelement:123:1;Variceal bleeding;en;Variceal bleeding;Variceal bleeding;SELECT_MANY_CHECKBOX
+123;1;urn:osse-11:dataelement:123:1;Peptic ulcer;en;Peptic ulcer;Peptic ulcer;SELECT_MANY_CHECKBOX
+123;1;urn:osse-11:dataelement:123:1;Other causes related to portal hypertension;en;Other causes related to portal hypertension;Other causes related to portal hypertension;SELECT_MANY_CHECKBOX
+123;1;urn:osse-11:dataelement:123:1;Other etiology;en;Other etiology;Other etiology;SELECT_MANY_CHECKBOX
+123;1;urn:osse-11:dataelement:123:1;Unknown etiology;en;Unknown etiology;Unknown etiology;SELECT_MANY_CHECKBOX
+124;1;urn:osse-11:dataelement:124:1;Yes;en;Had bacterial infections ;Had bacterial infections ;SELECT_ONE_RADIO
+124;1;urn:osse-11:dataelement:124:1;No;en;No bacterial infections ;No bacterial infections ;SELECT_ONE_RADIO
+124;1;urn:osse-11:dataelement:124:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+125;1;urn:osse-11:dataelement:125:1;SBP;en;SBP;SBP;SELECT_MANY_CHECKBOX
+125;1;urn:osse-11:dataelement:125:1;UTI;en;UTI;UTI;SELECT_MANY_CHECKBOX
+125;1;urn:osse-11:dataelement:125:1;Pneumonia;en;Pneumonia;Pneumonia;SELECT_MANY_CHECKBOX
+125;1;urn:osse-11:dataelement:125:1;Spontaneous bacteriemia;en;Spontaneous bacteriemia;Spontaneous bacteriemia;SELECT_MANY_CHECKBOX
+125;1;urn:osse-11:dataelement:125:1;Spontaneous empyema;en;Spontaneous empyema;Spontaneous empyema;SELECT_MANY_CHECKBOX
+125;1;urn:osse-11:dataelement:125:1;Cellulitis;en;Cellulitis;Cellulitis;SELECT_MANY_CHECKBOX
+125;1;urn:osse-11:dataelement:125:1;Other;en;Other;Other;SELECT_MANY_CHECKBOX
+125;1;urn:osse-11:dataelement:125:1;Unknown;en;Unknown;Unknown;SELECT_MANY_CHECKBOX
+126;1;urn:osse-11:dataelement:126:1;Yes;en;Had ACLF;Had ACLF;SELECT_ONE_RADIO
+126;1;urn:osse-11:dataelement:126:1;No;en;No ACLF;No ACLF;SELECT_ONE_RADIO
+126;1;urn:osse-11:dataelement:126:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+127;1;urn:osse-11:dataelement:127:1;Grade 1;en;Grade 1;Grade 1;SELECT_ONE_RADIO
+127;1;urn:osse-11:dataelement:127:1;Grade 2;en;Grade 2;Grade 2;SELECT_ONE_RADIO
+127;1;urn:osse-11:dataelement:127:1;Grade 3;en;Grade 3;Grade 3;SELECT_ONE_RADIO
+127;1;urn:osse-11:dataelement:127:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+128;1;urn:osse-11:dataelement:128:1;Yes;en;Had any ACLF caused by a clinical event;Had any ACLF caused by a clinical event;SELECT_ONE_RADIO
+128;1;urn:osse-11:dataelement:128:1;No;en;No any ACLF caused by a clinical event;No any ACLF caused by a clinical event;SELECT_ONE_RADIO
+128;1;urn:osse-11:dataelement:128:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+129;1;urn:osse-11:dataelement:129:1;Ascites;en;Ascites;Ascites;SELECT_MANY_CHECKBOX
+129;1;urn:osse-11:dataelement:129:1;Encephalopathy;en;Encephalopathy;Encephalopathy;SELECT_MANY_CHECKBOX
+129;1;urn:osse-11:dataelement:129:1;Gastrointestinal bleeding;en;Gastrointestinal bleeding;Gastrointestinal bleeding;SELECT_MANY_CHECKBOX
+129;1;urn:osse-11:dataelement:129:1;SBP;en;SBP;SBP;SELECT_MANY_CHECKBOX
+129;1;urn:osse-11:dataelement:129:1;Non-obstructive jaundice;en;Non-obstructive jaundice;Non-obstructive jaundice;SELECT_MANY_CHECKBOX
+129;1;urn:osse-11:dataelement:129:1;Other bacterial infection;en;Other bacterial infection;Other bacterial infection;SELECT_MANY_CHECKBOX
+129;1;urn:osse-11:dataelement:129:1;Unknown;en;Unknown;Unknown;SELECT_MANY_CHECKBOX
+130;1;urn:osse-11:dataelement:130:1;Yes;en;Had acute alcoholic-steatohepatitis (ASH);Had acute alcoholic-steatohepatitis (ASH);SELECT_ONE_RADIO
+130;1;urn:osse-11:dataelement:130:1;No;en;No acute alcoholic-steatohepatitis (ASH);No acute alcoholic-steatohepatitis (ASH);SELECT_ONE_RADIO
+130;1;urn:osse-11:dataelement:130:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+131;1;urn:osse-11:dataelement:131:1;Yes;en;Had acute viral hepatitis superimposed to cirrhosis;Had acute viral hepatitis superimposed to cirrhosis;SELECT_ONE_RADIO
+131;1;urn:osse-11:dataelement:131:1;No;en;No acute viral hepatitis superimposed to cirrhosis;No acute viral hepatitis superimposed to cirrhosis;SELECT_ONE_RADIO
+131;1;urn:osse-11:dataelement:131:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+132;1;urn:osse-11:dataelement:132:1;Yes;en;Had suspected drug-induced liver injury;Had suspected drug-induced liver injury;SELECT_ONE_RADIO
+132;1;urn:osse-11:dataelement:132:1;No;en;No suspected drug-induced liver injury;No suspected drug-induced liver injury;SELECT_ONE_RADIO
+132;1;urn:osse-11:dataelement:132:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+133;1;urn:osse-11:dataelement:133:1;Yes;en;Had hepatocellular carcinoma;Had hepatocellular carcinoma;SELECT_ONE_RADIO
+133;1;urn:osse-11:dataelement:133:1;No;en;No hepatocellular carcinoma;No hepatocellular carcinoma;SELECT_ONE_RADIO
+133;1;urn:osse-11:dataelement:133:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+136;1;urn:osse-11:dataelement:136:1;Yes;en;Had vascular invasion;Had vascular invasion;SELECT_ONE_RADIO
+136;1;urn:osse-11:dataelement:136:1;No;en;No  vascular invasion;No  vascular invasion;SELECT_ONE_RADIO
+136;1;urn:osse-11:dataelement:136:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+138;1;urn:osse-11:dataelement:138:1;Yes;en;Alcoholic cirrhosis;Alcoholic cirrhosis;SELECT_ONE_RADIO
+138;1;urn:osse-11:dataelement:138:1;No;en;No alcoholic cirrhosis;No alcoholic cirrhosis;SELECT_ONE_RADIO
+138;1;urn:osse-11:dataelement:138:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+139;1;urn:osse-11:dataelement:139:1;Medical advice;en;Medical advice;Medical advice;SELECT_MANY_CHECKBOX
+139;1;urn:osse-11:dataelement:139:1;Detoxification/dishabituation treatment;en;Detoxification/dishabituation treatment;Detoxification/dishabituation treatment;SELECT_MANY_CHECKBOX
+139;1;urn:osse-11:dataelement:139:1;n.a.;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+140;1;urn:osse-11:dataelement:140:1;No response (active drinker);en;No response (active drinker);No response (active drinker);SELECT_ONE_RADIO
+140;1;urn:osse-11:dataelement:140:1;Moderate response (moderate drinker);en;Moderate response (moderate drinker);Moderate response (moderate drinker);SELECT_ONE_RADIO
+140;1;urn:osse-11:dataelement:140:1;Total response (patient teetotaler);en;Total response (patient teetotaler);Total response (patient teetotaler);SELECT_ONE_RADIO
+140;1;urn:osse-11:dataelement:140:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+141;1;urn:osse-11:dataelement:141:1;Yes;en;Had hepatitis C virus antiviral therapy;Had hepatitis C virus antiviral therapy;SELECT_ONE_RADIO
+141;1;urn:osse-11:dataelement:141:1;No;en;No hepatitis C virus antiviral therapy;No hepatitis C virus antiviral therapy;SELECT_ONE_RADIO
+141;1;urn:osse-11:dataelement:141:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+142;1;urn:osse-11:dataelement:142:1;Boceprevir;en;Boceprevir;Boceprevir;SELECT_MANY_CHECKBOX
+142;1;urn:osse-11:dataelement:142:1;Daclatasvir;en;Daclatasvir;Daclatasvir;SELECT_MANY_CHECKBOX
+142;1;urn:osse-11:dataelement:142:1;Elbasvir/Grazoprevir;en;Elbasvir/Grazoprevir;Elbasvir/Grazoprevir;SELECT_MANY_CHECKBOX
+142;1;urn:osse-11:dataelement:142:1;Ledipasvir/Sofosbuvir;en;Ledipasvir/Sofosbuvir;Ledipasvir/Sofosbuvir;SELECT_MANY_CHECKBOX
+142;1;urn:osse-11:dataelement:142:1;OBV/PTV/r;en;OBV/PTV/r;OBV/PTV/r;SELECT_MANY_CHECKBOX
+142;1;urn:osse-11:dataelement:142:1;OBV/PTV/r+DSV;en;OBV/PTV/r+DSV;OBV/PTV/r+DSV;SELECT_MANY_CHECKBOX
+142;1;urn:osse-11:dataelement:142:1;Peg-IFN alfa;en;Peg-IFN alfa;Peg-IFN alfa;SELECT_MANY_CHECKBOX
+142;1;urn:osse-11:dataelement:142:1;Ribavirin;en;Ribavirin;Ribavirin;SELECT_MANY_CHECKBOX
+142;1;urn:osse-11:dataelement:142:1;Simeprevir;en;Simeprevir;Simeprevir;SELECT_MANY_CHECKBOX
+142;1;urn:osse-11:dataelement:142:1;Sofosbuvir;en;Sofosbuvir;Sofosbuvir;SELECT_MANY_CHECKBOX
+142;1;urn:osse-11:dataelement:142:1;Telaprevir;en;Telaprevir;Telaprevir;SELECT_MANY_CHECKBOX
+142;1;urn:osse-11:dataelement:142:1;Unknown;en;Unknown;Unknown;SELECT_MANY_CHECKBOX
+142;1;urn:osse-11:dataelement:142:1;n.a.;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+143;1;urn:osse-11:dataelement:143:1;Yes;en;Antiviral therapy terminated ;Antiviral therapy terminated ;SELECT_ONE_RADIO
+143;1;urn:osse-11:dataelement:143:1;No;en;Antiviral therapy not terminated ;Antiviral therapy not terminated;SELECT_ONE_RADIO
+143;1;urn:osse-11:dataelement:143:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+144;1;urn:osse-11:dataelement:144:1;Yes;en;Sustained virological response;Sustained virological response;SELECT_ONE_RADIO
+144;1;urn:osse-11:dataelement:144:1;No;en;No sustained virological response;No sustained virological response;SELECT_ONE_RADIO
+144;1;urn:osse-11:dataelement:144:1;Pending to complete treatment follow-up;en;Pending to complete treatment follow-up;Pending to complete treatment follow-up;SELECT_ONE_RADIO
+144;1;urn:osse-11:dataelement:144:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+145;1;urn:osse-11:dataelement:145:1;Yes;en;Had early virological response;Had early virological response;SELECT_ONE_RADIO
+145;1;urn:osse-11:dataelement:145:1;No;en;No early virological response;No early virological response;SELECT_ONE_RADIO
+145;1;urn:osse-11:dataelement:145:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+146;1;urn:osse-11:dataelement:146:1;Yes;en;Had hepatitis B virus antiviral therapy;Had hepatitis B virus antiviral therapy;SELECT_ONE_RADIO
+146;1;urn:osse-11:dataelement:146:1;No;en;No hepatitis B virus antiviral therapy;No hepatitis B virus antiviral therapy;SELECT_ONE_RADIO
+146;1;urn:osse-11:dataelement:146:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+147;1;urn:osse-11:dataelement:147:1;Adefovir;en;Adefovir;Adefovir;SELECT_MANY_CHECKBOX
+147;1;urn:osse-11:dataelement:147:1;Entecavir;en;Entecavir;Entecavir;SELECT_MANY_CHECKBOX
+147;1;urn:osse-11:dataelement:147:1;Lamivudine;en;Lamivudine;Lamivudine;SELECT_MANY_CHECKBOX
+147;1;urn:osse-11:dataelement:147:1;Peg-IFN alfa;en;Peg-IFN alfa;Peg-IFN alfa;SELECT_MANY_CHECKBOX
+147;1;urn:osse-11:dataelement:147:1;Tenofovir;en;Tenofovir;Tenofovir;SELECT_MANY_CHECKBOX
+147;1;urn:osse-11:dataelement:147:1;Telbivudine;en;Telbivudine;Telbivudine;SELECT_MANY_CHECKBOX
+147;1;urn:osse-11:dataelement:147:1;Unknown;en;Unknown;Unknown;SELECT_MANY_CHECKBOX
+147;1;urn:osse-11:dataelement:147:1;n.a.;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+148;1;urn:osse-11:dataelement:148:1;Yes;en;Had complete response (<10 IU);Had complete response (<10 IU);SELECT_ONE_RADIO
+148;1;urn:osse-11:dataelement:148:1;No;en;No complete response;No complete response;SELECT_ONE_RADIO
+148;1;urn:osse-11:dataelement:148:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+149;1;urn:osse-11:dataelement:149:1;Yes;en;Had reactivation of hepatitis B virus;Had reactivation of hepatitis B virus;SELECT_ONE_RADIO
+149;1;urn:osse-11:dataelement:149:1;No;en;No reactivation of hepatitis B virus;No reactivation of hepatitis B virus;SELECT_ONE_RADIO
+149;1;urn:osse-11:dataelement:149:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+150;1;urn:osse-11:dataelement:150:1;Yes;en;Had NAFLD/NASH therapy;Had NAFLD/NASH therapy;SELECT_ONE_RADIO
+150;1;urn:osse-11:dataelement:150:1;No;en;No NAFLD/NASH therapy;No NAFLD/NASH therapy;SELECT_ONE_RADIO
+150;1;urn:osse-11:dataelement:150:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+152;1;urn:osse-11:dataelement:152:1;Diet;en;Diet;Diet;SELECT_MANY_CHECKBOX
+152;1;urn:osse-11:dataelement:152:1;Surgery;en;Surgery;Surgery;SELECT_MANY_CHECKBOX
+152;1;urn:osse-11:dataelement:152:1;Endoscopy;en;Endoscopy;Endoscopy;SELECT_MANY_CHECKBOX
+152;1;urn:osse-11:dataelement:152:1;Others;en;Others;Others;SELECT_MANY_CHECKBOX
+152;1;urn:osse-11:dataelement:152:1;Unknown;en;Unknown;Unknown;SELECT_MANY_CHECKBOX
+152;1;urn:osse-11:dataelement:152:1;n.a.;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+153;1;urn:osse-11:dataelement:153:1;Yes;en;Had specific therapy of associated complications;Had specific therapy of associated complications;SELECT_ONE_RADIO
+153;1;urn:osse-11:dataelement:153:1;No;en;No specific therapy of associated complications;No specific therapy of associated complications;SELECT_ONE_RADIO
+153;1;urn:osse-11:dataelement:153:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+154;1;urn:osse-11:dataelement:154:1;Yes;en;Had autoimmune hepatitis therapy;Had autoimmune hepatitis therapy;SELECT_ONE_RADIO
+154;1;urn:osse-11:dataelement:154:1;No;en;No autoimmune hepatitis therapy;No autoimmune hepatitis therapy;SELECT_ONE_RADIO
+154;1;urn:osse-11:dataelement:154:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+155;1;urn:osse-11:dataelement:155:1;Azathioprin;en;Azathioprin;Azathioprin;SELECT_MANY_CHECKBOX
+155;1;urn:osse-11:dataelement:155:1;CD20-AB;en;CD20-AB;CD20-AB;SELECT_MANY_CHECKBOX
+155;1;urn:osse-11:dataelement:155:1;Cyclophosphamide;en;Cyclophosphamide;Cyclophosphamide;SELECT_MANY_CHECKBOX
+155;1;urn:osse-11:dataelement:155:1;Cyclosporin;en;Cyclosporin;Cyclosporin;SELECT_MANY_CHECKBOX
+155;1;urn:osse-11:dataelement:155:1;Methotrexate;en;Methotrexate;Methotrexate;SELECT_MANY_CHECKBOX
+155;1;urn:osse-11:dataelement:155:1;MMF;en;MMF;MMF;SELECT_MANY_CHECKBOX
+155;1;urn:osse-11:dataelement:155:1;Prednisone;en;Prednisone;Prednisone;SELECT_MANY_CHECKBOX
+155;1;urn:osse-11:dataelement:155:1;Sirolimus;en;Sirolimus;Sirolimus;SELECT_MANY_CHECKBOX
+155;1;urn:osse-11:dataelement:155:1;Tacrolimus;en;Tacrolimus;Tacrolimus;SELECT_MANY_CHECKBOX
+155;1;urn:osse-11:dataelement:155:1;TNFa-AB;en;TNFa-AB;TNFa-AB;SELECT_MANY_CHECKBOX
+155;1;urn:osse-11:dataelement:155:1;Others;en;Others;Others;SELECT_MANY_CHECKBOX
+155;1;urn:osse-11:dataelement:155:1;Unknown;en;Unknown;Unknown;SELECT_MANY_CHECKBOX
+155;1;urn:osse-11:dataelement:155:1;n.a.;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+156;1;urn:osse-11:dataelement:156:1;Yes;en;Had positive response;Had positive response;SELECT_ONE_RADIO
+156;1;urn:osse-11:dataelement:156:1;No;en;No positive response;No positive response;SELECT_ONE_RADIO
+156;1;urn:osse-11:dataelement:156:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+157;1;urn:osse-11:dataelement:157:1;Complete;en;Complete;Complete;SELECT_ONE_RADIO
+157;1;urn:osse-11:dataelement:157:1;Partial;en;Partial;Partial;SELECT_ONE_RADIO
+157;1;urn:osse-11:dataelement:157:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+158;1;urn:osse-11:dataelement:158:1;Yes;en;Had other type of cirrhosis treatment;Had other type of cirrhosis treatment;SELECT_ONE_RADIO
+158;1;urn:osse-11:dataelement:158:1;No;en;No other type of cirrhosis treatment;No other type of cirrhosis treatment;SELECT_ONE_RADIO
+158;1;urn:osse-11:dataelement:158:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+159;1;urn:osse-11:dataelement:159:1;Yes;en;Had continuous treatment;Had continuous treatment;SELECT_ONE_RADIO
+159;1;urn:osse-11:dataelement:159:1;No;en;No continuous treatment;No continuous treatment;SELECT_ONE_RADIO
+159;1;urn:osse-11:dataelement:159:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+160;1;urn:osse-11:dataelement:160:1;Yes;en;Had diuretics treatment;Had diuretics treatment;SELECT_ONE_RADIO
+160;1;urn:osse-11:dataelement:160:1;No;en;No diuretics treatment;No diuretics treatment;SELECT_ONE_RADIO
+160;1;urn:osse-11:dataelement:160:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+161;1;urn:osse-11:dataelement:161:1;Furosemide;en;Furosemide;Furosemide;SELECT_MANY_CHECKBOX
+161;1;urn:osse-11:dataelement:161:1;Torasemide;en;Torasemide;Torasemide;SELECT_MANY_CHECKBOX
+161;1;urn:osse-11:dataelement:161:1;Spironolactone;en;Spironolactone;Spironolactone;SELECT_MANY_CHECKBOX
+161;1;urn:osse-11:dataelement:161:1;Other;en;Other;Other;SELECT_MANY_CHECKBOX
+161;1;urn:osse-11:dataelement:161:1;Unknown;en;Unknown;Unknown;SELECT_MANY_CHECKBOX
+161;1;urn:osse-11:dataelement:161:1;n.a.;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+162;1;urn:osse-11:dataelement:162:1;Yes;en;Had therapeutic paracentesis;Had therapeutic paracentesis;SELECT_ONE_RADIO
+162;1;urn:osse-11:dataelement:162:1;No;en;No therapeutic paracentesis;No therapeutic paracentesis;SELECT_ONE_RADIO
+162;1;urn:osse-11:dataelement:162:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+163;1;urn:osse-11:dataelement:163:1;Yes;en;Had beta-blockers;Had beta-blockers;SELECT_ONE_RADIO
+163;1;urn:osse-11:dataelement:163:1;No;en;No beta-blockers;No beta-blockers;SELECT_ONE_RADIO
+163;1;urn:osse-11:dataelement:163:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+164;1;urn:osse-11:dataelement:164:1;Primary prophylaxis;en;Primary prophylaxis;Primary prophylaxis;SELECT_MANY_CHECKBOX
+164;1;urn:osse-11:dataelement:164:1;Secondary prophylaxis;en;Secondary prophylaxis;Secondary prophylaxis;SELECT_MANY_CHECKBOX
+164;1;urn:osse-11:dataelement:164:1;Cardiac disease;en;Cardiac disease;Cardiac disease;SELECT_MANY_CHECKBOX
+164;1;urn:osse-11:dataelement:164:1;Other;en;Other;Other;SELECT_MANY_CHECKBOX
+164;1;urn:osse-11:dataelement:164:1;Unknown;en;Unknown;Unknown;SELECT_MANY_CHECKBOX
+164;1;urn:osse-11:dataelement:164:1;n.a.;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+165;1;urn:osse-11:dataelement:165:1;Yes;en;Had intravenous albumin;Had intravenous albumin;SELECT_ONE_RADIO
+165;1;urn:osse-11:dataelement:165:1;No;en;No intravenous albumin;No intravenous albumin;SELECT_ONE_RADIO
+165;1;urn:osse-11:dataelement:165:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+166;1;urn:osse-11:dataelement:166:1;Paracentesis;en;Paracentesis;Paracentesis;SELECT_MANY_CHECKBOX
+166;1;urn:osse-11:dataelement:166:1;HRS prophylaxis;en;HRS prophylaxis;HRS prophylaxis;SELECT_MANY_CHECKBOX
+166;1;urn:osse-11:dataelement:166:1;HRS treatment;en;HRS treatment;HRS treatment;SELECT_MANY_CHECKBOX
+166;1;urn:osse-11:dataelement:166:1;SBP;en;SBP;SBP;SELECT_MANY_CHECKBOX
+166;1;urn:osse-11:dataelement:166:1;Other bacterial infection;en;Other bacterial infection;Other bacterial infection;SELECT_MANY_CHECKBOX
+166;1;urn:osse-11:dataelement:166:1;Others;en;Others;Others;SELECT_MANY_CHECKBOX
+166;1;urn:osse-11:dataelement:166:1;Unknown;en;Unknown;Unknown;SELECT_MANY_CHECKBOX
+166;1;urn:osse-11:dataelement:166:1;n.a.;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+167;1;urn:osse-11:dataelement:167:1;Yes;en;Had vasopressors;Had vasopressors;SELECT_ONE_RADIO
+167;1;urn:osse-11:dataelement:167:1;No;en;No vasopressors;No vasopressors;SELECT_ONE_RADIO
+167;1;urn:osse-11:dataelement:167:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+168;1;urn:osse-11:dataelement:168:1;Circulatory failure;en;Circulatory failure;Circulatory failure;SELECT_MANY_CHECKBOX
+168;1;urn:osse-11:dataelement:168:1;Gastrointestinal bleeding;en;Gastrointestinal bleeding;Gastrointestinal bleeding;SELECT_MANY_CHECKBOX
+168;1;urn:osse-11:dataelement:168:1;HRS prophylaxis;en;HRS prophylaxis;HRS prophylaxis;SELECT_MANY_CHECKBOX
+168;1;urn:osse-11:dataelement:168:1;HRS treatment;en;HRS treatment;HRS treatment;SELECT_MANY_CHECKBOX
+168;1;urn:osse-11:dataelement:168:1;Others;en;Others;Others;SELECT_MANY_CHECKBOX
+168;1;urn:osse-11:dataelement:168:1;Unknown;en;Unknown;Unknown;SELECT_MANY_CHECKBOX
+168;1;urn:osse-11:dataelement:168:1;n.a;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+169;1;urn:osse-11:dataelement:169:1;Yes;en;Had renal replacement treatment;Had renal replacement treatment;SELECT_ONE_RADIO
+169;1;urn:osse-11:dataelement:169:1;No;en;No renal replacement treatment;No renal replacement treatment;SELECT_ONE_RADIO
+169;1;urn:osse-11:dataelement:169:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+170;1;urn:osse-11:dataelement:170:1;Yes;en;Had artificial liver support;Had artificial liver support;SELECT_ONE_RADIO
+170;1;urn:osse-11:dataelement:170:1;No;en;No artificial liver support;No artificial liver support;SELECT_ONE_RADIO
+170;1;urn:osse-11:dataelement:170:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+171;1;urn:osse-11:dataelement:171:1;Yes;en;Had Omeprazol or other PPI;Had Omeprazol or other PPI;SELECT_ONE_RADIO
+171;1;urn:osse-11:dataelement:171:1;No;en;No Omeprazol or other PPI;No Omeprazol or other PPI;SELECT_ONE_RADIO
+171;1;urn:osse-11:dataelement:171:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+172;1;urn:osse-11:dataelement:172:1;Yes;en;Had endoscopic therapy of bleeding;Had endoscopic therapy of bleeding;SELECT_ONE_RADIO
+172;1;urn:osse-11:dataelement:172:1;No;en;No endoscopic therapy of bleeding;No endoscopic therapy of bleeding;SELECT_ONE_RADIO
+172;1;urn:osse-11:dataelement:172:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+173;1;urn:osse-11:dataelement:173:1;Yes;en;Had lactulose;Had lactulose;SELECT_ONE_RADIO
+173;1;urn:osse-11:dataelement:173:1;No;en;No lactulose;No lactulose;SELECT_ONE_RADIO
+173;1;urn:osse-11:dataelement:173:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+174;1;urn:osse-11:dataelement:174:1;Yes;en;Had Rifaximin for HE;Had Rifaximin for HE;SELECT_ONE_RADIO
+174;1;urn:osse-11:dataelement:174:1;No;en;No Rifaximin for HE;No Rifaximin for HE;SELECT_ONE_RADIO
+174;1;urn:osse-11:dataelement:174:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+175;1;urn:osse-11:dataelement:175:1;Yes;en;Had TIPS;Had TIPS;SELECT_ONE_RADIO
+175;1;urn:osse-11:dataelement:175:1;No;en;No TIPS;No TIPS;SELECT_ONE_RADIO
+175;1;urn:osse-11:dataelement:175:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+176;1;urn:osse-11:dataelement:176:1;Refractory ascites;en;Refractory ascites;Refractory ascites;SELECT_MANY_CHECKBOX
+176;1;urn:osse-11:dataelement:176:1;Variceal bleeding;en;Variceal bleeding;Variceal bleeding;SELECT_MANY_CHECKBOX
+176;1;urn:osse-11:dataelement:176:1;Other;en;Other;Other;SELECT_MANY_CHECKBOX
+176;1;urn:osse-11:dataelement:176:1;Unknown;en;Unknown;Unknown;SELECT_MANY_CHECKBOX
+176;1;urn:osse-11:dataelement:176:1;n.a.;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+178;1;urn:osse-11:dataelement:178:1;Yes;en;Had antibiotic prophylaxis;Had antibiotic prophylaxis;SELECT_ONE_RADIO
+178;1;urn:osse-11:dataelement:178:1;No;en;No antibiotic prophylaxis;No antibiotic prophylaxis;SELECT_ONE_RADIO
+178;1;urn:osse-11:dataelement:178:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+179;1;urn:osse-11:dataelement:179:1;SBP;en;SBP;SBP;SELECT_MANY_CHECKBOX
+179;1;urn:osse-11:dataelement:179:1;Variceal bleeding;en;Variceal bleeding;Variceal bleeding;SELECT_MANY_CHECKBOX
+179;1;urn:osse-11:dataelement:179:1;Endocarditis;en;Endocarditis;Endocarditis;SELECT_MANY_CHECKBOX
+179;1;urn:osse-11:dataelement:179:1;Intervention;en;Intervention;Intervention;SELECT_MANY_CHECKBOX
+179;1;urn:osse-11:dataelement:179:1;Other;en;Other;Other;SELECT_MANY_CHECKBOX
+179;1;urn:osse-11:dataelement:179:1;Unknown;en;Unknown;Unknown;SELECT_MANY_CHECKBOX
+179;1;urn:osse-11:dataelement:179:1;n.a;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+180;1;urn:osse-11:dataelement:180:1;Yes;en;Had antibiotic for infection (nonprophylactic);Had antibiotic for infection (nonprophylactic);SELECT_ONE_RADIO
+180;1;urn:osse-11:dataelement:180:1;No;en;No antibiotic for infection ;No antibiotic for infection ;SELECT_ONE_RADIO
+180;1;urn:osse-11:dataelement:180:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+181;1;urn:osse-11:dataelement:181:1;Yes;en;Had corticosteroids;Had corticosteroids;SELECT_ONE_RADIO
+181;1;urn:osse-11:dataelement:181:1;No;en;No corticosteroids;No corticosteroids;SELECT_ONE_RADIO
+181;1;urn:osse-11:dataelement:181:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+183;1;urn:osse-11:dataelement:183:1;Yes;en;Had treatments for HCC;Had treatments for HCC;SELECT_ONE_RADIO
+183;1;urn:osse-11:dataelement:183:1;No;en;No treatments for HCC;No treatments for HCC;SELECT_ONE_RADIO
+183;1;urn:osse-11:dataelement:183:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+184;1;urn:osse-11:dataelement:184:1;TACE;en;TACE;TACE;SELECT_MANY_CHECKBOX
+184;1;urn:osse-11:dataelement:184:1;Ablation therapy;en;Ablation therapy;Ablation therapy;SELECT_MANY_CHECKBOX
+184;1;urn:osse-11:dataelement:184:1;Unknown;en;Unknown;Unknown;SELECT_MANY_CHECKBOX
+184;1;urn:osse-11:dataelement:184:1;n.a.;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+185;1;urn:osse-11:dataelement:185:1;Yes;en;Had Insulin;Had Insulin;SELECT_ONE_RADIO
+185;1;urn:osse-11:dataelement:185:1;No;en;No Insulin;No Insulin;SELECT_ONE_RADIO
+185;1;urn:osse-11:dataelement:185:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+186;1;urn:osse-11:dataelement:186:1;Yes;en;Had oral antidiabetics;Had oral antidiabetics;SELECT_ONE_RADIO
+186;1;urn:osse-11:dataelement:186:1;No;en;No oral antidiabetics;No oral antidiabetics;SELECT_ONE_RADIO
+186;1;urn:osse-11:dataelement:186:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+187;1;urn:osse-11:dataelement:187:1;Yes;en;Had Metformin;Had Metformin;SELECT_ONE_RADIO
+187;1;urn:osse-11:dataelement:187:1;No;en;No Metformin;No Metformin;SELECT_ONE_RADIO
+187;1;urn:osse-11:dataelement:187:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+188;1;urn:osse-11:dataelement:188:1;Yes;en;Had Statins;Had Statins;SELECT_ONE_RADIO
+188;1;urn:osse-11:dataelement:188:1;No;en;No Statins;No Statins;SELECT_ONE_RADIO
+188;1;urn:osse-11:dataelement:188:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+189;1;urn:osse-11:dataelement:189:1;Yes;en;Had non-bariatric surgery;Had non-bariatric surgery;SELECT_ONE_RADIO
+189;1;urn:osse-11:dataelement:189:1;No;en;No non-bariatric surgery;No non-bariatric surgery;SELECT_ONE_RADIO
+189;1;urn:osse-11:dataelement:189:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+190;1;urn:osse-11:dataelement:190:1;Liver surgery;en;Liver surgery;Liver surgery;SELECT_MANY_CHECKBOX
+190;1;urn:osse-11:dataelement:190:1;Portal-systemic shunt;en;Portal-systemic shunt;Portal-systemic shunt;SELECT_MANY_CHECKBOX
+190;1;urn:osse-11:dataelement:190:1;Biliary pancreatic surgery;en;Biliary pancreatic surgery;Biliary pancreatic surgery;SELECT_MANY_CHECKBOX
+190;1;urn:osse-11:dataelement:190:1;Other;en;Other;Other;SELECT_MANY_CHECKBOX
+190;1;urn:osse-11:dataelement:190:1;Unknown;en;Unknown;Unknown;SELECT_MANY_CHECKBOX
+190;1;urn:osse-11:dataelement:190:1;n.a.;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+191;1;urn:osse-11:dataelement:191:1;Yes;en;Had ICU admission;Had ICU admission;SELECT_ONE_RADIO
+191;1;urn:osse-11:dataelement:191:1;No;en;No ICU admission;No ICU admission;SELECT_ONE_RADIO
+191;1;urn:osse-11:dataelement:191:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+193;1;urn:osse-11:dataelement:193:1;Yes;en;Had drug with potential hepatotoxic effect;Had drug with potential hepatotoxic effect;SELECT_ONE_RADIO
+193;1;urn:osse-11:dataelement:193:1;No;en;No drug with potential hepatotoxic effect ;No drug with potential hepatotoxic effect ;SELECT_ONE_RADIO
+193;1;urn:osse-11:dataelement:193:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+194;1;urn:osse-11:dataelement:194:1;Yes;en;Had drug with potential adverse effect;Had drug with potential adverse effect;SELECT_ONE_RADIO
+194;1;urn:osse-11:dataelement:194:1;No;en;No drug with potential adverse effect;No drug with potential adverse effect;SELECT_ONE_RADIO
+194;1;urn:osse-11:dataelement:194:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+198;1;urn:osse-11:dataelement:198:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+198;1;urn:osse-11:dataelement:198:1;No;en;No;No;SELECT_ONE_RADIO
+198;1;urn:osse-11:dataelement:198:1;No data;en;No data;No data;SELECT_ONE_RADIO
+199;1;urn:osse-11:dataelement:199:1;No data;en;No data;No data;SELECT_MANY_CHECKBOX
+199;1;urn:osse-11:dataelement:199:1;Prophylactic;en;Prophylactic;Prophylactic;SELECT_MANY_CHECKBOX
+199;1;urn:osse-11:dataelement:199:1;Therapeutic;en;Therapeutic;Therapeutic;SELECT_MANY_CHECKBOX
+199;1;urn:osse-11:dataelement:199:1;Non-randomized;en;Non-randomized;Non-randomized;SELECT_MANY_CHECKBOX
+199;1;urn:osse-11:dataelement:199:1;Randomized placebo controlled;en;Randomized placebo controlled;Randomized placebo controlled;SELECT_MANY_CHECKBOX
+199;1;urn:osse-11:dataelement:199:1;Randomized comparative;en;Randomized comparative;Randomized comparative;SELECT_MANY_CHECKBOX
+202;1;urn:osse-11:dataelement:202:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+202;1;urn:osse-11:dataelement:202:1;No;en;No;No;SELECT_ONE_RADIO
+202;1;urn:osse-11:dataelement:202:1;No data;en;No data;No data;SELECT_ONE_RADIO
+203;1;urn:osse-11:dataelement:203:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+203;1;urn:osse-11:dataelement:203:1;No;en;No;No;SELECT_ONE_RADIO
+208;1;urn:osse-11:dataelement:208:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+208;1;urn:osse-11:dataelement:208:1;No;en;No;No;SELECT_ONE_RADIO
+209;1;urn:osse-11:dataelement:209:1;Infection;en;Infection;Infection;SELECT_MANY_CHECKBOX
+209;1;urn:osse-11:dataelement:209:1;Electrolyte disorders;en;Electrolyte disorders;Electrolyte disorders;SELECT_MANY_CHECKBOX
+209;1;urn:osse-11:dataelement:209:1;Gastrointestinal bleeding;en;Gastrointestinal bleeding;Gastrointestinal bleeding;SELECT_MANY_CHECKBOX
+209;1;urn:osse-11:dataelement:209:1;Diuretic overdose;en;Diuretic overdose;Diuretic overdose;SELECT_MANY_CHECKBOX
+209;1;urn:osse-11:dataelement:209:1;Constipation;en;Constipation;Constipation;SELECT_MANY_CHECKBOX
+209;1;urn:osse-11:dataelement:209:1;Other;en;Other;Other;SELECT_MANY_CHECKBOX
+209;1;urn:osse-11:dataelement:209:1;Unidentified (episode qualified as Spontaneous);en;Unidentified (episode qualified as Spontaneous);Unidentified (episode qualified as Spontaneous);SELECT_MANY_CHECKBOX
+209;1;urn:osse-11:dataelement:209:1;n.a.;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+210;1;urn:osse-11:dataelement:210:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+210;1;urn:osse-11:dataelement:210:1;No;en;No;No;SELECT_ONE_RADIO
+213;1;urn:osse-11:dataelement:213:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+213;1;urn:osse-11:dataelement:213:1;No;en;No;No;SELECT_ONE_RADIO
+215;1;urn:osse-11:dataelement:215:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+215;1;urn:osse-11:dataelement:215:1;No;en;No;No;SELECT_ONE_RADIO
+216;1;urn:osse-11:dataelement:216:1;Spontaneous;en;Spontaneous;Spontaneous;SELECT_MANY_CHECKBOX
+216;1;urn:osse-11:dataelement:216:1;Bacterial Infection;en;Bacterial Infection;Bacterial Infection;SELECT_MANY_CHECKBOX
+216;1;urn:osse-11:dataelement:216:1;Drugs;en;Drugs;Drugs;SELECT_MANY_CHECKBOX
+216;1;urn:osse-11:dataelement:216:1;Other;en;Other;Other;SELECT_MANY_CHECKBOX
+216;1;urn:osse-11:dataelement:216:1;n.a.;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+217;1;urn:osse-11:dataelement:217:1;1;en;1;1;SELECT_ONE_RADIO
+217;1;urn:osse-11:dataelement:217:1;2;en;2;2;SELECT_ONE_RADIO
+217;1;urn:osse-11:dataelement:217:1;3;en;3;3;SELECT_ONE_RADIO
+217;1;urn:osse-11:dataelement:217:1;n.a./n.d.;en;Not applicable ;Not applicable ;SELECT_ONE_RADIO
+218;1;urn:osse-11:dataelement:218:1;ATN;en;ATN;acute tubular necrosis;SELECT_ONE_RADIO
+218;1;urn:osse-11:dataelement:218:1;HRS;en;HRS;hepatorenal syndrome;SELECT_ONE_RADIO
+218;1;urn:osse-11:dataelement:218:1;Other;en;Other;Other;SELECT_ONE_RADIO
+218;1;urn:osse-11:dataelement:218:1;n.a.;en;Not applicable ;Not applicable;SELECT_ONE_RADIO
+219;1;urn:osse-11:dataelement:219:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+219;1;urn:osse-11:dataelement:219:1;No;en;No;No;SELECT_ONE_RADIO
+220;1;urn:osse-11:dataelement:220:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+220;1;urn:osse-11:dataelement:220:1;No;en;No;No;SELECT_ONE_RADIO
+221;1;urn:osse-11:dataelement:221:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+221;1;urn:osse-11:dataelement:221:1;No;en;No;No;SELECT_ONE_RADIO
+223;1;urn:osse-11:dataelement:223:1;Yes, confirmed by biopsy;en;Yes, confirmed by biopsy;Yes, confirmed by biopsy;SELECT_ONE_RADIO
+223;1;urn:osse-11:dataelement:223:1;Yes, confirmed by NIAAA Alcoholic Hepatitis Consortia Criteria;en;Yes, confirmed by NIAAA Alcoholic Hepatitis Consortia Criteria;Yes, confirmed by NIAAA Alcoholic Hepatitis Consortia Criteria;SELECT_ONE_RADIO
+223;1;urn:osse-11:dataelement:223:1;No;en;No;No;SELECT_ONE_RADIO
+224;1;urn:osse-11:dataelement:224:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+224;1;urn:osse-11:dataelement:224:1;No;en;No;No;SELECT_ONE_RADIO
+225;1;urn:osse-11:dataelement:225:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+225;1;urn:osse-11:dataelement:225:1;No;en;No;No;SELECT_ONE_RADIO
+226;2;urn:osse-11:dataelement:226:2;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+226;2;urn:osse-11:dataelement:226:2;No (if imaging is negative);en;No (if imaging is negative);No (if imaging is negative);SELECT_ONE_RADIO
+226;2;urn:osse-11:dataelement:226:2;Unknown;en;Unknown;Unknown;SELECT_ONE_RADIO
+233;1;urn:osse-11:dataelement:233:1;Caucasian;en;Caucasian;Caucasian;SELECT_ONE_RADIO
+233;1;urn:osse-11:dataelement:233:1;Black;en;Black;Black;SELECT_ONE_RADIO
+233;1;urn:osse-11:dataelement:233:1;Asian;en;Asian;Asian;SELECT_ONE_RADIO
+233;1;urn:osse-11:dataelement:233:1;Other;en;Other;Other;SELECT_ONE_RADIO
+237;1;urn:osse-11:dataelement:237:1;Absent;en;Absent;Absent;SELECT_ONE_RADIO
+237;1;urn:osse-11:dataelement:237:1;Present;en;Present;Present;SELECT_ONE_RADIO
+237;1;urn:osse-11:dataelement:237:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+241;1;urn:osse-11:dataelement:241:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+241;1;urn:osse-11:dataelement:241:1;No;en;No;No;SELECT_ONE_RADIO
+274;1;urn:osse-11:dataelement:274:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+274;1;urn:osse-11:dataelement:274:1;No;en;No;No;SELECT_ONE_RADIO
+276;1;urn:osse-11:dataelement:276:1;Negative;en;Negative;Negative;SELECT_ONE_RADIO
+276;1;urn:osse-11:dataelement:276:1;Positive;en;Positive;Positive;SELECT_ONE_RADIO
+276;1;urn:osse-11:dataelement:276:1;Not available;en;Not available;Not available;SELECT_ONE_RADIO
+277;1;urn:osse-11:dataelement:277:1;Negative;en;Negative;Negative;SELECT_ONE_RADIO
+277;1;urn:osse-11:dataelement:277:1;Positive;en;Positive;Positive;SELECT_ONE_RADIO
+277;1;urn:osse-11:dataelement:277:1;Not available;en;Not available;Not available;SELECT_ONE_RADIO
+279;1;urn:osse-11:dataelement:279:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+279;1;urn:osse-11:dataelement:279:1;No;en;No;No;SELECT_ONE_RADIO
+291;1;urn:osse-11:dataelement:291:1;Metoprolol;en;Metoprolol;Metoprolol;SELECT_MANY_CHECKBOX
+291;1;urn:osse-11:dataelement:291:1;Bisoprolol;en;Bisoprolol;Bisoprolol;SELECT_MANY_CHECKBOX
+291;1;urn:osse-11:dataelement:291:1;Esmolol;en;Esmolol;Esmolol;SELECT_MANY_CHECKBOX
+291;1;urn:osse-11:dataelement:291:1;Nebivolol;en;Nebivolol;Nebivolol;SELECT_MANY_CHECKBOX
+291;1;urn:osse-11:dataelement:291:1;Propanolol;en;Propanolol;Propanolol;SELECT_MANY_CHECKBOX
+291;1;urn:osse-11:dataelement:291:1;Carvedilol;en;Carvedilol;Carvedilol;SELECT_MANY_CHECKBOX
+291;1;urn:osse-11:dataelement:291:1;Nadolol;en;Nadolol;Nadolol;SELECT_MANY_CHECKBOX
+291;1;urn:osse-11:dataelement:291:1;Timolol;en;Timolol;Timolol;SELECT_MANY_CHECKBOX
+291;1;urn:osse-11:dataelement:291:1;Atenolol;en;Atenolol;Atenolol;SELECT_MANY_CHECKBOX
+291;1;urn:osse-11:dataelement:291:1;Sotalol;en;Sotalol;Sotalol;SELECT_MANY_CHECKBOX
+291;1;urn:osse-11:dataelement:291:1;Pindolol;en;Pindolol;Pindolol;SELECT_MANY_CHECKBOX
+291;1;urn:osse-11:dataelement:291:1;n.a.;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+297;1;urn:osse-11:dataelement:297:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+297;1;urn:osse-11:dataelement:297:1;No;en;No;No;SELECT_ONE_RADIO
+299;1;urn:osse-11:dataelement:299:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+299;1;urn:osse-11:dataelement:299:1;No;en;No;No;SELECT_ONE_RADIO
+300;1;urn:osse-11:dataelement:300:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+300;1;urn:osse-11:dataelement:300:1;No;en;No;No;SELECT_ONE_RADIO
+300;1;urn:osse-11:dataelement:300:1;Not applicable;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+303;1;urn:osse-11:dataelement:303:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+303;1;urn:osse-11:dataelement:303:1;No;en;No;No;SELECT_ONE_RADIO
+304;1;urn:osse-11:dataelement:304:1;Mild;en;Mild;Mild;SELECT_ONE_RADIO
+304;1;urn:osse-11:dataelement:304:1;Moderate;en;Moderate;Moderate;SELECT_ONE_RADIO
+304;1;urn:osse-11:dataelement:304:1;Severe;en;Severe;Severe;SELECT_ONE_RADIO
+305;1;urn:osse-11:dataelement:305:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+305;1;urn:osse-11:dataelement:305:1;No;en;No;No;SELECT_ONE_RADIO
+306;1;urn:osse-11:dataelement:306:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+306;1;urn:osse-11:dataelement:306:1;No;en;No;No;SELECT_ONE_RADIO
+307;1;urn:osse-11:dataelement:307:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+307;1;urn:osse-11:dataelement:307:1;No;en;No;No;SELECT_ONE_RADIO
+317;1;urn:osse-11:dataelement:317:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+317;1;urn:osse-11:dataelement:317:1;No;en;No;No;SELECT_ONE_RADIO
+318;1;urn:osse-11:dataelement:318:1;Abnormal;en;Abnormal;Abnormal;SELECT_ONE_RADIO
+318;1;urn:osse-11:dataelement:318:1;Normal;en;Normal;Normal;SELECT_ONE_RADIO
+323;1;urn:osse-11:dataelement:323:1;Grade 0;en;Grade 0;Grade 0;SELECT_ONE_RADIO
+323;1;urn:osse-11:dataelement:323:1;Grade 1;en;Grade 1;Grade 1;SELECT_ONE_RADIO
+323;1;urn:osse-11:dataelement:323:1;Grade 2;en;Grade 2;Grade 2;SELECT_ONE_RADIO
+323;1;urn:osse-11:dataelement:323:1;Grade 3;en;Grade 3;Grade 3;SELECT_ONE_RADIO
+323;1;urn:osse-11:dataelement:323:1;Grade 4;en;Grade 4;Grade 4;SELECT_ONE_RADIO
+326;1;urn:osse-11:dataelement:326:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+326;1;urn:osse-11:dataelement:326:1;No;en;No;No;SELECT_ONE_RADIO
+328;1;urn:osse-11:dataelement:328:1;Positive signs;en;Positive signs;Positive signs;SELECT_ONE_RADIO
+328;1;urn:osse-11:dataelement:328:1;Negative signs;en;Negative signs;Negative signs;SELECT_ONE_RADIO
+328;1;urn:osse-11:dataelement:328:1;Not determined signs;en;Not determined signs;Not determined signs;SELECT_ONE_RADIO
+329;1;urn:osse-11:dataelement:329:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+329;1;urn:osse-11:dataelement:329:1;No;en;No;No;SELECT_ONE_RADIO
+338;1;urn:osse-11:dataelement:338:1;Alive;en;Alive;Alive;SELECT_ONE_RADIO
+338;1;urn:osse-11:dataelement:338:1;Death;en;Death;Death;SELECT_ONE_RADIO
+340;1;urn:osse-11:dataelement:340:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+340;1;urn:osse-11:dataelement:340:1;No;en;No;No;SELECT_ONE_RADIO
+341;1;urn:osse-11:dataelement:341:1;Hypovolemic shock;en;Hypovolemic shock;Hypovolemic shock;SELECT_MANY_CHECKBOX
+341;1;urn:osse-11:dataelement:341:1;Refractory septic shock;en;Refractory septic shock;Refractory septic shock;SELECT_MANY_CHECKBOX
+341;1;urn:osse-11:dataelement:341:1;ACLF;en;ACLF;ACLF;SELECT_MANY_CHECKBOX
+341;1;urn:osse-11:dataelement:341:1;ARDS;en;ARDS;ARDS;SELECT_MANY_CHECKBOX
+341;1;urn:osse-11:dataelement:341:1;Other;en;Other;Other;SELECT_MANY_CHECKBOX
+341;1;urn:osse-11:dataelement:341:1;Unknown;en;Unknown;Unknown;SELECT_MANY_CHECKBOX
+343;1;urn:osse-11:dataelement:343:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+343;1;urn:osse-11:dataelement:343:1;No;en;No;No;SELECT_ONE_RADIO
+49;2;urn:osse-11:dataelement:49:2;Medical Information/data;en;Medical Information/data;Medical Information/data;SELECT_MANY_CHECKBOX
+49;2;urn:osse-11:dataelement:49:2;Biological samples;en;Biological samples;Biological samples;SELECT_MANY_CHECKBOX
+49;2;urn:osse-11:dataelement:49:2;Biopsy specimens;en;Biopsy specimens;Biopsy specimens;SELECT_MANY_CHECKBOX
+49;2;urn:osse-11:dataelement:49:2;Genetic testing;en;Genetic testing;Genetic testing;SELECT_MANY_CHECKBOX
+52;2;urn:osse-11:dataelement:52:2;Genetic testing;en;Genetic testing;Genetic testing;SELECT_MANY_CHECKBOX
+52;2;urn:osse-11:dataelement:52:2;Biopsy specimens;en;Biopsy specimens;Biopsy specimens;SELECT_MANY_CHECKBOX
+52;2;urn:osse-11:dataelement:52:2;Biological samples;en;Biological samples;Biological samples;SELECT_MANY_CHECKBOX
+52;2;urn:osse-11:dataelement:52:2;Medical Information/data;en;Medical Information/data;Medical Information/data;SELECT_MANY_CHECKBOX
+352;1;urn:osse-11:dataelement:352:1;n.a.;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+352;1;urn:osse-11:dataelement:352:1;Unknown;en;Unknown;Unknown;SELECT_MANY_CHECKBOX
+352;1;urn:osse-11:dataelement:352:1;Telaprevir;en;Telaprevir;Telaprevir;SELECT_MANY_CHECKBOX
+352;1;urn:osse-11:dataelement:352:1;Sofosbuvir;en;Sofosbuvir;Sofosbuvir;SELECT_MANY_CHECKBOX
+352;1;urn:osse-11:dataelement:352:1;Simeprevir;en;Simeprevir;Simeprevir;SELECT_MANY_CHECKBOX
+352;1;urn:osse-11:dataelement:352:1;Ribavirin;en;Ribavirin;Ribavirin;SELECT_MANY_CHECKBOX
+352;1;urn:osse-11:dataelement:352:1;Peg-IFN alfa;en;Peg-IFN alfa;Peg-IFN alfa;SELECT_MANY_CHECKBOX
+352;1;urn:osse-11:dataelement:352:1;OBV/PTV/r+DSV;en;OBV/PTV/r+DSV;OBV/PTV/r+DSV;SELECT_MANY_CHECKBOX
+352;1;urn:osse-11:dataelement:352:1;OBV/PTV/r;en;OBV/PTV/r;OBV/PTV/r;SELECT_MANY_CHECKBOX
+352;1;urn:osse-11:dataelement:352:1;Ledipasvir/Sofosbuvir;en;Ledipasvir/Sofosbuvir;Ledipasvir/Sofosbuvir;SELECT_MANY_CHECKBOX
+352;1;urn:osse-11:dataelement:352:1;Elbasvir/Grazoprevir;en;Elbasvir/Grazoprevir;Elbasvir/Grazoprevir;SELECT_MANY_CHECKBOX
+352;1;urn:osse-11:dataelement:352:1;Daclatasvir;en;Daclatasvir;Daclatasvir;SELECT_MANY_CHECKBOX
+352;1;urn:osse-11:dataelement:352:1;Boceprevir;en;Boceprevir;Boceprevir;SELECT_MANY_CHECKBOX
+352;1;urn:osse-11:dataelement:352:1;SOF/VEL;en;Sofosbuvir/velpatasvir;Sofosbuvir/velpatasvir;SELECT_MANY_CHECKBOX
+352;1;urn:osse-11:dataelement:352:1;SOF/VEL/VOX;en;Sofosbuvir/velpatasvir/voxilaprevir;Sofosbuvir/velpatasvir/voxilaprevir;SELECT_MANY_CHECKBOX
+352;1;urn:osse-11:dataelement:352:1;GLE/PIB;en;glecaprevir/pibrentasvir;glecaprevir/pibrentasvir;SELECT_MANY_CHECKBOX
+353;1;urn:osse-11:dataelement:353:1;GLE/PIB;en;glecaprevir/pibrentasvir;glecaprevir/pibrentasvir;SELECT_MANY_CHECKBOX
+353;1;urn:osse-11:dataelement:353:1;SOF/VEL/VOX;en;Sofosbuvir/velpatasvir/voxilaprevir;Sofosbuvir/velpatasvir/voxilaprevir;SELECT_MANY_CHECKBOX
+353;1;urn:osse-11:dataelement:353:1;SOF/VEL;en;Sofosbuvir/velpatasvir;Sofosbuvir/velpatasvir;SELECT_MANY_CHECKBOX
+353;1;urn:osse-11:dataelement:353:1;GLE/PIB + SOF + RBV;en;glecaprevir/pibrentasvir+Sofosbuvir+ ribavirin;glecaprevir/pibrentasvir+Sofosbuvir+ ribavirin;SELECT_MANY_CHECKBOX
+365;1;urn:osse-11:dataelement:365:1;Yes;de;Swab(s) has/have been performed;Swab(s) has/have been performed;SELECT_ONE_RADIO
+365;1;urn:osse-11:dataelement:365:1;No;en;Swab(s) has/have not been performed;No swabs have been taken;SELECT_ONE_RADIO
+366;1;urn:osse-11:dataelement:366:1;Yes;de;Patient received Abx during last 3M;Patient received Abx during last 3M;SELECT_ONE_RADIO
+366;1;urn:osse-11:dataelement:366:1;No;de;Patient did not receive Abx during last 3M;Patient did not receive Abx during last 3M;SELECT_ONE_RADIO
+367;1;urn:osse-11:dataelement:367:1;Amoxicillin;en;Amoxicillin;Amoxicillin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Amoxicillin + Clavulanic acid;en;Amoxicillin + Clavulanic acid;Amoxicillin + Clavulanic acid;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Ampicillin + Sulbactam;en;Ampicillin + Sulbactam;Ampicillin + Sulbactam;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Azithromycin;en;Azithromycin;Azithromycin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Cefepim;en;Cefepim;Cefepim;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Cefazolin;en;Cefazolin;Cefazolin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Cefotaxim;en;Cefotaxim;Cefotaxim;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Cefotiam;en;Cefotiam;Cefotiam;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Ceftarolin;en;Ceftarolin;Ceftarolin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Ceftazidim;en;Ceftazidim;Ceftazidim;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Ceftazidim + Avibactam;en;Ceftazidim + Avibactam;Ceftazidim + Avibactam;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Ceftobirol;en;Ceftobirol;Ceftobirol;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Ceftolozan / Tazobactam;en;Ceftolozan / Tazobactam;Ceftolozan / Tazobactam;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Ceftriaxon;en;Ceftriaxon;Ceftriaxon;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Cefuroxim;en;Cefuroxim;Cefuroxim;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Ciprofloxacin;en;Ciprofloxacin;Ciprofloxacin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Clarithromycin;en;Clarithromycin;Clarithromycin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Clindamycin;en;Clindamycin;Clindamycin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Cotrimoxazol;en;Cotrimoxazol;Cotrimoxazol;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Daptomycin;en;Daptomycin;Daptomycin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Doxycyclin;en;Doxycyclin;Doxycyclin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Erythromycin;en;Erythromycin;Erythromycin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Ertapenem;en;Ertapenem;Ertapenem;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Flucloxacillin;en;Flucloxacillin;Flucloxacillin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Gentamycin;en;Gentamycin;Gentamycin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Fosfomycin;en;Fosfomycin;Fosfomycin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Imipenem + Cilastatin;en;Imipenem + Cilastatin;Imipenem + Cilastatin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Levofloxacin;en;Levofloxacin;Levofloxacin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Linezolid;en;Linezolid;Linezolid;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Meropenem;en;Meropenem;Meropenem;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Metronidazol;en;Metronidazol;Metronidazol;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Mezlocillin;en;Mezlocillin;Mezlocillin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Moxifloxacin;en;Moxifloxacin;Moxifloxacin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Neomycin;en;Neomycin;Neomycin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Netilimycin;en;Netilimycin;Netilimycin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Norfloxacin;en;Norfloxacin;Norfloxacin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Nystatin;en;Nystatin;Nystatin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Paromomycin;en;Paromomycin;Paromomycin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Penicillin G;en;Penicillin G;Penicillin G;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Penicillin V;en;Penicillin V;Penicillin V;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Piperacillin/Tazobactam;en;Piperacillin/Tazobactam;Piperacillin/Tazobactam;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Rifampicin;en;Rifampicin;Rifampicin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Rifaximin;en;Rifaximin;Rifaximin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Synercid;en;Synercid;Synercid;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Tigecyclin;en;Tigecyclin;Tigecyclin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Tobramycin;en;Tobramycin;Tobramycin;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Turixin nasal creme;en;Turixin nasal creme;Turixin nasal creme;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Meropenem + Vaborbactam;en;Meropenem + Vaborbactam;Meropenem + Vaborbactam;SELECT_MANY_CHECKBOX
+367;1;urn:osse-11:dataelement:367:1;Vancomycin;en;Vancomycin;Vancomycin;SELECT_MANY_CHECKBOX
+369;2;urn:osse-11:dataelement:369:2;Severe;en;Severe;Severe;SELECT_ONE_RADIO
+369;2;urn:osse-11:dataelement:369:2;Moderate;en;Moderate;Moderate;SELECT_ONE_RADIO
+369;2;urn:osse-11:dataelement:369:2;Mild;en;Mild;Mild;SELECT_ONE_RADIO
+370;1;urn:osse-11:dataelement:370:1;Severe;en;Severe;Severe;SELECT_ONE_RADIO
+370;1;urn:osse-11:dataelement:370:1;Moderate;en;Moderate;Moderate;SELECT_ONE_RADIO
+370;1;urn:osse-11:dataelement:370:1;Mild;en;Mild;Mild;SELECT_ONE_RADIO
+371;1;urn:osse-11:dataelement:371:1;Severe;en;Severe;Severe;SELECT_ONE_RADIO
+371;1;urn:osse-11:dataelement:371:1;Moderate;en;Moderate;Moderate;SELECT_ONE_RADIO
+371;1;urn:osse-11:dataelement:371:1;Mild;en;Mild;Mild;SELECT_ONE_RADIO
+372;1;urn:osse-11:dataelement:372:1;Severe;en;Severe;Severe;SELECT_ONE_RADIO
+372;1;urn:osse-11:dataelement:372:1;Moderate;en;Moderate;Moderate;SELECT_ONE_RADIO
+372;1;urn:osse-11:dataelement:372:1;Mild;en;Mild;Mild;SELECT_ONE_RADIO
+373;1;urn:osse-11:dataelement:373:1;Severe;en;Severe;Severe;SELECT_ONE_RADIO
+373;1;urn:osse-11:dataelement:373:1;Moderate;en;Moderate;Moderate;SELECT_ONE_RADIO
+373;1;urn:osse-11:dataelement:373:1;Mild;en;Mild;Mild;SELECT_ONE_RADIO
+230;2;urn:osse-11:dataelement:230:2;None;en;0 - None;Makes no movements;SELECT_ONE_RADIO
+230;2;urn:osse-11:dataelement:230:2;Extends to pain;en;1 - Extends to pain;Extends to pain;SELECT_ONE_RADIO
+230;2;urn:osse-11:dataelement:230:2;Flexes to pain;en;2 - Flexes to pain;Abnormal flexion (decorticate posture);SELECT_ONE_RADIO
+230;2;urn:osse-11:dataelement:230:2;Withdraws to pain;en;3 - Withdraws to pain;Flexion / Withdrawal from painful stimuli;SELECT_ONE_RADIO
+230;2;urn:osse-11:dataelement:230:2;Localises to pain;en;4 - Localises to pain;Moves to localise pain;SELECT_ONE_RADIO
+230;2;urn:osse-11:dataelement:230:2;Obeys command;en;6 - Obeys command;Obeys commands;SELECT_ONE_RADIO
+228;2;urn:osse-11:dataelement:228:2;None;en;1 - None;Does not open eyes;SELECT_ONE_RADIO
+228;2;urn:osse-11:dataelement:228:2;To pain;en;2 - To pain;Opens eyes in response to pain;SELECT_ONE_RADIO
+228;2;urn:osse-11:dataelement:228:2;To speech;en;3 - To speech;Opens eyes in response to voice;SELECT_ONE_RADIO
+228;2;urn:osse-11:dataelement:228:2;Spontaneous;en;4 - Spontaneous;Opens eyes spontaneously;SELECT_ONE_RADIO
+229;2;urn:osse-11:dataelement:229:2;None;en;1 - None;Makes no sounds;SELECT_ONE_RADIO
+229;2;urn:osse-11:dataelement:229:2;Incomprehensible;en;2 - Incomprehensible;Incomprehensible sounds;SELECT_ONE_RADIO
+229;2;urn:osse-11:dataelement:229:2;Inappropriate;en;3 - Inappropriate;Inappropriate words;SELECT_ONE_RADIO
+229;2;urn:osse-11:dataelement:229:2;Confused;en;4 - Confused;Confused and disoriented, but able to answer questions;SELECT_ONE_RADIO
+229;2;urn:osse-11:dataelement:229:2;Orientated;en;5 - Orientated;Oriented to time, person, and place, converses normally;SELECT_ONE_RADIO
+151;2;urn:osse-11:dataelement:151:2;Obesity;en;Obesity;Obesity;SELECT_MANY_CHECKBOX
+151;2;urn:osse-11:dataelement:151:2;Diabetes;en;Diabetes;Diabetes;SELECT_MANY_CHECKBOX
+151;2;urn:osse-11:dataelement:151:2;Arterial hypertension;en;Arterial hypertension;Arterial hypertension;SELECT_MANY_CHECKBOX
+151;2;urn:osse-11:dataelement:151:2;Others;en;Others;Others;SELECT_MANY_CHECKBOX
+151;2;urn:osse-11:dataelement:151:2;Unknown;en;Unknown;Unknown;SELECT_MANY_CHECKBOX
+151;2;urn:osse-11:dataelement:151:2;n.a.;en;Not applicable;Not applicable;SELECT_MANY_CHECKBOX
+204;2;urn:osse-11:dataelement:204:2;Home;en;Home;Home;SELECT_ONE_RADIO
+204;2;urn:osse-11:dataelement:204:2;Other hospital;en;Other hospital;Other hospital;SELECT_ONE_RADIO
+204;2;urn:osse-11:dataelement:204:2;Long-term care facility;en;Long-term care facility;Long-term care facility;SELECT_ONE_RADIO
+204;2;urn:osse-11:dataelement:204:2;Nursing home;en;Nursing home;Nursing home;SELECT_ONE_RADIO
+204;2;urn:osse-11:dataelement:204:2;Other;en;Other;Other;SELECT_ONE_RADIO
+206;2;urn:osse-11:dataelement:206:2;Ascites;en;Ascites;Ascites;SELECT_MANY_CHECKBOX
+206;2;urn:osse-11:dataelement:206:2;Hepatic encephalopathy;en;Hepatic encephalopathy;Hepatic encephalopathy;SELECT_MANY_CHECKBOX
+206;2;urn:osse-11:dataelement:206:2;Gastrointestinal bleeding;en;Gastrointestinal bleeding;Gastrointestinal bleeding;SELECT_MANY_CHECKBOX
+206;2;urn:osse-11:dataelement:206:2;SBP;en;SBP;SBP;SELECT_MANY_CHECKBOX
+206;2;urn:osse-11:dataelement:206:2;Other bacterial infection;en;Other bacterial infection;Other bacterial infection;SELECT_MANY_CHECKBOX
+206;2;urn:osse-11:dataelement:206:2;Others;en;Others;Others;SELECT_MANY_CHECKBOX
+205;2;urn:osse-11:dataelement:205:2;Emergency department;en;Emergency department;Emergency department;SELECT_ONE_RADIO
+205;2;urn:osse-11:dataelement:205:2;Regular ward;en;Regular ward;Regular ward;SELECT_ONE_RADIO
+205;2;urn:osse-11:dataelement:205:2;ICU;en;ICU;ICU;SELECT_ONE_RADIO
+205;2;urn:osse-11:dataelement:205:2;Out-patient clinic;en;Out-patient clinic;Out-patient clinic;SELECT_ONE_RADIO
+207;3;urn:osse-11:dataelement:207:3;Ascites;en;Ascites;Ascites;SELECT_ONE_RADIO
+207;3;urn:osse-11:dataelement:207:3;Hepatic encephalopathy;en;Hepatic encephalopathy;Hepatic encephalopathy;SELECT_ONE_RADIO
+207;3;urn:osse-11:dataelement:207:3;Gastrointestinal bleeding;en;Gastrointestinal bleeding;Gastrointestinal bleeding;SELECT_ONE_RADIO
+207;3;urn:osse-11:dataelement:207:3;SBP;en;SBP;SBP;SELECT_ONE_RADIO
+207;3;urn:osse-11:dataelement:207:3;Other bacterial infection;en;Other bacterial infection;Other bacterial infection;SELECT_ONE_RADIO
+207;3;urn:osse-11:dataelement:207:3;Others;en;Others;Others;SELECT_ONE_RADIO
+1;1;urn:osse-11:dataelement:1:1;m;de;Männlich;Sex;SELECT_MANY_CHECKBOX
+1;1;urn:osse-11:dataelement:1:1;w;de;Weiblich;Sex  ;SELECT_MANY_CHECKBOX
+13;1;urn:osse-11:dataelement:13:1;Yes;en;Blood sample has been collected;Blood sample has been collected;
+13;1;urn:osse-11:dataelement:13:1;No;en;Blood sample has not been collected;Blood sample has not been collected;
+44;1;urn:osse-11:dataelement:44:1;The patients admitted/referred to study center with AD of cirrhosis (ascites, overt encephalopathy, new onset of non-obstructive jaundice, GI hemorrhage and/or bacterial infections), but without ACLF (as defined according to the CANONIC study) at hospitalization.;en;The patients admitted/referred to study center with AD of cirrhosis (ascites, overt encephalopathy, new onset of non-obstructive jaundice, GI hemorrhage and/or bacterial infections), but without ACLF (as defined according to the CANONIC study) at hospitalization.;The patients admitted/referred to study center with AD of cirrhosis (ascites, overt encephalopathy, new onset of non-obstructive jaundice, GI hemorrhage and/or bacterial infections), but without ACLF (as defined according to the CANONIC study) at hospitalization.;SELECT_MANY_CHECKBOX
+52;1;urn:osse-11:dataelement:52:1;Genetic testing;en;Genetic testing;Genetic testing;SELECT_ONE_RADIO
+52;1;urn:osse-11:dataelement:52:1;Biopsy specimens;en;Biopsy specimens;Biopsy specimens;SELECT_ONE_RADIO
+52;1;urn:osse-11:dataelement:52:1;Biological samples;en;Biological samples;Biological samples;SELECT_ONE_RADIO
+52;1;urn:osse-11:dataelement:52:1;Medical Information/data;en;Medical Information/data;Medical Information/data;SELECT_ONE_RADIO
+226;1;urn:osse-11:dataelement:226:1;Yes;en;Yes;Yes;SELECT_ONE_RADIO
+226;1;urn:osse-11:dataelement:226:1;No (if imaging is negative);en;No (if imaging is negative);No (if imaging is negative);SELECT_ONE_RADIO
+226;1;urn:osse-11:dataelement:226:1;Unknown;en;Unknown;Unknown;SELECT_ONE_RADIO
+228;1;urn:osse-11:dataelement:228:1;None;en;None;None;SELECT_ONE_RADIO
+228;1;urn:osse-11:dataelement:228:1;To pain;en;To pain;To pain;SELECT_ONE_RADIO
+228;1;urn:osse-11:dataelement:228:1;To speech;en;To speech;To speech;SELECT_ONE_RADIO
+228;1;urn:osse-11:dataelement:228:1;Spontaneous;en;Spontaneous;Spontaneous;SELECT_ONE_RADIO
+229;1;urn:osse-11:dataelement:229:1;None;en;None;None;SELECT_ONE_RADIO
+229;1;urn:osse-11:dataelement:229:1;Incomprehensible;en;Incomprehensible;Incomprehensible;SELECT_ONE_RADIO
+229;1;urn:osse-11:dataelement:229:1;Inappropriate;en;Inappropriate;Inappropriate;SELECT_ONE_RADIO
+229;1;urn:osse-11:dataelement:229:1;Confused;en;Confused;Confused;SELECT_ONE_RADIO
+229;1;urn:osse-11:dataelement:229:1;Orientated;en;Orientated;Orientated;SELECT_ONE_RADIO
+204;1;urn:osse-11:dataelement:204:1;Home;en;Home;Home;SELECT_ONE_RADIO
+204;1;urn:osse-11:dataelement:204:1;Other hospital;en;Other hospital;Other hospital;SELECT_ONE_RADIO
+204;1;urn:osse-11:dataelement:204:1;Long-term care facility;en;Long-term care facility;Long-term care facility;SELECT_ONE_RADIO
+204;1;urn:osse-11:dataelement:204:1;Nursing home;en;Nursing home;Nursing home;SELECT_ONE_RADIO
+204;1;urn:osse-11:dataelement:204:1;Other;en;Other;Other;SELECT_ONE_RADIO
+207;1;urn:osse-11:dataelement:207:1;Ascites;en;Ascites;Ascites;SELECT_ONE_RADIO
+207;1;urn:osse-11:dataelement:207:1;Hepatic encephalopathy;en;Hepatic encephalopathy;Hepatic encephalopathy;SELECT_ONE_RADIO
+207;1;urn:osse-11:dataelement:207:1;Gastrointestinal bleeding;en;Gastrointestinal bleeding;Gastrointestinal bleeding;SELECT_ONE_RADIO
+207;1;urn:osse-11:dataelement:207:1;SBP;en;SBP;SBP;SELECT_ONE_RADIO
+207;1;urn:osse-11:dataelement:207:1;Other bacterial infection;en;Other bacterial infection;Other bacterial infection;SELECT_ONE_RADIO
+207;1;urn:osse-11:dataelement:207:1;Others;en;Others;Others;SELECT_ONE_RADIO
+206;1;urn:osse-11:dataelement:206:1;Ascites;en;Ascites;Ascites;SELECT_MANY_CHECKBOX
+206;1;urn:osse-11:dataelement:206:1;Hepatic encephalopathy;en;Hepatic encephalopathy;Hepatic encephalopathy;SELECT_MANY_CHECKBOX
+206;1;urn:osse-11:dataelement:206:1;Gastrointestinal bleeding;en;Gastrointestinal bleeding;Gastrointestinal bleeding;SELECT_MANY_CHECKBOX
+206;1;urn:osse-11:dataelement:206:1;SBP;en;SBP;SBP;SELECT_MANY_CHECKBOX
+206;1;urn:osse-11:dataelement:206:1;Other bacterial infection;en;Other bacterial infection;Other bacterial infection;SELECT_MANY_CHECKBOX
+206;1;urn:osse-11:dataelement:206:1;Others;en;Others;Others;SELECT_MANY_CHECKBOX
+49;1;urn:osse-11:dataelement:49:1;Medical Information/data;en;Medical Information/data;Medical Information/data;SELECT_ONE_RADIO
+49;1;urn:osse-11:dataelement:49:1;Biological samples;en;Biological samples;Biological samples;SELECT_ONE_RADIO
+49;1;urn:osse-11:dataelement:49:1;Biopsy specimens;en;Biopsy specimens;Biopsy specimens;SELECT_ONE_RADIO
+49;1;urn:osse-11:dataelement:49:1;Genetic testing;en;Genetic testing;Genetic testing;SELECT_ONE_RADIO
+369;1;urn:osse-11:dataelement:369:1;Severe;en;Severe;Severe;SELECT_ONE_RADIO
+369;1;urn:osse-11:dataelement:369:1;Moderate;en;Moderate;Moderate;SELECT_ONE_RADIO
+369;1;urn:osse-11:dataelement:369:1;Mild;en;Mild;Mild;SELECT_ONE_RADIO
+230;1;urn:osse-11:dataelement:230:1;None;en;None;None;SELECT_ONE_RADIO
+230;1;urn:osse-11:dataelement:230:1;Extends to pain;en;Extends to pain;Extends to pain;SELECT_ONE_RADIO
+230;1;urn:osse-11:dataelement:230:1;Flexes to pain;en;Flexes to pain;Flexes to pain;SELECT_ONE_RADIO
+230;1;urn:osse-11:dataelement:230:1;Withdraws to pain;en;Withdraws to pain;Withdraws to pain;SELECT_ONE_RADIO
+230;1;urn:osse-11:dataelement:230:1;Localises to pain;en;Localises to pain;Localises to pain;SELECT_ONE_RADIO
+230;1;urn:osse-11:dataelement:230:1;Obeys command;en;Obeys command;Obeys command;SELECT_ONE_RADIO
+151;1;urn:osse-11:dataelement:151:1;Obesity;en;Obesity;Obesity;SELECT_ONE_RADIO
+151;1;urn:osse-11:dataelement:151:1;Diabetes;en;Diabetes;Diabetes;SELECT_ONE_RADIO
+151;1;urn:osse-11:dataelement:151:1;Arterial hypertension;en;Arterial hypertension;Arterial hypertension;SELECT_ONE_RADIO
+151;1;urn:osse-11:dataelement:151:1;Others;en;Others;Others;SELECT_ONE_RADIO
+151;1;urn:osse-11:dataelement:151:1;Unknown;en;Unknown;Unknown;SELECT_ONE_RADIO
+151;1;urn:osse-11:dataelement:151:1;n.a.;en;Not applicable;Not applicable;SELECT_ONE_RADIO
+205;1;urn:osse-11:dataelement:205:1;Emergency department;en;Emergency department;Emergency department;SELECT_ONE_RADIO
+205;1;urn:osse-11:dataelement:205:1;Regular ward;en;Regular ward;Regular ward;SELECT_ONE_RADIO
+205;1;urn:osse-11:dataelement:205:1;ICU;en;ICU;ICU;SELECT_ONE_RADIO
+205;1;urn:osse-11:dataelement:205:1;Out-patient clinic;en;Out-patient clinic;Out-patient clinic;SELECT_ONE_RADIO
+207;2;urn:osse-11:dataelement:207:2;Ascites;en;Ascites;Ascites;SELECT_ONE_RADIO
+207;2;urn:osse-11:dataelement:207:2;Hepatic encephalopathy;en;Hepatic encephalopathy;Hepatic encephalopathy;SELECT_ONE_RADIO
+207;2;urn:osse-11:dataelement:207:2;Gastrointestinal bleeding;en;Gastrointestinal bleeding;Gastrointestinal bleeding;SELECT_ONE_RADIO
+207;2;urn:osse-11:dataelement:207:2;SBP;en;SBP;SBP;SELECT_ONE_RADIO
+207;2;urn:osse-11:dataelement:207:2;Other bacterial infection;en;Other bacterial infection;Other bacterial infection;SELECT_ONE_RADIO
+207;2;urn:osse-11:dataelement:207:2;Others;en;Others;Others;SELECT_ONE_RADIO

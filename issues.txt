@@ -1,5 +1,0 @@
-Basic Data - b´sico ma mostra episode daten
-
-Mehrauswahl como sao separados
-
-Em relacao a dataelements que foram apagados: verificar se sao todos com os mesmos (poucos) pacientes, ness caso seria questao de apagar esses pacientes e fazer red flag que é preciso actualizer a Data deles. Se forem poucos é fazível por este meio.

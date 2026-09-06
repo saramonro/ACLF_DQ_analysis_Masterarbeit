@@ -1,0 +1,36 @@
+calculation_id;variable_alias;variable_label;variable_source_id;variable_urn
+MELD_scores;inr;INR;X_235_56_256;urn:osse-11:dataelement:256
+MELD_scores;bilirubin;Total Bilirubin;X_235_56_264;urn:osse-11:dataelement:264
+MELD_scores;creatinine;Creatinine;X_235_56_265;urn:osse-11:dataelement:265
+MELD_Na_scores;meld;MELD Score;X_235_0_320;urn:osse-11:dataelement:320
+MELD_Na_scores;sodium;Sodium;X_235_56_266;urn:osse-11:dataelement:266
+BMI_basic;weight;Weight;X_230_0_349;urn:osse-11:dataelement:349
+BMI_basic;height;Height;X_230_0_350;urn:osse-11:dataelement:350
+MAP_aclf_examination;sbp;Systolic Blood Pressure;X_224_19_67;urn:osse-11:dataelement:67
+MAP_aclf_examination;dbp;Diastolic Blood Pressure;X_224_19_68;urn:osse-11:dataelement:68
+MAP_physical_examination;sbp;Systolic Blood Pressure;X_230_0_67;urn:osse-11:dataelement:67
+MAP_physical_examination;dbp;Diastolic Blood Pressure;X_230_0_68;urn:osse-11:dataelement:68
+SPO2_FIO2_ratio;spo2;SpO?;X_224_20_73;urn:osse-11:dataelement:73
+SPO2_FIO2_ratio;fio2;FiO?;X_224_20_75;urn:osse-11:dataelement:75
+PAO2_FIO2_ratio;pao2;PaO?;X_224_20_72;urn:osse-11:dataelement:72
+PAO2_FIO2_ratio;fio2;FiO?;X_224_20_75;urn:osse-11:dataelement:75
+Maddrey_scores;prothrombin_time;Prothrombin Time;X_235_59_254;urn:osse-11:dataelement:254
+Maddrey_scores;control_prothrombin_time;Control Prothrombin Time;X_235_59_325;urn:osse-11:dataelement:255
+Maddrey_scores;bilirubin;Total Bilirubin;X_235_59_264;urn:osse-11:dataelement:264
+CLIF_C_AD_scores;age;Age;X_235_68_337;urn:osse-11:dataelement:337
+CLIF_C_AD_scores;creatinine;Creatinine;X_235_68_265;urn:osse-11:dataelement:265
+CLIF_C_AD_scores;inr;INR;X_235_68_256;urn:osse-11:dataelement:256
+CLIF_C_AD_scores;leucocyte;Leucocyte Absolute;X_235_68_245;urn:osse-11:dataelement:245
+CLIF_C_AD_scores;sodium;Sodium;X_235_68_266;urn:osse-11:dataelement:266
+organ_failures_scores;liver_failure;Liver Failure;TODO;urn:osse-11:dataelement:57
+organ_failures_scores;renal_failure;Renal Failure;TODO;urn:osse-11:dataelement:59
+organ_failures_scores;cerebral_failure;Cerebral Failure;TODO;urn:osse-11:dataelement:62
+organ_failures_scores;coagulation_failure;Coagulation Failure;TODO;urn:osse-11:dataelement:64
+organ_failures_scores;circulation_failure;Circulation Failure;TODO;urn:osse-11:dataelement:66
+organ_failures_scores;respiratory_failure;Respiratory Failure;TODO;urn:osse-11:dataelement:71
+CLIF_OF_scores;liver_score;Liver Score;X_235_61_330;urn:osse-11:dataelement:330
+CLIF_OF_scores;kidney_score;Kidney Score;X_235_62_331;urn:osse-11:dataelement:331
+CLIF_OF_scores;brain_score;Brain Score;X_235_63_332;urn:osse-11:dataelement:332
+CLIF_OF_scores;coagulation_score;Coagulation Score;X_235_65_333;urn:osse-11:dataelement:333
+CLIF_OF_scores;circulation_score;Circulation Score;X_235_64_334;urn:osse-11:dataelement:334
+CLIF_OF_scores;lung_score;Lung Score;X_235_66_335;urn:osse-11:dataelement:335

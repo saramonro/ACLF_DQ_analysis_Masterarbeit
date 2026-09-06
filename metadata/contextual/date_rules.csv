@@ -1,0 +1,23 @@
+Form;form_type;record_designation;dataelement_designation;source_id;data_format;notBeforeDOB;notFuture;notAfterDeath;notAfterEpisode;notBeforeVariable;notBeforeVariable_source_id;notAfterVariable;notAfterVariable_source_id
+Screen data;Basic;;Date of informed consent signature:;X_222_0_48;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Patient’s information and Medical history;Basic;;Date of birth;X_225_0_55;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Patient’s information and Medical history;Basic;Diagnosis of Cirrhosis;Date of diagnosis of chronic liver disease;X_225_22_97;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Patient’s information and Medical history;Basic;Diagnosis of Cirrhosis;Date of diagnosis of cirrhosis;X_225_22_98;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Patient’s information and Medical history;Basic;Diagnosis of Cirrhosis;If AD-Date of first acute decompensation;X_225_22_100;MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Patient’s information and Medical history;Basic;Diagnosis of Cirrhosis;If listed-listed liver transplantation date;X_225_22_103;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Data at visit;Longitudinal;Visit Date;Visit Date;X_228_47_197;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Clinical features;Longitudinal;4. HVPG: hepatic-venous-pressure-gradient;Date of HVPG;X_229_51_212;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Physical examination;Longitudinal;;Physical examination date;X_230_0_232;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Laboratory data 1;Longitudinal;;Date of Collection;X_231_0_242;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Laboratory data 1;Longitudinal;;Date of Collection;X_231_0_275;YYYY-MM-DD;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Laboratory data 2;Longitudinal;;Date of arterial blood sample  collection;X_232_0_280;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Treatment;Longitudinal;;ICU admission date:;X_233_0_296;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Electrocardiogram and Echocardiography;Longitudinal;;ECG date:;X_234_0_298;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Electrocardiogram and Echocardiography;Longitudinal;;Echocardiography date;X_234_0_301;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Scores;Longitudinal;;Inclusion Date;X_235_0_56;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Biobank sample collection;Longitudinal;Urine sample collection information;Collection date;X_223_7_29;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Biobank sample collection;Longitudinal;Ascitic fluid sample collection information;Collection date;X_223_8_29;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Biobank sample collection;Longitudinal;Stool sample collection information;Collection date;X_223_9_29;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Biobank sample collection;Longitudinal;Hair sample collection information;Collection date;X_223_10_29;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Status;Longitudinal;;Date of Death;X_236_0_339;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
+Status;Longitudinal;;Date of liver transplantation;X_236_0_344;DD.MM.YYYY;True;True;True;False;True;X_222_0_48;True;X_236_0_339
