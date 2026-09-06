@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Data Quality Report</h1>
+<p>The following results were generated on {{ generated_date }}</p>
+
+<p>The performed rule checks were conceptualized in alignment with the harmonized data quality
+framework by Kahn et al., which defines the dimensions Conformance, Plausibility and
+Completeness. The results will be displayed by dimension and subdimension.</p>
+
+
+<h1>Conformance Checks</h1>
+<h2>Value Conformance</h2>
+<p>Value conformance checks checked whether reported values conformed to hard-coded constraints defined in the Metadata Repository (MDR). Different checks were applied to different data element types.</p>
+
+
+<h3>Boolean conformance</h3>
+<p>{{ boolean.explanation }}</p>
+
+<p>
+    <strong>Assessment scope:</strong>
+    {{ boolean.assessment_unit }}
+</p>
+
+<p>
+    A total of <strong>{{ boolean.assessed_elements }}</strong>
+    values were assessed.
+    <strong>{{ boolean.total_violations }}</strong>
+    violations were identified, corresponding to
+<strong>{{ "%.2f"|format(boolean.violation_rate) }}%</strong>
+</p>
+
+<h3>Float conformance</h3>
+<p>{{ float.explanation }}</p>
+<p>
+    <strong>Assessment scope:</strong>
+    {{ float.assessment_unit }}
+</p>
+
+<p>
+    A total of <strong>{{ float.assessed_elements }}</strong>
+    values were assessed.
+    <strong>{{ float.total_violations }}</strong>
+    violations were identified, corresponding to
+<strong>{{ "%.2f"|format(float.violation_rate) }}%</strong>.
+</p>
+
+<h3>Integer conformance</h3>
+
+<p>{{ integer.explanation }}</p>
+
+<p>
+    <strong>Assessment scope:</strong>
+    {{ integer.assessment_unit }}
+</p>
+
+<p>
+    A total of
+    <strong>{{ integer.assessed_elements }}</strong>
+    values were assessed.
+    <strong>{{ integer.total_violations }}</strong>
+    violations were identified,
+    corresponding to
+    <strong>{{ "%.2f"|format(integer.violation_rate) }}%</strong>.
+</p>
+
+
+<h3>Permissible values conformance</h3>
+
+<p>{{ permissible_values.explanation }}</p>
+
+<p>
+    <strong>Assessment scope:</strong>
+    {{ permissible_values.assessment_unit }}
+</p>
+
+<p>
+    A total of
+    <strong>{{ permissible_values.assessed_elements }}</strong>
+    values were assessed.
+    <strong>{{ permissible_values.total_violations }}</strong>
+    violations were identified,
+    corresponding to
+    <strong>
+        {{ "%.2f"|format(permissible_values.violation_rate) }}%
+    </strong>.
+</p>
+
+
+<h3>Single-choice conformance</h3>
+
+<p>{{ single_choice.explanation }}</p>
+
+<p>
+    <strong>Assessment scope:</strong>
+    {{ single_choice.assessment_unit }}
+</p>
+
+<p>
+    A total of
+    <strong>{{ single_choice.assessed_elements }}</strong>
+    values were assessed.
+    <strong>{{ single_choice.total_violations }}</strong>
+    violations were identified,
+    corresponding to
+    <strong>{{ "%.2f"|format(single_choice.violation_rate) }}%</strong>.
+</p>
+<h3>Date type conformance</h3>
+
+<p>{{ date_format.explanation }}</p>
+
+<p>
+    <strong>Assessment scope:</strong>
+    {{ date_format.assessment_unit }}
+</p>
+
+<p>
+    A total of
+    <strong>{{ date_format.assessed_elements }}</strong>
+    values were assessed.
+    <strong>{{ date_format.total_violations }}</strong>
+    violations were identified,
+    corresponding to
+    <strong>{{ "%.2f"|format(date_format.violation_rate) }}%</strong>.
+</p>
+
+<h3>Range conformance</h3>
+
+<p>{{ numeric_range.explanation }}</p>
+
+<p>
+    <strong>Assessment scope:</strong>
+    {{ numeric_range.assessment_unit }}
+</p>
+
+<p>
+    A total of
+    <strong>{{ numeric_range.assessed_elements }}</strong>
+    values were assessed.
+    <strong>{{ numeric_range.total_violations }}</strong>
+    violations were identified,
+    corresponding to
+    <strong>{{ "%.2f"|format(numeric_range.violation_rate) }}%</strong>.
+</p>
+
+<h3>Computational Conformance</h3>
+<p>Computational conformance checks targeted automatic inputs coded in the registry´s frontend. </p>
+<h3>Import checks</h3>
+<p>Values automatically imported across forms were checked for whether the values for target and source elements were identical.</p>
+
+
+<h2>Dimension</h2>
+<p>text</p>
+<h3>Subdimension</h3>
+<p>text</p>
+<h3>Rule</h3>
+<p>text</p>
+
+
+
+### PLACEHOLDER
+
+<h3>Float conformance</h3>
+<p>{{ float.explanation }}</p>
+<p>
+    <strong>Assessment scope:</strong>
+    {{ float.assessment_unit }}
+</p>
+
+<p>
+    A total of <strong>{{ float.assessed_elements }}</strong>
+    values were assessed.
+    <strong>{{ float.total_violations }}</strong>
+    violations were identified.
+</p>
+
+</body>
+</html>

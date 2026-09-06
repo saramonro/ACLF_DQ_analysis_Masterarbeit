@@ -1,0 +1,19 @@
+Checks on data types are performed in two steps.
+First date_rule_template_build.py creates a template for manual check /annotation:
+
+ - read data_dictionary
+ - filter adata_type == DATE
+ - output a template CSV for manual annotation:
+    - source_id
+    - form
+    - form_type
+    - record_designation
+    - dataelement_urn
+    - data_element_designation
+    - data_element_definition
+    - data_format
+    - rule_no_future
+    - rule_not_before_DIB
+    - rule_not_after_episode_date
+    - rule_not_before_source_id
+    - rule_not_after_source-id

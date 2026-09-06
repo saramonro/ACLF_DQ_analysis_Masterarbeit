@@ -1,0 +1,4 @@
+metric,denominator_definition,numerator_definition,denominator_n,numerator_n,completeness_percent
+Overall element completeness,All expected elements in non-empty forms,Filled expected elements,228025,113239,49.66
+Basic form completeness,Expected elements in non-empty basic forms,Filled expected basic elements,41922,32705,78.01
+Longitudinal form completeness,Expected elements in non-empty longitudinal forms,Filled expected longitudinal elements,186103,80534,43.27

@@ -1,0 +1,23 @@
+explain different types and sources of metadata
+
+1. Explicit metadata
+datatype
+format
+mandatory
+permissible values
+repeatability
+
+→ directly machine-readable
+
+2. Implicit metadata (what you have here)
+dependencies between variables
+conditional logic
+temporal relationships
+
+→ encoded in natural language
+→ not machine-readable without interpretation
+
+3. External/contextual metadata
+study protocol
+clinical logic
+domain knowledge

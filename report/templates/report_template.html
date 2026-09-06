@@ -1,97 +1,8 @@
 
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Data Quality Report</title>
-
-    <style>
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #222;
-}
-.report-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 32px;
-}
- h1,
-        h2,
-        h3 {
-            line-height: 1.25;
-        }
-
-        h1 {
-            margin-top: 0;
-            font-size: 2rem;
-        }
-
-        h2 {
-            margin-top: 48px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #d9dee5;
-            font-size: 1.5rem;
-        }
-
-        h3 {
-            margin-top: 30px;
-            font-size: 1.15rem;
-        }
-.result-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0 32px;
-    font-size: 0.95rem;
-}
-
-.result-table th,
-.result-table td {
-    padding: 12px 14px;
-    border-bottom: 1px solid #d9dee5;
-    vertical-align: top;
-}
-
-.result-table th {
-    text-align: left;
-    font-weight: 600;
-    background-color: #f1f3f5;
-}
-
-.result-table tbody tr:nth-child(even) {
-    background-color: #fafafa;
-}
-
-.result-table tbody tr:hover {
-    background-color: #f3f6f8;
-}
-
-.table-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    margin-bottom: 32px;
-}
-
-.report-chart {
-    display: block;
-    width: 100%;
-    max-width: 900px;
-    height: auto;
-    margin: 24px auto 40px;
-}
-  </style>
-</head>
-
+<html>
 <body>
-<main class="report-container">
+
 <h1>Data Quality Report</h1>
 <p>The following results were generated on {{ generated_date }}</p>
 
@@ -99,228 +10,58 @@ body {
 framework by Kahn et al., which defines the dimensions Conformance, Plausibility and
 Completeness. The results will be displayed by dimension and subdimension.</p>
 
-<h1>Completeness</h1>
 
-<p>
-    Completeness was assessed using the expected data-element
-    instances derived from the registry structure and provenance
-    metadata. Results were evaluated for general, core and mandatory
-    data elements.
-</p>
-
-
-<h3>Completeness overview</h3>
-
-<p>
-    The overview below summarizes form presence and element-level
-    completeness within forms containing at least one recorded value.
-</p>
-
-{{ completeness.overview_table | safe }}
-
-
-<h3>General, core and mandatory completeness</h3>
-
-<p>
-    General completeness considered all expected data elements.
-    Core completeness considered elements classified as core.
-    Mandatory completeness considered elements marked as mandatory
-    in the registry structure.
-</p>
-
-{{ completeness.layers_table | safe }}
-
-
-<h3>Completeness by form</h3>
-
-<p>
-    The chart shows the percentage of expected data-element instances
-    that contained a recorded value for each form.
-</p>
-
-<img
-    class="report-chart"
-    src="{{ form_completeness_chart }}"
-    alt="General completeness by form"
->
-
-
-<h3>Patient-level completeness</h3>
-
-<p>
-    The following chart shows the distribution of general
-    completeness percentages across patients.
-</p>
-
-<img
-    class="report-chart"
-    src="{{ patient_completeness_chart }}"
-    alt="Distribution of patient-level completeness"
->
-
-
-<h3>Empty expected forms</h3>
-
-<p>
-    An expected form was classified as empty when none of its expected
-    data elements contained a recorded value.
-</p>
-
-{{ completeness.empty_forms_table | safe }}
-
-<h1>Conformance Checks</h1>
-<h2>Value Conformance</h2>
+<h2>Conformance</h2>
+<h3>Value Conformance</h3>
 <p>Value conformance checks checked whether reported values conformed to hard-coded constraints defined in the Metadata Repository (MDR). Different checks were applied to different data element types.</p>
 
 
-{{ value_conformance_table | safe }}
+<h4>Boolean conformance</h4>
+<p>{{ boolean.explanation }}</p>
 
+<p>
+    <strong>Assessment scope:</strong>
+    {{ boolean.assessment_unit }}
+</p>
 
-<h2>Computational Conformance</h2>
+<p>
+    A total of <strong>{{ boolean.assessed_elements }}</strong>
+    values were assessed.
+    <strong>{{ boolean.total_violations }}</strong>
+    violations were identified.
+</p>
+
+<h4>Float conformance</h4>
+<p>Checks whether recorded values are numerical.</p>
+
+<h4>Integer conformance</h4>
+<p>Checks whether recorded values are whole numbers.</p>
+
+<h4>Single-choice conformance</h4>
+<p>Checks whether enumerated types with single-choice input (radio buttons, dropdowns) contain only one recorded value.</p>
+
+<h4>Permissible values conformance</h4>
+<p>Checks whether enumerated types contain only values predefined in the MDR</p>
+
+<h4>Date type conformance</h4>
+<p>Checks that date type elements contain values conforming to the date format defined in the MDR</p>
+
+<h4>Range conformance</h4>
+<p>Checks that numerical values fall within hard-coded ranges</p>
+
+<h3>Computational Conformance</h3>
 <p>Computational conformance checks targeted automatic inputs coded in the registry´s frontend. </p>
-
-<h3>Calculation checks</h3>
-
-<p>{{ calculation.explanation }}</p>
-
-<p>
-    <strong>Assessment scope:</strong>
-    {{ calculation.assessment_unit }}
-</p>
-
-<p>
-    A total of
-    <strong>{{ calculation.n_checks }}</strong>
-    calculation checks were performed.
-
-    Across these checks,
-    <strong>{{ calculation.total_assessed }}</strong>
-    calculable instances were assessed.
-
-    <strong>{{ calculation.total_violations }}</strong>
-    violations were identified, corresponding to
-    <strong>
-        {{ "%.2f"|format(calculation.overall_violation_rate) }}%
-    </strong>.
-</p>
+<h4>Import checks</h4>
+<p>Values automatically imported across forms were checked for whether the values for target and source elements were identical.</p>
 
 
-{{ calculation.table | safe }}
+<h2>Dimension</h2>
+<p>text</p>
+<h3>Subdimension</h3>
+<p>text</p>
+<h4>Rule</h4>
+<p>text</p>
 
 
-<h3>Import checks</h3>
-
-<p>{{ imports.explanation }}</p>
-
-<p>
-    <strong>Assessment scope:</strong>
-    {{ imports.assessment_unit }}
-</p>
-
-<p>
-    A total of
-    <strong>{{ imports.n_checks }}</strong>
-    import checks were performed.
-
-    Across these checks,
-    <strong>{{ imports.total_assessed }}</strong>
-    import instances were assessed.
-
-    <strong>{{ imports.total_violations }}</strong>
-    violations were identified, corresponding to
-    <strong>
-        {{ "%.2f"|format(imports.overall_violation_rate) }}%
-    </strong>.
-</p>
-
-<h2>Relational conformance</h2>
-
-<p>{{ relational.explanation }}</p>
-
-<p>
-    A total of
-    <strong>{{ relational.n_checks }}</strong>
-    relational conformance checks were performed.
-    Violations were detected in
-    <strong>{{ relational.checks_with_violations }}</strong>
-    checks, with
-    <strong>{{ relational.total_violations }}</strong>
-    individual violations identified in total.
-</p>
-
-{{ relational.table | safe }}
-
-<h1>Plausibility</h1>
-
-<p>
-    Plausibility checks assess whether recorded values are credible
-    in relation to other values, time points or expected clinical
-    developments.
-</p>
-
-<h2>Atemporal plausibility</h2>
-<h3>longitudinal plausibility</h3>
-<p>{{ longitudinal.explanation }}</p>
-
-<p>
-    <strong>Assessment scope:</strong>
-    {{ longitudinal.assessment_unit }}
-</p>
-
-<p>
-    A total of
-    <strong>{{ longitudinal.n_checks }}</strong>
-    longitudinal plausibility checks were performed.
-    Across these checks,
-    <strong>{{ longitudinal.total_assessed }}</strong>
-    comparisons were assessed.
-    <strong>{{ longitudinal.total_violations }}</strong>
-    violations were identified, corresponding to a pooled violation
-    rate of
-    <strong>
-        {{ "%.2f"|format(
-            longitudinal.pooled_violation_rate
-        ) }}%
-    </strong>.
-</p>
-
-<p>
-    Detailed results for the individual longitudinal checks are
-    provided in the accompanying violation tables.
-</p>
-
-<h2>Temporal plausibility</h2>
-
-<p>{{ temporal.explanation }}</p>
-
-<p>
-    <strong>Assessment scope:</strong>
-    {{ temporal.assessment_unit }}
-</p>
-
-<p>
-    A total of
-    <strong>{{ temporal.n_checks }}</strong>
-    temporal plausibility checks were performed.
-    Across these checks,
-    <strong>{{ temporal.total_assessed }}</strong>
-    date instances were assessed.
-    <strong>{{ temporal.total_violations }}</strong>
-    violations were identified, corresponding to a pooled violation
-    rate of
-    <strong>
-        {{ "%.2f"|format(
-            temporal.pooled_violation_rate
-        ) }}%
-    </strong>.
-</p>
-
-<p>
-    Detailed results for the individual temporal plausibility checks
-    are provided in the accompanying violation tables.
-</p>
-
-
-</main>
 </body>
 </html>

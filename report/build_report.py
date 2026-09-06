@@ -24,7 +24,7 @@ METADATA_PATH = REPORT_DIRECTORY / "report_metadata.csv"
 VALUE_SUMMARY_PATH = RESULTS_DIRECTORY / "value_conformance_summary.csv"
 LONG_SUMMARY_PATH = RESULTS_DIRECTORY / "longitudinal_plausibility_summary.csv"
 IMPORT_SUMMARY_PATH = RESULTS_DIRECTORY / "import_conformance_summary.csv"
-CALC_SUMMARY_PATH = RESULTS_DIRECTORY / "calculation_check_summary.csv"
+CALC_SUMMARY_PATH = RESULTS_DIRECTORY / "computational_conformance_summary.csv"
 DATES_SUMMARY_PATH = RESULTS_DIRECTORY / "dates"/"date_rule_summary.csv"
 RANGE_SUMMARY_PATH = RESULTS_DIRECTORY / "range"/"range_rule_summary.csv"
 RELATIONAL_SUMMARY_PATH = (
@@ -32,6 +32,7 @@ RELATIONAL_SUMMARY_PATH = (
 )
 
 TEMPLATE_DIRECTORY = REPORT_DIRECTORY / "templates"
+TEMPLATE_PATH = REPORT_DIRECTORY /"templates"/  "report_template.html"
 OUTPUT_PATH = REPORT_DIRECTORY / "data_quality_report.html"
 
 ## Completeness summary paths
@@ -91,32 +92,6 @@ def prepare_rule(rule_id, metadata, summary):
         "violation_rate": violation_rate,
     }
 
-# Value conformance table
-def prepare_value_conformance_table(rules):
-    rows = []
-
-    for check_name, rule in rules.items():
-        rows.append(
-            {
-                "Check": check_name,
-                "What was checked": rule["explanation"],
-                "Assessed values": rule["assessed_elements"],
-                "Violations": rule["total_violations"],
-                "Violation rate": (
-                    f'{rule["violation_rate"]:.2f}%'
-                    if rule["violation_rate"] is not None
-                    else "Not assessed"
-                ),
-            }
-        )
-
-    table = pd.DataFrame(rows)
-
-    return table.to_html(
-        index=False,
-        classes="result-table value-conformance-table",
-        border=0,
-    )
 
 # LOADS
 metadata = pd.read_csv(
@@ -149,8 +124,22 @@ range_summary = pd.read_csv(
     RANGE_SUMMARY_PATH,
     sep=";",
 )
-
- 
+value_summary = pd.read_csv(
+    VALUE_SUMMARY_PATH,
+    sep=";",
+)
+value_summary = pd.read_csv(
+    VALUE_SUMMARY_PATH,
+    sep=";",
+)
+value_summary = pd.read_csv(
+    VALUE_SUMMARY_PATH,
+    sep=";",
+)
+value_summary = pd.read_csv(
+    VALUE_SUMMARY_PATH,
+    sep=";",
+)
 relational_summary = pd.read_csv(
     RELATIONAL_SUMMARY_PATH,
     sep=";",
@@ -199,18 +188,8 @@ numeric_range = prepare_rule(
                              range_summary
     
     )
-# prepare table
-value_conformance_table = prepare_value_conformance_table(
-    {
-        "Boolean conformance": boolean,
-        "Float conformance": float,
-        "Integer conformance": integer,
-        "Permissible-value conformance": permissible_values,
-        "Single-choice conformance": single_choice,
-        "Date-format conformance": date_format,
-        "Numeric-range conformance": numeric_range,
-    }
-)
+
+
 ### Calculations section
 
 def prepare_calculation_section(metadata, calc_summary):
@@ -319,6 +298,7 @@ def prepare_imports_section(metadata, import_summary):
 
     return {
         "explanation": metadata_row["explanation"],
+        "assessment_unit": metadata_row["assessment_unit"],
         "n_checks": len(import_summary),
         "total_assessed": int(total_assessed),
         "total_violations": int(total_violations),
@@ -591,46 +571,28 @@ def create_form_completeness_chart(
 ):
     chart_data = completeness_per_form.sort_values(
         "general_completeness_percent"
-    ).copy()
+    )
 
     labels = (
-        chart_data["form_label"]
-        + " ("
-        + chart_data["form_id"].astype(str)
-        + ")"
-    )
+    chart_data["form_label"]
+    + " ("
+    + chart_data["form_id"].astype(str)
+    + ")"
+)
 
-    y = range(len(chart_data))
-    bar_height = 0.38
-
-    fig, ax = plt.subplots(figsize=(10, 8))
+    fig, ax = plt.subplots(figsize=(9, 7))
 
     ax.barh(
-        [i - bar_height / 2 for i in y],
+        labels,
         chart_data["general_completeness_percent"],
-        height=bar_height,
-        label="General completeness",
     )
-
-    ax.barh(
-        [i + bar_height / 2 for i in y],
-        chart_data["core_completeness_percent"],
-        height=bar_height,
-        label="Core completeness",
-    )
-
-    ax.set_yticks(list(y))
-    ax.set_yticklabels(labels)
 
     ax.set_xlabel("Completeness (%)")
     ax.set_ylabel("")
-    ax.set_title("General and core completeness by form")
+    ax.set_title("General completeness by form")
     ax.set_xlim(0, 100)
 
-    ax.legend()
-
     fig.tight_layout()
-
     fig.savefig(
         output_path,
         dpi=150,
@@ -679,9 +641,9 @@ create_patient_completeness_chart(
     PATIENT_CHART_PATH,
 )
 
-'''
+
 ## Summary table for all violations 
-def prepare_violation_section(summary_df):
+def prepare_violation_section(summary_df, display_names):
     section = summary_df.copy()
 
     section["rule_id"] = section["rule_id"].str.strip()
@@ -700,7 +662,9 @@ def prepare_violation_section(summary_df):
         * 100
     )
 
-    section["display_name"] = section["rule_id"]
+    section["display_name"] = section["rule_id"].map(
+        display_names
+    )
 
     # section totals
     n_checks = len(section)
@@ -751,10 +715,48 @@ def prepare_violation_section(summary_df):
         "table": table_html,
         "chart_data": section,
     }
-'''
+
+ ### Horizonal bar chart
+ 
+def create_violation_rate_chart(section_df, output_path):
+    chart_data = section_df.sort_values("violation_rate")
+
+    fig, ax = plt.subplots(figsize=(9, 5))
+
+    ax.barh(
+        chart_data["display_name"],
+        chart_data["violation_rate"],
+    )
+
+    ax.set_xlabel("Violation rate (%)")
+    ax.set_ylabel("")
+    ax.set_title("Violation rate by check")
+
+    fig.tight_layout()
+    fig.savefig(
+        output_path,
+        dpi=150,
+        bbox_inches="tight",
+    )
+
+    plt.close(fig)   
 
 
+calculation_names = {
+    "MELD_scores": "MELD score",
+    "MELD_Na_scores": "MELD-Na score",
+    "BMI_basic": "Body mass index",
+    "MAP_aclf_examination": "Mean arterial pressure – ACLF examination",
+    "MAP_physical_examination": "Mean arterial pressure – physical examination",
+}
 
+calculation_section = prepare_violation_section(
+    calc_summary,
+    calculation_names,
+)
+
+CALC_CHART_PATH = REPORT_DIRECTORY / "assets" / "calculation_violation_rates.png"
+(REPORT_DIRECTORY / "assets").mkdir(exist_ok=True)
 
 ## Relational Conformance section
 def prepare_relational_section(metadata, relational_summary):
@@ -853,8 +855,13 @@ template = environment.get_template("report_template.html")
 
 completed_html = template.render(
     generated_date=date.today().strftime("%d %B %Y"),
-
-    value_conformance_table=value_conformance_table,
+    boolean=boolean,
+    float=float,
+    integer=integer,
+    permissible_values=permissible_values,
+    date_format=date_format,
+    single_choice=single_choice,
+    numeric_range=numeric_range,
         calculation=calculation_section,
             longitudinal=longitudinal_section,
     imports=imports,
@@ -870,8 +877,6 @@ relational=relational_section,
         "assets/patient_completeness_distribution.png"
     ),
 )
-
-
 
 OUTPUT_PATH.write_text(
     completed_html,
