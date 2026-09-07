@@ -26,12 +26,13 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 # Loading
 
 def load_csv(path, sep):
-    """Load a CSV file as text so identifiers are not converted."""
+   
     return pd.read_csv(path, dtype="object", sep=sep)
 
 
+# Normalize
 def clean_text_columns(df, columns):
-    """Strip whitespace from identifier columns."""
+    
     out = df.copy()
 
     for column in columns:
@@ -42,7 +43,7 @@ def clean_text_columns(df, columns):
 
 
 def prepare_export(df_export):
-    """Prepare the export columns used by the relational checks."""
+    
     export = clean_text_columns(
         df_export,
         ["PID", "Episode_Date", "source_id"],
@@ -54,7 +55,7 @@ def prepare_export(df_export):
 
 
 def prepare_expected_elements(df_expected):
-    """Prepare expected patient-element assignments."""
+     
     expected = df_expected.rename(
         columns={"episode_date": "Episode_Date"}
     )
@@ -89,14 +90,14 @@ def prepare_expected_elements(df_expected):
 
 
 def prepare_form_elements(df_form_elements):
-    """Prepare the versioned Form Editor structure metadata."""
+     
     return clean_text_columns(
         df_form_elements,
         ["form_id", "form_version"],
     )
 
 
-# Shared output helpers
+#   output helpers
 
 def make_violation(
     df,
@@ -104,7 +105,7 @@ def make_violation(
     expected,
     observed_col,
 ):
-    """Add standard rule-result columns to failed assessment units."""
+     
     out = df.copy()
 
     out["rule_id"] = rule_id
@@ -128,7 +129,7 @@ def make_violation(
 
 
 def make_summary(rule_id, assessed_elements, violations):
-    """Create one summary row for a relational rule."""
+     
     return {
         "rule_type": "relational_conformance",
         "rule_id": rule_id,
@@ -142,7 +143,7 @@ def make_summary(rule_id, assessed_elements, violations):
 
 def check_source_id_exists(df_export, df_dictionary):
     """
-    Check that every source_id in the export exists in the data dictionary.
+    Checks that every source_id in the export exists in the data dictionary.
 
     Assessment unit:
         unique exported source_id
@@ -182,8 +183,8 @@ def check_source_id_exists(df_export, df_dictionary):
 
 def check_pid_mapping_conformance(df_export, df_expected):
     """
-    Check that patient identifiers map between the export and the
-    expected-elements metadata in both directions.
+    Checks that patient identifiers map between the export and the expected-elements metadata in both directions.
+    
 The patient identifiers in the export must match the  patient identifiers in the expected-elements MD.
     """
     export_pids = (
@@ -241,7 +242,7 @@ The patient identifiers in the export must match the  patient identifiers in the
 
 def check_element_expected_for_patient(df_export, df_expected):
     """
-    Check that each observed patient-element combination is expected.
+    Checks that each observed patient-element combination is expected.
 
     Filters out empty values so they dont falsely count as observed values (empty values in export exist currently for elements in current registry version)
     """
@@ -353,7 +354,7 @@ def check_element_expected_for_patient(df_export, df_expected):
 
 def check_form_version_exists(df_expected, df_form_elements):
     """
-    Check that every form-version pair in expected-elements metadata
+    Checks that every form-version pair in expected-elements metadata
     exists in the versioned Form Editor metadata.
 
     Assessment unit:
@@ -407,7 +408,7 @@ def apply_rules(
     df_expected,
     df_form_elements,
 ):
-    """Run all relational conformance checks."""
+   #
     rule_results = [
         (
             "Source_id_exists",
