@@ -4,10 +4,7 @@ Reads config.yaml (via config.py) and executes each enabled check script in
 order. Individual scripts can be toggled on/off in config.yaml under the
 'scripts' section.
 
-Usage:
-    python run_all.py
-    python run_all.py --only 4_value-conformance 5_daterules
-    python run_all.py --config path/to/other.yaml
+ 
 """
 
 import argparse
@@ -18,9 +15,10 @@ from pathlib import Path
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent
+# Name of the folder with the scripts
 CHECKS_DIR = PROJECT_ROOT / "scripts"
 
-# Canonical execution order, matching the numbered filenames in checks/.
+# Execution order
 SCRIPT_ORDER = [
     "1_mdr_metadata_fetch",
     "2_create_data_dictionary",
@@ -65,8 +63,7 @@ def run_script(script_id):
 
     # Run each script in a fresh subprocess so its memory is fully reclaimed
     # before the next script starts (important for the memory-heavy steps), and
-    # so its output streams to the console in real time. The child inherits the
-    # current environment, including SARA_CONFIG if it was set from --config.
+    # so its output streams to the console in real time. 
     result = subprocess.run([sys.executable, str(script_path)], cwd=str(PROJECT_ROOT))
     if result.returncode != 0:
         raise RuntimeError(
