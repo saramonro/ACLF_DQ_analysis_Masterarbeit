@@ -301,8 +301,8 @@ def run_import_conformance_checks(import_rules, value_lookup, longitudinal_looku
                 "target_label": target_label,
                 "source_source_id": source_source_id,
                 "target_source_id": target_source_id,
-                "n_evaluated": 0,
-                "n_violations": 0,
+                "assessed_elements": 0,
+                "total_violations": 0,
                 "n_skipped_missing_source": 0,
                 "n_skipped_multiple_source": 0,
                 "n_skipped_multiple_target": 0
