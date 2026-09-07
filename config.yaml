@@ -1,12 +1,20 @@
+# MAIN CONFIGURATION 
+# Adapt the pipeline to a registry by changing the following information if applicable:
+
 registry:
   namespace: "osse-11"      # MDR namespace
   name: "ACLF"             #short registry name (used in output filenames)
-  url: "https://register.neocyst.de/schemata/data_element_list.csv"  # url of the data element list (can alternatively be used as downloaded csv)
-  mdr_base: "https://mdr.prod.osse-register.de/v3/api/mdr/"  # MDR api base URL, expects a "/" in the end
+  url: "https://register.neocyst.de/schemata/data_element_list.csv"  # url of the data element list (can alternatively be used as downloaded csv under metadata/raw/structural)
+  mdr_base: "https://mdr.prod.osse-register.de/v3/api/mdr/"  # MDR api base URL, expects a "/" in the end - required for preparation of structural MD
   dob_source_id: "X_225_0_55" # Source_ID for date of birth, to be used in Temporal Plausibility checks
 
 paths:
   raw_export: "data/raw/ACLF_2026-02-12_MDAT.csv" # relative to project root
+
+# Disable/Enable Modules here:
+# change true - false accordingly. Scripts with true will run.
+# The first 3 scripts build structural metadata from the MDR REST API + data_element_list, and preprocess the wide format export.
+# If all preprocessig steps have been performed previously and the corresponding outputs are saved where they should, these can be skipped.
 
 scripts:
   "1_mdr_metadata_fetch": false
