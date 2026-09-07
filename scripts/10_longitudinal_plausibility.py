@@ -1,3 +1,5 @@
+# Longitudinal Plausibility
+
 from pathlib import Path
 import pandas as pd
 import numpy as np
@@ -14,6 +16,33 @@ SUMMARY_OUT = PROJECT_ROOT / "results" / "longitudinal_plausibility_summary.csv"
 
 EXPORT_SEP = ";"
 RULES_SEP = ";"
+
+
+'''
+Longitudinal Plausibility module
+
+This module assesses the longitudinal constraints recorded in the longitudinal_plausibility metadata table.
+
+The table must be filed with unique source_id´s matching the ones in the export, their type under "value_type", and the allowed percent.
+
+The following definitions are supported:
+
+* enumerated type consistency: enumerated fields which should not have any value change across episodes. 
+value_type: enumerated
+allowed_variation_percent: 0
+(unidirectional change is not supported yet)
+
+* date increasing: date types which should only increase and not decrease along episodes.
+value_type: date_increasing
+allowed_variation_percent: 0
+
+
+* numeric values with threshold constraints: for values which can only increase or decrease within a certain % of the previous episode´s value.
+value_type: float or integer
+allowed_variation_percent: any % value 
+
+
+'''
 
 
 # Loading
