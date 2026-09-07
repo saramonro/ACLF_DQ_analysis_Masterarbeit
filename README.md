@@ -103,19 +103,15 @@ Individual scripts can be enabled or disabled in the scripts section of the
 YAML configuration file by adding "true" or "false" in front of each script name.
 
 Preprocessing scripts can be skipped if the outputs have already been generated previously.
-
-An alternative configuration file can also be supplied when executing the
-pipeline.
+ 
 
 ## Running the pipeline
 
-Run all checks enabled in config.yaml:
+Run only checks enabled by configuring the script in the config.yaml and then running:
 
 python run_all.py
 
-Run selected modules only:
-
-python run_all.py --only 4_value-conformance 5_daterules
+Optional: Run selected modules only with python run_all.py --only 4_value-conformance 5_daterules
 
 
 Each module is executed as a separate Python subprocess. Pipeline execution
