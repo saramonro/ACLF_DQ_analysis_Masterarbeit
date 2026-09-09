@@ -1,0 +1,34 @@
+rule_id;source_label;target_label;source_source_id;target_source_id;assessed_elements;total_violations;n_skipped_missing_source;n_skipped_multiple_source;n_skipped_multiple_target
+IMPORT_001;Laboratory INR;MELD INR;X_231_0_256;X_235_56_256;399;2;0;0;0
+IMPORT_002;Laboratory Total Bilirubin;MELD Total Bilirubin;X_231_0_264;X_235_56_264;400;2;0;0;0
+IMPORT_003;Laboratory Creatinine;MELD Creatinine;X_231_0_265;X_235_56_265;402;2;0;0;0
+IMPORT_004;Laboratory Sodium;MELD Sodium;X_231_0_266;X_235_56_266;399;3;0;0;0
+IMPORT_005;Laboratory Total Bilirubin;Child-Pugh Old Total Bilirubin;X_231_0_264;X_235_58_264;0;0;0;0;0
+IMPORT_006;Laboratory Prothrombin Time;Child-Pugh Old Prothrombin Time;X_231_0_254;X_235_58_254;0;0;0;0;0
+IMPORT_007;Laboratory INR;Child-Pugh Old INR;X_231_0_256;X_235_58_256;0;0;0;0;0
+IMPORT_008;Laboratory Total Bilirubin;Child-Pugh New Total Bilirubin;X_231_0_264;X_235_69_264;397;1;0;0;0
+IMPORT_009;Laboratory Albumin;Child-Pugh New Albumin;X_231_0_347;X_235_69_347;284;2;0;0;0
+IMPORT_010;Laboratory Prothrombin Time;Child-Pugh New Prothrombin Time;X_231_0_254;X_235_69_254;36;0;1;0;0
+IMPORT_011;Laboratory INR;Child-Pugh New INR;X_231_0_256;X_235_69_256;396;1;0;0;0
+IMPORT_012;Laboratory Prothrombin Time;Maddrey Prothrombin Time;X_231_0_254;X_235_59_254;39;0;1;0;0
+IMPORT_013;Laboratory Control Prothrombin Time;Maddrey Control Prothrombin Time;X_231_0_255;X_235_59_325;12;1;0;0;0
+IMPORT_014;Laboratory Total Bilirubin;Maddrey Total Bilirubin;X_231_0_264;X_235_59_264;400;2;0;0;0
+IMPORT_015;Physical Examination Temperature;SIRS Temperature;X_230_0_239;X_235_60_239;388;1;0;0;0
+IMPORT_016;Physical Examination Heart Rate;SIRS Heart Rate;X_230_0_238;X_235_60_238;389;1;0;0;0
+IMPORT_017;Physical Examination Respiratory Rate;SIRS Respiratory Rate;X_230_0_240;X_235_60_240;370;2;0;0;0
+IMPORT_018;Blood Gas PaCO2;SIRS PaCO2;X_232_0_283;X_235_60_283;83;3;1;0;0
+IMPORT_019;Laboratory Leucocytes;SIRS Leucocytes;X_231_0_245;X_235_60_245;399;3;0;0;0
+IMPORT_020;Laboratory Immature Neutrophils;SIRS Immature Neutrophils;X_231_0_252;X_235_60_252;35;0;0;0;0
+IMPORT_021;Consent Date;CLIF-OF Consent Date;X_222_0_48;X_235_0_56;398;0;0;0;0
+IMPORT_022;Laboratory Total Bilirubin;CLIF-OF Liver Bilirubin;X_231_0_264;X_235_61_264;400;2;0;0;0
+IMPORT_023;Laboratory INR;CLIF-OF Coagulation INR;X_231_0_256;X_235_65_256;399;2;0;0;0
+IMPORT_024;Laboratory Creatinine;CLIF-OF Kidney Creatinine;X_231_0_265;X_235_62_265;402;2;0;0;0
+IMPORT_025;Physical Examination SBP;CLIF-OF Circulation SBP;X_230_0_67;X_235_64_67;390;1;0;0;0
+IMPORT_026;Physical Examination DBP;CLIF-OF Circulation DBP;X_230_0_68;X_235_64_68;390;1;0;0;0
+IMPORT_027;Physical Examination MAP;CLIF-OF Circulation MAP;X_230_0_69;X_235_64_69;388;1;0;0;0
+IMPORT_028;Physical Examination SpO2;CLIF-OF Lung SpO2;X_230_0_73;X_235_66_73;310;12;0;0;0
+IMPORT_029;Blood Gas PaO2;CLIF-OF Lung PaO2;X_232_0_282;X_235_66_282;78;3;1;0;0
+IMPORT_030;Laboratory Leucocytes;CLIF-C AD Leucocytes;X_231_0_245;X_235_68_245;398;3;0;0;0
+IMPORT_031;Laboratory Creatinine;CLIF-C AD Creatinine;X_231_0_265;X_235_68_265;401;2;0;0;0
+IMPORT_032;Laboratory INR;CLIF-C AD INR;X_231_0_256;X_235_68_256;398;2;0;0;0
+IMPORT_033;Laboratory Sodium;CLIF-C AD Sodium;X_231_0_266;X_235_68_266;398;3;0;0;0

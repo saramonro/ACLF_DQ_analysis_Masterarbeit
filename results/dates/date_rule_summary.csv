@@ -1,0 +1,6 @@
+rule_type;rule_id;assessed_elements;total_violations
+temporal_plausibility;not_before_dob;3005;1
+temporal_plausibility;not_in_future;3009;1
+temporal_plausibility;not_after_episode;0;0
+temporal_plausibility;not_before_variable;3009;815
+temporal_plausibility;not_after_variable;0;0

@@ -20,7 +20,7 @@ Data Dictionary -> to check form type
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 EXPORT_PATH = BASE_DIR / "data" / "processed" / "export_long_clean.csv"
-IMPORT_RULES_PATH = BASE_DIR / "metadata" / "behavioral" / "imports" / "import_rules.csv"
+IMPORT_RULES_PATH = BASE_DIR / "metadata" / "behavioural" / "imports" / "import_rules.csv"
 DATA_DICTIONARY_PATH = (
     BASE_DIR
     / "metadata"

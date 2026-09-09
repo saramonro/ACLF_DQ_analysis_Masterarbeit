@@ -1,0 +1,14 @@
+rule_type;rule_id;assessed_elements;total_violations
+longitudinal_plausibility;LONG_001;95;3
+longitudinal_plausibility;LONG_002;94;0
+longitudinal_plausibility;LONG_003;91;0
+longitudinal_plausibility;LONG_004;92;0
+longitudinal_plausibility;LONG_005;92;9
+longitudinal_plausibility;LONG_006;92;28
+longitudinal_plausibility;LONG_007;6;0
+longitudinal_plausibility;LONG_008;94;1
+longitudinal_plausibility;LONG_009;8;0
+longitudinal_plausibility;LONG_010;23;0
+longitudinal_plausibility;LONG_011;0;0
+longitudinal_plausibility;LONG_012;6;0
+longitudinal_plausibility;LONG_013;0;0

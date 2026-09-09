@@ -5,7 +5,7 @@ registry:
   namespace: "osse-11"      # MDR namespace
   name: "ACLF"             #short registry name (used in output filenames)
   url: "https://register.neocyst.de/schemata/data_element_list.csv"  # url of the data element list (can alternatively be used as downloaded csv under metadata/raw/structural)
-  mdr_base: "https://mdr.prod.osse-register.de/v3/api/mdr/"  # MDR api base URL, expects a "/" in the end - required for preparation of structural MD
+  mdr_base: "https://mdr.prod.osse-register.de/rest/api/mdr/"  # MDR api base URL, expects a "/" in the end - required for preparation of structural MD
   dob_source_id: "X_225_0_55" # Source_ID for date of birth, to be used in Temporal Plausibility checks
 
 paths:
@@ -17,16 +17,16 @@ paths:
 # If all preprocessig steps have been performed previously and the corresponding outputs are saved where they should, these can be skipped.
 
 scripts:
-  "1_mdr_metadata_fetch": false
+  "1_mdr_metadata_fetch": true
   "2_create_data_dictionary": true
-  "3_export_data_preprocess_clean": false
-  "4_value-conformance": false
-  "5_daterules": false
-  "6_ranges": false
-  "7.1_Form_versioning_JSON_to_CSV": false
-  "7.2_expected_elements_per_patient_with_versions": false
-  "7.3_completeness_checks": false
-  "8_calculations": false
-  "9_import_checks": false
-  "10_longitudinal_plausibility": false
-  "11_relational_conformance": false
+  "3_export_data_preprocess_clean": true
+  "4_value-conformance": true
+  "5_daterules": true
+  "6_ranges": true
+  "7.1_Form_versioning_JSON_to_CSV": true
+  "7.2_expected_elements_per_patient_with_versions": true
+  "7.3_completeness_checks": true
+  "8_calculations": true
+  "9_import_checks": true
+  "10_longitudinal_plausibility": true
+  "11_relational_conformance": true

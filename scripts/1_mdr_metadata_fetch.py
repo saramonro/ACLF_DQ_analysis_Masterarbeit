@@ -8,16 +8,14 @@ import json
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import NAMESPACE, REGISTRY_NAME, MDR_BASE
 
-####################
-# Configuration 
-####################
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = PROJECT_ROOT / "metadata" / "processed"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True) # create directory if it doesn't exist
 HEADERS = {
     "Accept-Language": "en-US, en;q=0.7,de;q=0.3"
 }
-####################
+
 
 def build_search_url(namespace):
     return f"{MDR_BASE}namespaces/{namespace}/search?query="

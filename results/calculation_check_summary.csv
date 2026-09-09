@@ -1,0 +1,11 @@
+rule_type;rule_id;assessed_elements;total_violations
+calculation_check;MELD_scores;397;72
+calculation_check;MELD_Na_scores;394;14
+calculation_check;BMI_basic;391;7
+calculation_check;MAP_aclf_examination;250;15
+calculation_check;MAP_physical_examination;405;40
+calculation_check;SPO2_FIO2_ratio;140;0
+calculation_check;PAO2_FIO2_ratio;27;0
+calculation_check;Maddrey_scores;9;0
+calculation_check;CLIF_C_AD_scores;391;0
+calculation_check;CLIF_OF_scores;0;0

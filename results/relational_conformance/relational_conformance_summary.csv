@@ -1,0 +1,5 @@
+rule_type;rule_id;assessed_elements;total_violations
+relational_conformance;Source_id_exists;451;0
+relational_conformance;PID_mapping_conformance;313;48
+relational_conformance;Element_expected_for_patient;108683;3
+relational_conformance;Form_version_exists;43;0

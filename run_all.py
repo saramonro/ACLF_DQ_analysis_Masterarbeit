@@ -1,7 +1,7 @@
 """Run the data-quality check pipeline.
 
 Reads config.yaml (via config.py) and executes each enabled check script in
-order. Individual scripts can be toggled on/off in config.yaml under the
+order. Individual scripts can be activated or deactivated in config.yaml under the
 'scripts' section.
 
  

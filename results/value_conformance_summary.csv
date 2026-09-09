@@ -1,0 +1,7 @@
+rule_type;rule_id;assessed_elements;total_violations
+datatype_conformance;Integer_conformance;12572;0
+datatype_conformance;Float_conformance;18261;0
+datatype_conformance;Boolean_conformance;1805;0
+Date_format_conformance;Date_format_conformance;3233;1
+permissible_values;Permissible_values_conformance;73026;0
+Single_choice_conformance;Single_choice_conformance;58517;0

@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parents[1] # project root; script lives in t
 
 EXPORT_PATH = BASE_DIR / "data" / "processed" / "export_long_clean.csv"
 
-CALC_INSTANCES_PATH = BASE_DIR / "metadata" / "behavioral" / "calculations" / "calculation_instances.csv"
-CALC_MAPPINGS_PATH = BASE_DIR / "metadata" / "behavioral" / "calculations" / "calculation_variable_mappings.csv"
-CALC_FORMULAS_PATH = BASE_DIR / "metadata" / "behavioral" / "calculations" / "calculation_formulas.csv"
+CALC_INSTANCES_PATH = BASE_DIR / "metadata" / "behavioural" / "calculations" / "calculation_instances.csv"
+CALC_MAPPINGS_PATH = BASE_DIR / "metadata" / "behavioural" / "calculations" / "calculation_variable_mappings.csv"
+CALC_FORMULAS_PATH = BASE_DIR / "metadata" / "behavioural" / "calculations" / "calculation_formulas.csv"
 
 RESULTS_DIR = BASE_DIR / "results"
 RESULTS_DIR.mkdir(exist_ok=True)
