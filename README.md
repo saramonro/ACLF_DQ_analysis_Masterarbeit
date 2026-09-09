@@ -39,7 +39,7 @@ Pipeline/
 │   │   ├── structural/
 │   │   └── versioning/
 │   ├── processed/
-│   ├── behavioral/
+│   ├── behavioural/
 │   │   ├── calculations/
 │   │   └── imports/
 │   └── contextual/
