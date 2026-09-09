@@ -1,0 +1,6 @@
+rule_id,source_id,variable_label,value_type,allowed_variation_percent
+LONG_001,X_230_0_233,Race,enumerated,0
+LONG_002,X_230_0_349,Weight (Kg),float,50
+LONG_003,X_230_0_350,Height (cm),integer,10
+LONG_007,X_236_0_339,Date of Death,date,0
+LONG_008,X_231_0_242,Date of Collection ,date_increasing,0
