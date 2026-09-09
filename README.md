@@ -129,7 +129,7 @@ Jinja2
 
 ## Limitations
 
-The software is a research prototype rather than a production-ready DQ system.
+The pipeline is a research prototype rather than a production-ready DQ system.
 
 Its execution depends on the expected structure of the registry exports and
 metadata files. Registry-specific metadata and contextual rules therefore
